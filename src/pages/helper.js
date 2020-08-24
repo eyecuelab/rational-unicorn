@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+// import ReactDOM from "react-dom"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
@@ -8,6 +9,12 @@ const textElement = document.getElementById("text")
 const optionButtonsElement = document.getElementById("option-buttons")
 
 let state = {}
+
+// this should act as ComponentDidMount()
+// useEffect(() => {
+//   state = {}
+//   showTextNode(1)
+// }, [])
 
 function startHelper() {
   state = {}
@@ -56,7 +63,7 @@ const textNodes = [
         nextText: 2,
       },
       {
-        text: "I already own a business",
+        text: "I own a business",
         nextText: 2,
       },
       {
@@ -149,22 +156,30 @@ const textNodes = [
   },
 ]
 
-const SecondPage = () => (
-  <Layout>
-    <SEO title="Page two" />
-    <div class="container">
-      <div id="text">text</div>
-      <div id="option-buttons" class="btn-grid">
-        <button class="btn">Option 1</button>
-        <button class="btn">Option 2</button>
-        <button class="btn">Option 3</button>
-        <button class="btn">Option 4</button>
+const Helper = () => {
+  // this should act as ComponentDidMount()
+  useEffect(() => {
+    // state = {}
+    // showTextNode(1)
+    startHelper()
+  }, [])
+  return (
+    <Layout>
+      <SEO title="Page two" />
+      <div class="container">
+        <div id="text" ref="text">Text</div>
+        <div id="option-buttons" class="btn-grid">
+          <button class="btn">Option 1</button>
+          <button class="btn">Option 2</button>
+          <button class="btn">Option 3</button>
+          <button class="btn">Option 4</button>
+        </div>
       </div>
-    </div>
-    <Link to="/">Start Over</Link>
-  </Layout>
-)
+      <Link to="/">Start Over</Link>
+    </Layout>
+  )
+}
 
-startHelper()
 
-export default SecondPage
+
+export default Helper
