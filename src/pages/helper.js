@@ -1,56 +1,14 @@
-import React, { useEffect } from "react"
+import React, { useRef, useEffect, useState, createRef } from "react"
 // import ReactDOM from "react-dom"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const textElement = document.getElementById("text")
-const optionButtonsElement = document.getElementById("option-buttons")
+// const textElement = document.getElementById("text")
+// const optionButtonsElement = document.getElementById("option-buttons")
 
 let state = {}
-
-// this should act as ComponentDidMount()
-// useEffect(() => {
-//   state = {}
-//   showTextNode(1)
-// }, [])
-
-function startHelper() {
-  state = {}
-  showTextNode(1)
-}
-
-function showTextNode(textNodeIndex) {
-  const textNode = textNodes.find(textNode => textNode.id === textNodeIndex)
-  textElement.innerText = textNode.text
-  while (optionButtonsElement.firstChild) {
-    optionButtonsElement.removeChild(optionButtonsElement.firstChild)
-  }
-
-  textNode.options.forEach(option => {
-    if (showOption(option)) {
-      const button = document.createElement("button")
-      button.innerText = option.text
-      button.classList.add("btn")
-      button.addEventListener("click", () => selectOption(option))
-      optionButtonsElement.appendChild(button)
-    }
-  })
-}
-
-function showOption(option) {
-  return option.requiredState == null || option.requiredState(state)
-}
-
-function selectOption(option) {
-  const nextTextNodeId = option.nextText
-  if (nextTextNodeId <= 0) {
-    return startHelper()
-  }
-  state = Object.assign(state, option.setState)
-  showTextNode(nextTextNodeId)
-}
 
 const textNodes = [
   {
@@ -125,7 +83,7 @@ const textNodes = [
   },
   {
     id: 4,
-    text: "Here's the contact you will need to get started on your adventure!",
+    text: "Here's a contract you will need to get started on your adventure!",
     options: [
       {
         text: "Copyright Contract",
@@ -157,18 +115,62 @@ const textNodes = [
 ]
 
 const Helper = () => {
-  // this should act as ComponentDidMount()
+  // const textElement = useRef(null);
+  const optionButtonsElement = useRef(null);
+  const [textState, setTextState] = useState(null);
+  // const [buttonState, setButtonState] = useState(null);
+
+  // this acts as ComponentDidMount()
   useEffect(() => {
-    // state = {}
-    // showTextNode(1)
-    startHelper()
+
+    startHelper();
   }, [])
+
+  function startHelper() {
+    state = {}
+    showTextNode(1)
+  }
+
+
+  function showTextNode(textNodeIndex) {
+    const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+    setTextState(textNode.text) // hook gets set here  
+    while (optionButtonsElement.firstChild) {
+      optionButtonsElement.removeChild(optionButtonsElement.firstChild);
+    }
+
+    textNode.options.forEach(option => {
+      if (showOption(option)) {
+        const button = document.createElement("button");
+        button.innerText = option.text;
+        button.classList.add("btn");
+        button.addEventListener("click", () => selectOption(option));
+        optionButtonsElement.appendChild(button);
+      }
+    })
+  }
+
+  function showOption(option) {
+    return option.requiredState == null || option.requiredState(state);
+  }
+
+  function selectOption(option) {
+    const nextTextNodeId = option.nextText;
+    if (nextTextNodeId <= 0) {
+      return startHelper();
+    }
+    state = Object.assign(state, option.setState);
+    showTextNode(nextTextNodeId);
+  }
+
+
+
   return (
     <Layout>
       <SEO title="Page two" />
       <div class="container">
-        <div id="text" ref="text">Text</div>
-        <div id="option-buttons" class="btn-grid">
+        <div id="text" ref={textState}>Text</div>
+        <div id="option-buttons" ref={optionButtonsElement} class="btn-grid">
           <button class="btn">Option 1</button>
           <button class="btn">Option 2</button>
           <button class="btn">Option 3</button>
