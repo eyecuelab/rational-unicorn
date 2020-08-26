@@ -10,7 +10,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Test Environment`,
+    title: `Unicorn Testing Facility`,
     description: `framework to test out back end functionality`,
     author: `Tyler Bates`,
   },

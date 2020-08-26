@@ -1,12 +1,13 @@
 import React, { useState } from "react"
 import Button from "../components/button"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-// const textElement = document.getElementById("text")
-// const optionButtonsElement = document.getElementById("option-buttons")
+const btnStyles = {
+
+}
 
 const textNodes = [
   {
@@ -15,20 +16,24 @@ const textNodes = [
     options: [
       {
         text: "I'm starting a business",
+        requiredState: null,
         config: { startingBiz: true },
         nextText: 2,
       },
       {
         text: "I own a business",
+        requiredState: null,
         nextText: 2,
       },
       {
         text: "I'm going into business with someone",
+        requiredState: null,
         config: { startingBiz: true, partner: true },
         nextText: 2,
       },
       {
         text: "I'm a content/product creator",
+        requiredState: null,
         nextText: 3,
       },
     ],
@@ -52,6 +57,7 @@ const textNodes = [
       },
       {
         text: "Intellectual Property",
+        requiredState: null,
         config: { copyright: true, trademark: true, patent: true },
         nextText: 4,
       },
@@ -64,16 +70,19 @@ const textNodes = [
     options: [
       {
         text: "Copyrights",
+        requiredState: null,
         config: { copyright: true },
         nextText: 4,
       },
       {
         text: "Trademarks",
+        requiredState: null,
         config: { trademark: true },
         nextText: 4,
       },
       {
         text: "Patents",
+        requiredState: null,
         config: { patent: true },
         nextText: 4,
       },
@@ -121,7 +130,6 @@ const Helper = () => {
     if (!!config) {
       setConfiguration(config);
     }
-
     // choose next node to use
     for (let i = 0; i < textNodes.length; i++) {
       if (next == textNodes[i].id) {
@@ -133,39 +141,6 @@ const Helper = () => {
   }
 
 
-  // function showTextNode(textNodeIndex) {
-  //   const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
-  //   setTextState(textNode.text) // hook gets set here  
-    // while (optionButtonsElement.firstChild) {
-    //   optionButtonsElement.removeChild(optionButtonsElement.firstChild);
-    // }
-
-    // textNode.options.forEach(option => {
-    //   if (showOption(option)) {
-    //     const button = document.createElement("button");
-    //     button.innerText = option.text;
-    //     button.classList.add("btn");
-    //     button.addEventListener("click", () => selectOption(option));
-    //     optionButtonsElement.appendChild(button);
-    //   }
-    // })
-  // }
-
-  // function showOption(option) {
-  //   return option.requiredState == null || option.requiredState(state);
-  // }
-
-  // function selectOption(option) {
-  //   const nextTextNodeId = option.nextText;
-  //   if (nextTextNodeId <= 0) {
-  //     return startHelper();
-  //   }
-  //   state = Object.assign(state, option.setState);
-  //   showTextNode(nextTextNodeId);
-  // }
-
-
-
   return (
     <Layout>
       <SEO title="Page two" />
@@ -174,10 +149,13 @@ const Helper = () => {
         <div id="option-buttons" class="btn-grid">
           {textState.options.map(option => {
             // logic for showing option based on required state
-            return <Button node={option} handleClick={handleClick} />
+            // return !option.requiredState? || option.requiredState.contains(option.config) <Button style={btnStyles} node={option} handleClick={handleClick} /> : null
+            return <Button style={btnStyles} node={option} handleClick={handleClick} />
           })}
         </div>
       </div>
+      <br />
+      <br />
       <Link to="/">Start Over</Link>
     </Layout>
   )

@@ -12,7 +12,7 @@ const IndexPage = () => (
       <Link to="/helper/">Start</Link>
     </button>{" "}
     <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
+    {/* <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
   </Layout>
 )
 

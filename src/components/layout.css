@@ -19,13 +19,14 @@ body {
   background-image: url("https://i.ibb.co/ZKKfS8n/Start.jpg");
   background-size: 70vh;
   background-position: center;
-  background-position-y: top;
+  background-position-y: 15vh;
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .container {
   width: 500px;
+  max-width: 90vw;
   height: 200px;
   background-color: #333;
   padding: 10px;
@@ -46,13 +47,12 @@ body {
   height: 60px;
   font-size: 40px;
   text-decoration: none;
-  margin-top: 5vh;
+  margin-top: 13.5vh;
   background-color: #333;
-  border: 1px solid #000;
+  border: 1px solid #333;
   border-radius: 30px;
   padding: 5px 10px;
   color: rgb(255, 200, 50);
-  outline: none;
 }
 
 .start-btn:hover {
@@ -60,20 +60,6 @@ body {
   color: #333;
 }
 
-.btn {
-  background-color: #333;
-  border: 1px solid #000;
-  text-decoration: none;
-  border-radius: 25px;
-  padding: 5px 10px;
-  color: #999;
-  outline: none;
-}
-
-.btn:hover {
-  background-color: rgb(255, 200, 50);
-  color: #333;
-}
 article,
 aside,
 details,
