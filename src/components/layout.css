@@ -52,12 +52,19 @@ body {
   border: 1px solid #333;
   border-radius: 30px;
   padding: 5px 10px;
-  color: rgb(255, 200, 50);
+  color: rgb(238, 173, 52);
 }
 
-.start-btn:hover {
-  background-color: rgb(255, 200, 50);
-  color: #333;
+.home-btn {
+  width: auto;
+  height: auto;
+  font-size: 20px;
+  text-decoration: none;
+  margin-top: 0;
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: 25px;
+  padding: 5px 10px;
 }
 
 article,
@@ -93,9 +100,14 @@ template {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: rgb(236, 179, 20);
   -webkit-text-decoration-skip: objects;
 }
-a:active,
+a:active {
+  color: rgb(115, 30, 253);
+  text-decoration: none;
+}
 a:hover {
   outline-width: 0;
 }
