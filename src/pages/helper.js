@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import Button from "../components/button"
 import { Link, useStaticQuery, graphql } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import AnswerNode from "../components/answer-node"
 
 const btnStyles = {
 
@@ -155,6 +155,13 @@ const textNodes = [
             }
           }
     }
+    allContentfulTestTypeForUnicornDoWeNeedJsonJsonNode {
+      edges {
+        node {
+          buttons
+        }
+      }
+    }
   }`
     )
 
@@ -162,6 +169,9 @@ const textNodes = [
   return (
     <Layout>
       <SEO title="Service Guide"/>
+      <div>
+        <AnswerNode props={data}></AnswerNode>
+      </div>
       <div class="container">
         {data.allContentfulTestTypeForUnicorn.edges.map (edge => {
           return (<>

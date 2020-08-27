@@ -1,5 +1,5 @@
 import React from "react"
-import {graphql, Link} from "gatsby"
+import {graphql, Link, useStaticQuery} from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -8,7 +8,7 @@ query($slug: String!){
   contentfulTestTypeForUnicorn(slug: {eq: $slug}){
     uniTitle
     uniBodyText { uniBodyText}
-    uniId
+    id
 
   }
 }`
@@ -20,7 +20,7 @@ const AnswerNode = props => {
       <div className="bodyText">
         <h1>{props.data.contentfulTestTypeForUnicorn.uniTitle}</h1>
         <span>
-          {props.data.contentfulTestTypeForUnicorn.uniBpdyText}
+          {props.data.contentfulTestTypeForUnicorn.uniBodyText.uniBodyText}
         </span>
       </div>
     </Layout>

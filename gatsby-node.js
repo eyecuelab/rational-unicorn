@@ -20,14 +20,15 @@ exports.createPages = async ({graphql, actions}) => {
     }
   }
   `)
-}
+
 
 response.data.allContentfulTestTypeForUnicorn.edges.forEach(edge => {
   createPage ({
     path: `/helper/${edge.node.slug}`,
-    component: path.resolve("./src/components/answer-node.js"),
+    component: path.resolve("./src/pages/answer-node.js"),
     context: {
       slug: edge.node.slug, 
     }
   })
 })
+}
