@@ -2,7 +2,7 @@ import React from 'react';
 import {Modal, Button} from 'react-bootstrap';
 import Content from '../components/content'
 
-const DescriptionModal = (handleClick)=> {
+const DescriptionModal = (option, handleClick)=> {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -13,7 +13,7 @@ const DescriptionModal = (handleClick)=> {
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
         </Modal.Header>
-        <Modal.Body>{}</Modal.Body>
+        <Modal.Body>{option.description}</Modal.Body>
         <Modal.Footer>
           <p>Is this what you were looking for?</p>
           <Button variant="secondary" onClick={handleClose}>

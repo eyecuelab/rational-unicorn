@@ -37,7 +37,7 @@ const Helper = () => {
           {nodeState.options.map(option => { // refactor for reduce()
             // logic for showing option based on required state
             // return !option.requiredState? || option.requiredState.contains(option.config) <Button style={btnStyles} node={option} handleClick={handleClick} /> : null
-            return <Button style={btnStyles} node={option} handleClick={handleShow(handleClick)} />
+            return <Button style={btnStyles} node={option} handleClick={handleShow(handleClick), option} />
           })}
         </div>
       </div>
