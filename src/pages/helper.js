@@ -12,7 +12,7 @@ const Helper = () => {
   const [configuration, setConfiguration] = useState(null);
   const handleShow = () => setShow(true);
 
-  const handleClick(description, requiredState, prevNodeId, nextNodeId)=> {
+  const handleClick = (description, requiredState, prevNodeId, nextNodeId)=> {
     // set configuration options
     if (!!requireState) {
       setConfiguration(requiredState);
