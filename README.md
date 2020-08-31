@@ -59,7 +59,8 @@ The user will be prompted a list of options attached to a question on what they'
 2. Once you've navigated to the application's space, you'll be presented with a list of each question and it's options. Clicking on these will give you access to edit all of the properties connected to the selected question/option.
 
 3. After you've modified your selection simply click the green "Publish Changes" button to the right of the form.
-<img src='src\images\publish_changes.png' alt="app design">
+
+    <img src='src\images\publish_changes.png' alt="app design">
 
 4. The application will automatically re-deploy your updates to the live application through Netlify's [Continuous Deployment](https://www.netlify.com/products/build/#start)
 
