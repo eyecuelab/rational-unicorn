@@ -12,7 +12,7 @@ module.exports = {
   siteMetadata: {
     title: `Unicorn Testing Facility`,
     description: `framework to test out back end functionality`,
-    author: `Tyler Bates`,
+    author: `Tyler Bates, Ethan Firpo`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

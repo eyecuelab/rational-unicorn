@@ -1,10 +1,10 @@
 import React from "react"
 
-const Button = ({node, handleClick}) => {
-  const { nextText, config, text } = node;
+const Button = ({node, handleShow, handleClick}) => {
+  const { text } = node;
   return (
     <>
-      <button onClick={() => handleClick(nextText, config)}>{text}</button>
+      <button onClick={() => handleShow(handleClick)}>{text}</button>
     </>
   )    
 }
