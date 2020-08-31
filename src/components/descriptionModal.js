@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Modal, Button} from 'react-bootstrap';
-import Content from '../components/content'
 
 const DescriptionModal = (option, handleClick)=> {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
+  const [showModal, setShowModal] = useState(true);
+  const handleClose = () => setShowModal(false);
 
 
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title></Modal.Title>
         </Modal.Header>
@@ -19,7 +18,7 @@ const DescriptionModal = (option, handleClick)=> {
           <Button variant="secondary" onClick={handleClose}>
             Nope
           </Button>
-          <Button variant="primary" onClick={handleClick(description, requiredState, prevNodeId, nextNodeId), handleClose}>
+          <Button variant="primary" onClick={handleClick(option)}>
             Yup!
           </Button>
         </Modal.Footer>
