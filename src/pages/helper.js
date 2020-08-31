@@ -6,137 +6,11 @@ import SEO from "../components/seo"
 import Content from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 
-const btnStyles = {}
-
-// const textNodes = [
-//   {
-//     id: 1,
-//     text: "Let's get started, select what best applies to you.",
-//     options: [
-//       {
-//         text: "I'm starting a business",
-//         requiredState: null,
-//         config: { startingBiz: true },
-//         nextText: 2,
-//       },
-//       {
-//         text: "I own a business",
-//         requiredState: null,
-//         config: null,
-//         nextText: 2,
-//       },
-//       {
-//         text: "I'm going into business with someone",
-//         requiredState: null,
-//         config: { startingBiz: true, partner: true },
-//         nextText: 4,
-//       },
-//       {
-//         text: "I'm a content/product creator",
-//         requiredState: null,
-//         config: null,
-//         nextText: 3,
-//       },
-//     ],
-//   },
-//   {
-//     id: 2,
-//     text:
-//       "A new business can be quite an exciting adventure! Here are some things you may need to help you get started!",
-//     options: [
-//       {
-//         text: "LLC",
-//         requiredState: currentState => currentState.startingBiz,
-//         config: { llc: true },
-//         nextText: 4,
-//       },
-//       {
-//         text: "Partnership Agreement",
-//         requiredState: currentState => currentState.partner,
-//         config: { partnership: true },
-//         nextText: 4,
-//       },
-//       {
-//         text: "Intellectual Property",
-//         requiredState: null,
-//         config: { copyright: true, trademark: true, patent: true },
-//         nextText: 3,
-//       },
-//       {
-//         text: "Start Over",
-//         requiredState: null,
-//         config: null,
-//         nextText: 1,
-//       },
-//     ],
-//   },
-//   {
-//     id: 3,
-//     text:
-//       "I applaud your creativity! Here's some options in protecting what you've created.",
-//     options: [
-//       {
-//         text: "Copyrights",
-//         requiredState: null,
-//         config: { copyright: true },
-//         nextText: 3,
-//       },
-//       {
-//         text: "Trademarks",
-//         requiredState: null,
-//         config: { trademark: true },
-//         nextText: 3,
-//       },
-//       {
-//         text: "Patents",
-//         requiredState: null,
-//         config: { patent: true },
-//         nextText: 3,
-//       },
-//       {
-//         text: "Start Over",
-//         requiredState: null,
-//         config: null,
-//         nextText: 1,
-//       },
-//     ],
-//   },
-//   {
-//     id: 4,
-//     text:
-//       "Going into business with someone huh? It's good to know someone will have your back. Here's some services you may need.",
-//     options: [
-//       {
-//         text: "Partnership Agreement",
-//         requiredState: currentState => currentState.partner,
-//         config: null,
-//         nextText: 4,
-//       },
-//       {
-//         text: "LLC Contract",
-//         requiredState: currentState => currentState.llc,
-//         config: null,
-//         nextText: 2,
-//       },
-//       {
-//         text: "Intellectual Property",
-//         requiredState: currentState => currentState.copyright,
-//         config: null,
-//         nextText: 3,
-//       },
-//       {
-//         text: "Start Over",
-//         requiredState: null,
-//         config: null,
-//         nextText: 1,
-//       },
-//     ],
-//   },
-// ]
 
 const Helper = () => {
-  const [textState, setTextState] = useState(textNodes[0])
-  const [configuration, setConfiguration] = useState(null)
+  const [nodeState, setNodeState] = useState(textNodes[0]);
+  const [configuration, setConfiguration] = useState(null);
+  const handleShow = () => setShow(true);
 
   const handleClick = (description, requiredState, prevNodeId, nextNodeId)=> {
     // set configuration options
@@ -169,9 +43,7 @@ const Helper = () => {
       </div>
       <br />
       <br />
-      <button class="home-btn">
-        <Link to="/">Home</Link>
-      </button>
+      <Link to="/">Start Over</Link>
     </Layout>
   )
 }
