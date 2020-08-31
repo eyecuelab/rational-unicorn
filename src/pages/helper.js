@@ -9,13 +9,13 @@ import DescriptionModal from "../components/descriptionModal"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(textNodes[0]);
-  const [configuration, setConfiguration] = useState(null);
+  const [requiredState, setRequiredState] = useState(null);
   const handleShow = () => setShow(true);
 
   const handleClick = (description, requiredState, prevNodeId, nextNodeId)=> {
-    // set configuration options
-    if (!!requireState) {
-      setConfiguration(requiredState);
+    // set requiredState options
+    if (!!requiredState) {
+      setRequiredState(requiredState);
     }
     // choose next node to use
     for (let i = 0; i < textNodes.length; i++) {
