@@ -8,8 +8,8 @@ import TextNodes from "../components/content"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0]);
-  // const [requiredState, setRequiredState] = useState(null);
   const [showModal, setShowModal] = useState(false);
+  // const [requiredState, setRequiredState] = useState(null);
   
   const handleShow = () => setShowModal(true);
 
@@ -36,7 +36,7 @@ const Helper = () => {
         <div id="text">{nodeState.question}</div>
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => { // refactor for reduce()
-            // logic for showing option based on required state goes here
+            // logic for showing option based on required state
             return <Button node={option.text} handleClick={handleShow(handleClick(option), option)} />
           })}
         </div>
