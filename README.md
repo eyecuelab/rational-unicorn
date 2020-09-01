@@ -26,26 +26,26 @@ The user will be prompted a list of options attached to a question on what they'
 
 ## Logistics
 
-|                    | Minimum Product Features                                            |
+|                    | Minimum Product Features                                                       |
+| ------------------ | ------------------------------------------------------------------------------ |
+| :heavy_check_mark: | User is greeted with a splash page                                             |
+| :heavy_check_mark: | Clicking on the start button begins the choose your own adventure              |
+| :heavy_check_mark: | User is prompt with a question and given multiple options                      |
+| :heavy_check_mark: | Clicking on an option opens a modal with a description of the legal service    |
+| :heavy_check_mark: | User can confirm choice or back out from modal                                 |
+| :heavy_check_mark: | Clicking confirm navigates to the next question                                |
+| :heavy_check_mark: | User can go back to previous question resetting last answer                    |
+| :heavy_check_mark: | User is given results at end of application with list of needed legal services |
+
+<br/>
+<br/>
+
+|                    | Stretch Goals                                                       |
 | ------------------ | ------------------------------------------------------------------- |
-| :heavy_check_mark: | User is greeted with a splash page                                                   |
-| :heavy_check_mark: | Clicking on the start button begins the choose your own adventure                  |
-| :heavy_check_mark: | User is prompt with a question and given multiple options                               |
-| :heavy_check_mark: | Clicking on an option opens a modal with a description of the legal service |
-| :heavy_check_mark: | User can confirm choice or back out from modal                   |
-| :heavy_check_mark: | Clicking confirm navigates to the next question        |
-| :heavy_check_mark: | User can go back to previous question resetting last answer            |
-| :heavy_check_mark: | User is given results at end of application with list of needed legal services       |
-
-<br/>
-<br/>
-
-|                    | Stretch Goals                                           |
-| ------------------ | ------------------------------------------------------- |
-| :heavy_check_mark: | Clean, Responsive UI                                    |
-| :heavy_check_mark: | Site is deployed                                        |
-|                    | Client can update questions/options via Contentful CMS   |
-|                    | Client can add new questions/options via Contentful CMS    |
+| :heavy_check_mark: | Clean, Responsive UI                                                |
+| :heavy_check_mark: | Site is deployed                                                    |
+|                    | Client can update questions/options via Contentful CMS              |
+|                    | Client can add new questions/options via Contentful CMS             |
 |                    | Application automatically re-deploys upon modification from client. |
 
 <hr />
@@ -60,7 +60,7 @@ The user will be prompted a list of options attached to a question on what they'
 
 3. After you've modified your selection simply click the green "Publish Changes" button to the right of the form.
 
-    <img src='src\images\publish_changes.png' alt="app design">
+<img src='src\images\publish_changes.png' alt="app design">
 
 4. The application will automatically re-deploy your updates to the live application through Netlify's [Continuous Deployment](https://www.netlify.com/products/build/#start)
 
@@ -71,9 +71,11 @@ The user will be prompted a list of options attached to a question on what they'
 2. Open the now local project folder with [VSC](https://code.visualstudio.com/Download) or an equivalent
 
 3. If Gatsby isn't already installed globally on your machine, do so by entering the following in the command line:
+
 ```
 $ npm install -g gatsby-cli
 ```
+
 4. Navigate to the project directory from your terminal by entering the following:
 
 ```

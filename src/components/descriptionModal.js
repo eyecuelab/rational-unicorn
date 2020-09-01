@@ -1,16 +1,15 @@
-import React, { useState } from 'react';
-import {Modal, Button} from 'react-bootstrap';
+import React, { useState } from "react"
+import { Modal, Button } from "react-bootstrap"
 
-const DescriptionModal = (option, handleClick)=> {
-  const [showModal, setShowModal] = useState(true);
-  const handleClose = () => setShowModal(false);
-
+const DescriptionModal = (option, handleClick) => {
+  const [showModal, setShowModal] = useState(true)
+  const handleClose = () => setShowModal(false)
 
   return (
     <>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
+          <Modal.Title>{option.text}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{option.description}</Modal.Body>
         <Modal.Footer>
@@ -24,7 +23,7 @@ const DescriptionModal = (option, handleClick)=> {
         </Modal.Footer>
       </Modal>
     </>
-  );
+  )
 }
 
-export default DescriptionModal;
+export default DescriptionModal
