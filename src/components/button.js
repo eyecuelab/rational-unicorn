@@ -1,12 +1,12 @@
 import React from "react"
 
-const Button = ({node, handleShow, handleClick}) => {
-  const { text } = node;
+const Button = (option ) => {
+  console.log(option + "button prop");
   return (
     <>
-      <button onClick={() => handleShow(handleClick)}>{text}</button>
+      <button>{option.node}</button>
     </>
-  )    
+  )     
 }
 
 export default Button

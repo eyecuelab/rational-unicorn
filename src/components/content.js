@@ -301,4 +301,4 @@ const TextNodes = [
     },
   ]
 
-  export default TextNodes
+  export default TextNodes;

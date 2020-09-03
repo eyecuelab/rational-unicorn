@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import {Modal, Button} from 'react-bootstrap';
+import HandleClick from '../components/handleClick';
+import Helper from '../pages/helper';
 
-const DescriptionModal = (option, handleClick)=> {
-  const [showModal, setShowModal] = useState(true);
+const DescriptionModal = (option)=> {
+  const [showModal, setShowModal] = useState(false);
+  
   const handleClose = () => setShowModal(false);
 
 
@@ -10,7 +13,7 @@ const DescriptionModal = (option, handleClick)=> {
     <>
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
+          <Modal.Title>{option.text}</Modal.Title>
         </Modal.Header>
         <Modal.Body>{option.description}</Modal.Body>
         <Modal.Footer>
@@ -18,7 +21,7 @@ const DescriptionModal = (option, handleClick)=> {
           <Button variant="secondary" onClick={handleClose}>
             Nope
           </Button>
-          <Button variant="primary" onClick={handleClick(option)}>
+          <Button variant="primary" onClick={<HandleClick value={ option }/>}>
             Yup!
           </Button>
         </Modal.Footer>

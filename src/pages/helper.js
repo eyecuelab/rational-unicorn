@@ -11,23 +11,9 @@ const Helper = () => {
   const [showModal, setShowModal] = useState(false)
   // const [requiredState, setRequiredState] = useState(null);
 
-  const handleShow = () => setShowModal(true)
   const handleClose = () => setShowModal(false)
 
-  const handleClick = option => {
-    // set requiredState options
-    // if (!!requiredState) {
-    //   setRequiredState(requiredState);
-    // }
-    // choose next node to use
-    for (let i = 0; i < TextNodes.length; i++) {
-      if (option.nextNodeId == TextNodes[i].nodeId) {
-        // set that node to nodeState
-        setNodeState(TextNodes[i])
-        return
-      }
-    }
-  }
+ console.log(nodeState.options[0].text + " button text");
 
   return (
     <Layout>
@@ -36,17 +22,18 @@ const Helper = () => {
         <div id="text">{nodeState.question}</div>
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => {
+            console.log(option.text + " mapped button name"); // it works!
             return (
               <>
                 <Button
                   node={option.text}
-                  handleClick={() => handleShow(handleClick(option), option)}
+                  handleClick={() => setShowModal(true), option}
                 />
-                <DescriptionModal
-                  show={showModal}
-                  onHide={handleClose}
-                  // onClick={handleClick}
-                />
+                  <DescriptionModal
+                    show={showModal}
+                    onHide={handleClose}
+                    // onClick={handleClick}
+                  />
               </>
             )
           })}
