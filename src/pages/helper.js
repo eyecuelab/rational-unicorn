@@ -11,12 +11,16 @@ const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
+  const [pathNodes, storePathNode] = useState(null)
 
   const handleClose = () => setShowModal(false)
   const handleClick = value => {
     const nextNode = useNextNode(value)
     setNodeState(nextNode)
     setShowModal(false)
+    storePathNode(pathNodes + nextNode)
+    console.log("PATHNODES:")
+    console.table(pathNodes)
   }
 
   return (
