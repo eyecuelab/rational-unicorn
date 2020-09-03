@@ -38,7 +38,7 @@ body {
 
 .btn-grid {
   display: table-row;
-  grid-template-rows: repeat(1, auto);
+  width: auto;
   gap: 10px;
   margin-top: 20px;
   max-height: contain;
@@ -71,7 +71,7 @@ body {
   font-size: 40px;
   text-decoration: none;
   margin: 0 auto;
-  margin-bottom: 70px;
+  margin-top: -4vh;
   background-color: #333;
   border: 1px solid #333;
   border-radius: 30px;

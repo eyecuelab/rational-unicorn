@@ -11,46 +11,48 @@ const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
-  
 
   const handleClose = () => setShowModal(false)
-  const handleClick = (value) => {
-    const nextNode = useNextNode(value);
-    setNodeState(nextNode);
-    setShowModal(false);
+  const handleClick = value => {
+    const nextNode = useNextNode(value)
+    setNodeState(nextNode)
+    setShowModal(false)
   }
 
   return (
     <Layout>
       <SEO title="Service Guide" />
       <div class="container">
-        {
-          showModal ? (
-            <DescriptionModal
-              onHide={handleClose}
-              value={optionValue}
-              handleClick={handleClick}
-            />
-          ) : null
-        } 
+        {showModal ? (
+          <DescriptionModal
+            onHide={handleClose}
+            value={optionValue}
+            handleClick={handleClick}
+          />
+        ) : null}
         <div id="text">{nodeState.question}</div>
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => {
             return (
-              <Button
-                node={option.text}
-                handleClick={() => {
-                  setOptionValue(option)
-                  setShowModal(true)
-                }}
-              />
+              <>
+                <Button
+                  node={option.text}
+                  handleClick={() => {
+                    setOptionValue(option)
+                    setShowModal(true)
+                  }}
+                />
+                <br />
+              </>
             )
           })}
         </div>
       </div>
       <br />
       <br />
-      <button class="home-btn"><Link to="/">Start Over</Link></button>
+      <button class="home-btn">
+        <Link to="/">Start Over</Link>
+      </button>
     </Layout>
   )
 }
