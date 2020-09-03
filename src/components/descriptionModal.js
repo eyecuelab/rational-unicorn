@@ -3,8 +3,6 @@ import {Modal, Button} from 'react-bootstrap';
 
 const DescriptionModal = ({ onHide, value, handleClick })=> {
 
-
-
   return (
     <>
       <Modal show={true} onHide={onHide}>

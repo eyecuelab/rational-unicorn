@@ -11,7 +11,6 @@ const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
-  console.log(showModal, optionValue);
   
 
   const handleClose = () => setShowModal(false)
@@ -20,8 +19,6 @@ const Helper = () => {
     setNodeState(nextNode);
     setShowModal(false);
   }
-
-//  console.log(nodeState.options[0].text + " ___button text___");
 
   return (
     <Layout>
@@ -39,15 +36,14 @@ const Helper = () => {
         <div id="text">{nodeState.question}</div>
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => {
-            // console.log(option.text + " ___mapped button text___");
             return (
-                <Button
-                  node={option.text}
-                  handleClick={() => {
-                    setOptionValue(option)
-                    setShowModal(true)
-                  }}
-                />
+              <Button
+                node={option.text}
+                handleClick={() => {
+                  setOptionValue(option)
+                  setShowModal(true)
+                }}
+              />
             )
           })}
         </div>
