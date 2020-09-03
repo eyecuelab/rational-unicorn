@@ -13,7 +13,7 @@ const Helper = () => {
 
   const handleClose = () => setShowModal(false)
 
- console.log(nodeState.options[0].text + " button text");
+//  console.log(nodeState.options[0].text + " ___button text___");
 
   return (
     <Layout>
@@ -22,18 +22,20 @@ const Helper = () => {
         <div id="text">{nodeState.question}</div>
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => {
-            console.log(option.text + " mapped button name"); // it works!
+            // console.log(option.text + " ___mapped button text___");
             return (
               <>
                 <Button
                   node={option.text}
-                  handleClick={() => setShowModal(true), option}
+                  handleClick={() => setShowModal(true),
+                    <DescriptionModal
+                      show={showModal}
+                      onHide={handleClose}
+                      value={option}
+                      // onClick={handleClick}
+                    />
+                  }
                 />
-                  <DescriptionModal
-                    show={showModal}
-                    onHide={handleClose}
-                    // onClick={handleClick}
-                  />
               </>
             )
           })}
@@ -41,7 +43,7 @@ const Helper = () => {
       </div>
       <br />
       <br />
-      <Link to="/">Start Over</Link>
+      <button class="home-btn"><Link to="/">Start Over</Link></button>
     </Layout>
   )
 }

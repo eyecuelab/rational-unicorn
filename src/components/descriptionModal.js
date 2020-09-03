@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Modal, Button} from 'react-bootstrap';
 import HandleClick from '../components/handleClick';
-import Helper from '../pages/helper';
 
-const DescriptionModal = (option)=> {
-  const [showModal, setShowModal] = useState(false);
-  
+const DescriptionModal = (showModal, option)=> {
+
   const handleClose = () => setShowModal(false);
-
+  console.log(showModal + "___modal prop state___");
+  console.log(option.value + "___modal props___");
 
   return (
     <>
@@ -18,10 +17,10 @@ const DescriptionModal = (option)=> {
         <Modal.Body>{option.description}</Modal.Body>
         <Modal.Footer>
           <p>Is this what you were looking for?</p>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="outline-dark" onClick={handleClose}>
             Nope
           </Button>
-          <Button variant="primary" onClick={<HandleClick value={ option }/>}>
+          <Button variant="outline-success" onClick={<HandleClick value={option.value}/>}>
             Yup!
           </Button>
         </Modal.Footer>

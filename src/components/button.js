@@ -1,10 +1,10 @@
 import React from "react"
 
-const Button = (option ) => {
-  console.log(option + "button prop");
+const Button = (props) => {
+  // console.log(props.node + "___button props___");
   return (
     <>
-      <button>{option.node}</button>
+      <button>{props.node}</button>
     </>
   )     
 }

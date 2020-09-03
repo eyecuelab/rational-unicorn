@@ -17,7 +17,7 @@ body {
   background-color: #333;
   text-align: center;
   background-image: url("https://i.ibb.co/ZKKfS8n/Start.jpg");
-  background-size: 70vh;
+  background-size: 100vh;
   background-position: center;
   background-position-y: 15vh;
   background-repeat: no-repeat;
@@ -27,7 +27,7 @@ body {
 .container {
   width: 500px;
   max-width: 90vw;
-  height: 200px;
+  height: auto;
   background-color: #333;
   padding: 10px;
   border-radius: 5px;
@@ -37,34 +37,46 @@ body {
 }
 
 .btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
+  display: table-row;
+  /* grid-template-rows: repeat(2, auto); */
   gap: 10px;
   margin-top: 20px;
+  max-height: contain;
 }
 .start-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
   width: 210px;
   height: 60px;
   font-size: 40px;
   text-decoration: none;
-  margin-top: 13.5vh;
+  margin-top: 9em;
   background-color: #333;
   border: 1px solid #333;
   border-radius: 30px;
-  padding: 5px 10px;
+  padding: 0px 10px;
   color: rgb(238, 173, 52);
 }
 
 .home-btn {
-  width: auto;
-  height: auto;
-  font-size: 20px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  width: 210px;
+  height: 60px;
+  font-size: 40px;
   text-decoration: none;
-  margin-top: 0;
+  margin: 0 auto;
+  margin-bottom: 70px;
   background-color: #333;
   border: 1px solid #333;
-  border-radius: 25px;
-  padding: 5px 10px;
+  border-radius: 30px;
+  padding: 0px;
+  color: rgb(238, 173, 52);
 }
 
 article,
