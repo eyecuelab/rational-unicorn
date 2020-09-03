@@ -1,12 +1,11 @@
 import React from "react"
 
-const Button = ({node, handleClick}) => {
-  const { nextText, config, text } = node;
+const Button = (props) => {
   return (
     <>
-      <button onClick={() => handleClick(nextText, config)}>{text}</button>
+      <button onClick={props.handleClick}>{props.node}</button>
     </>
-  )    
+  )     
 }
 
 export default Button
