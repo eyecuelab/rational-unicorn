@@ -5,13 +5,21 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
+import useNextNode from "../components/useNextNode"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
-  // const [requiredState, setRequiredState] = useState(null);
+  const [optionValue, setOptionValue] = useState(null)
+  console.log(showModal, optionValue);
+  
 
   const handleClose = () => setShowModal(false)
+  const handleClick = (value) => {
+    const nextNode = useNextNode(value);
+    setNodeState(nextNode);
+    setShowModal(false);
+  }
 
 //  console.log(nodeState.options[0].text + " ___button text___");
 
@@ -19,24 +27,27 @@ const Helper = () => {
     <Layout>
       <SEO title="Service Guide" />
       <div class="container">
+        {
+          showModal ? (
+            <DescriptionModal
+              onHide={handleClose}
+              value={optionValue}
+              handleClick={handleClick}
+            />
+          ) : null
+        } 
         <div id="text">{nodeState.question}</div>
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => {
             // console.log(option.text + " ___mapped button text___");
             return (
-              <>
                 <Button
                   node={option.text}
-                  handleClick={() => setShowModal(true),
-                    <DescriptionModal
-                      show={showModal}
-                      onHide={handleClose}
-                      value={option}
-                      // onClick={handleClick}
-                    />
-                  }
+                  handleClick={() => {
+                    setOptionValue(option)
+                    setShowModal(true)
+                  }}
                 />
-              </>
             )
           })}
         </div>

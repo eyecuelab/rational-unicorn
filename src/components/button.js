@@ -4,7 +4,7 @@ const Button = (props) => {
   // console.log(props.node + "___button props___");
   return (
     <>
-      <button>{props.node}</button>
+      <button onClick={props.handleClick}>{props.node}</button>
     </>
   )     
 }
