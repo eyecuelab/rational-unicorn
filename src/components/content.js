@@ -7,7 +7,7 @@ const TextNodes = [
       options: [
         {
           text: "My business has been formed but I need help knowing if I’m on the right track",
-          description: "An organization or enterprising entity engaged in commercial, industrial, or professional activities.",
+          description: "A business is an organization or enterprising entity engaged in commercial, industrial, or professional activities.",
           requiredState: null,
           category: null,
           prevNodeId: 1,
@@ -217,7 +217,7 @@ const TextNodes = [
           requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
           category: "demand",
           prevNodeId: 6,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "Small Claims Court",
@@ -225,7 +225,7 @@ const TextNodes = [
           requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
           category: "claims",
           prevNodeId: 6,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "Alternative Dispute Resolution (ADR)",
@@ -233,7 +233,7 @@ const TextNodes = [
           requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
           category: "resolution",
           prevNodeId: 6,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "Litigation",
@@ -241,7 +241,7 @@ const TextNodes = [
           requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
           category: "litigation",
           prevNodeId: 6,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "I'm not sure",
@@ -263,7 +263,7 @@ const TextNodes = [
           requiredState: null,
           category: null,
           prevNodeId: 7,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "City or County License",
@@ -271,7 +271,7 @@ const TextNodes = [
           requiredState: null,
           category: null,
           prevNodeId: 7,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "Zoning and Permitting",
@@ -279,7 +279,7 @@ const TextNodes = [
           requiredState: null,
           category: null,
           prevNodeId: 7,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "On needing a business bank account",
@@ -287,7 +287,7 @@ const TextNodes = [
           requiredState: null,
           category: null,
           prevNodeId: 7,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
         {
           text: "I'm not sure",
@@ -295,7 +295,7 @@ const TextNodes = [
           requiredState: null,
           category: null,
           prevNodeId: 7,
-          nextNodeId: 0,
+          nextNodeId: 7,
         },
       ],
     },

@@ -15,8 +15,8 @@ const Helper = () => {
 
   const handleClose = () => setShowModal(false)
   const handleClick = value => {
-    console.log(...pathStorage, "__path storage__")
-    const nextNode = useNextNode(value)
+    console.log(...pathStorage, "__path storage__", value, "__value__")
+    const nextNode = useNextNode(value) // I think an if statement would go here to determine the back button values
     setPathStorage([...pathStorage, value])
     setNodeState(nextNode)
     setShowModal(false)
@@ -43,10 +43,10 @@ const Helper = () => {
                 handleClick={() => {
                   setOptionValue(option)
                   setShowModal(true)
-              }}></Button>  
+              }}/>  
             )
           })}
-          <button class="btn" onClick={()=> handleClick(results)}>Back</button>
+          <button class="btn" onClick={()=> handleClick(pathStorage)}>Back</button>
         </div>
       </div>
       <br />
