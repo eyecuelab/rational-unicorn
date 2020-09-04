@@ -78,6 +78,9 @@ body {
   padding: 0px;
   color: rgb(238, 173, 52);
 }
+.btn {
+  background-color: purple;
+}
 
 article,
 aside,
