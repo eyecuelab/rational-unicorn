@@ -11,13 +11,17 @@ const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
+  const [pathStorage, setPathStorage] = useState([null])
 
   const handleClose = () => setShowModal(false)
   const handleClick = value => {
+    console.log(...pathStorage, "__path storage__")
     const nextNode = useNextNode(value)
+    setPathStorage([...pathStorage, value])
     setNodeState(nextNode)
     setShowModal(false)
   }
+
 
   return (
     <Layout>
@@ -34,18 +38,15 @@ const Helper = () => {
         <div id="option-buttons" class="btn-grid">
           {nodeState.options.map(option => {
             return (
-              <>
-                <Button
-                  node={option.text}
-                  handleClick={() => {
-                    setOptionValue(option)
-                    setShowModal(true)
-                  }}
-                />
-                <br />
-              </>
+              <Button
+                node={option.text}
+                handleClick={() => {
+                  setOptionValue(option)
+                  setShowModal(true)
+              }}></Button>  
             )
           })}
+          <button class="btn" onClick={()=> handleClick(results)}>Back</button>
         </div>
       </div>
       <br />
