@@ -1,15 +1,12 @@
 import React from "react"
 
 const Results = ({ value }) => {
-  console.log(value)
+  let result = []
   for (let i = 1; i < value.length; i++) {
-      if (value[i].category !== "void") {
-      console.log(value[i].text)
-      return (
-        <p>{value[i].text}</p>
-      )
-    }
+    console.log(value[i].text)
+        value[i].category !== "void" ? result.push(value[i].text) : result
   }
+  return result
 }
 
 export default Results
