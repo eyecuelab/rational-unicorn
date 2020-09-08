@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 import useNextNode from "../components/useNextNode"
+import Results from "../components/results"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
@@ -15,13 +16,13 @@ const Helper = () => {
 
   const handleClose = () => setShowModal(false)
   const handleClick = value => {
-    console.log(...pathStorage, "__path storage__", value, "__value__")
+    console.log(nodeState.nodeId)
     const nextNode = useNextNode(value) // I think an if statement would go here to determine the back button values
     setPathStorage([...pathStorage, value])
+    console.log(pathStorage)
     setNodeState(nextNode)
     setShowModal(false)
   }
-
 
   return (
     <Layout>
@@ -34,19 +35,26 @@ const Helper = () => {
             handleClick={handleClick}
           />
         ) : null}
-        <div id="text">{nodeState.question}</div>
+        <div id="text">
+          {nodeState !== TextNodes[8] ? nodeState.question : <h3>Results</h3>}
+        </div>
         <div id="option-buttons" class="btn-grid">
-          {nodeState.options.map(option => {
-            return (
-              <Button
-                node={option.text}
-                handleClick={() => {
-                  setOptionValue(option)
-                  setShowModal(true)
-              }}/>  
-            )
-          })}
-          <button class="btn" onClick={()=> handleClick(pathStorage)}>Back</button>
+          {nodeState !== TextNodes[8]
+            ? nodeState.options.map(option => {
+                return (
+                  <Button
+                    node={option.text}
+                    handleClick={() => {
+                      setOptionValue(option)
+                      setShowModal(true)
+                    }}
+                  />
+                )
+              })
+            : <Results value={pathStorage} />}
+          <button class="btn" onClick={() => handleClick(pathStorage)}>
+            Back
+          </button>
         </div>
       </div>
       <br />
