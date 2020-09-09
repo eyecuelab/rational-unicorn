@@ -132,7 +132,7 @@ const TextNodes = [
         requiredState: null,
         category: "void",
         prevNodeId: 3,
-        nextNodeId: 5,
+        nextNodeId: 4,
       },
     ],
   },
