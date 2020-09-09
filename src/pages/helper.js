@@ -21,7 +21,7 @@ const Helper = () => {
     const prevNode = usePrevNode(value)
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
     setPathStorage(newPathStorage);
-    console.log(pathStorage, "_________pathStorage after pop()")
+    console.log(pathStorage, "_________pathStorage after slice()")
     setNodeState(prevNode)
     setShowModal(false)
   }
