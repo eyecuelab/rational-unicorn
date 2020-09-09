@@ -6,6 +6,8 @@ import SEO from "../components/seo"
 import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 import useNextNode from "../components/useNextNode"
+import usePrevNode from "../components/usePrevNode"
+import Results from "../components/results"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
@@ -14,14 +16,24 @@ const Helper = () => {
   const [pathStorage, setPathStorage] = useState([null])
 
   const handleClose = () => setShowModal(false)
-  const handleClick = value => {
-    console.log(...pathStorage, "__path storage__", value, "__value__")
-    const nextNode = useNextNode(value) // I think an if statement would go here to determine the back button values
-    setPathStorage([...pathStorage, value])
-    setNodeState(nextNode)
+
+  const handleBack = value => {
+    const prevNode = usePrevNode(value)
+    const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
+    setPathStorage(newPathStorage);
+    console.log(pathStorage, "_________pathStorage after slice()")
+    setNodeState(prevNode)
     setShowModal(false)
   }
 
+  const handleClick = value => {
+    console.log(nodeState.nodeId, "_______ Current Node ID")
+    const nextNode = useNextNode(value)
+    setPathStorage([...pathStorage, value])
+    console.log(pathStorage, "_______pathStorage")
+    setNodeState(nextNode)
+    setShowModal(false)
+  }
 
   return (
     <Layout>
@@ -34,19 +46,26 @@ const Helper = () => {
             handleClick={handleClick}
           />
         ) : null}
-        <div id="text">{nodeState.question}</div>
+        <div id="text">
+          {nodeState !== TextNodes[8] ? nodeState.question : <h3>Here are your Results</h3>}
+        </div>
         <div id="option-buttons" class="btn-grid">
-          {nodeState.options.map(option => {
-            return (
-              <Button
-                node={option.text}
-                handleClick={() => {
-                  setOptionValue(option)
-                  setShowModal(true)
-              }}/>  
-            )
-          })}
-          <button class="btn" onClick={()=> handleClick(pathStorage)}>Back</button>
+          {nodeState !== TextNodes[8]
+            ? nodeState.options.map(option => {
+                return (
+                  <Button
+                    node={option.text}
+                    handleClick={() => {
+                      setOptionValue(option)
+                      setShowModal(true)
+                    }}
+                  />
+                )
+              })
+            : <Results value={pathStorage} />}
+          <button class="btn" onClick={() => handleBack(pathStorage)}>
+            Back
+          </button>
         </div>
       </div>
       <br />
