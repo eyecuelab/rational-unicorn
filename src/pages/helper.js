@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 import useNextNode from "../components/useNextNode"
+import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 
 const Helper = () => {
@@ -15,11 +16,21 @@ const Helper = () => {
   const [pathStorage, setPathStorage] = useState([null])
 
   const handleClose = () => setShowModal(false)
+
+  const handleBack = value => {
+    const prevNode = usePrevNode(value)
+    const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
+    setPathStorage(newPathStorage);
+    console.log(pathStorage, "_________pathStorage after pop()")
+    setNodeState(prevNode)
+    setShowModal(false)
+  }
+
   const handleClick = value => {
-    console.log(nodeState.nodeId)
+    console.log(nodeState.nodeId, "_______ Current Node ID")
     const nextNode = useNextNode(value)
     setPathStorage([...pathStorage, value])
-    console.log(pathStorage)
+    console.log(pathStorage, "_______pathStorage")
     setNodeState(nextNode)
     setShowModal(false)
   }
@@ -52,7 +63,7 @@ const Helper = () => {
                 )
               })
             : <Results value={pathStorage} />}
-          <button class="btn" onClick={() => handleClick(pathStorage)}>
+          <button class="btn" onClick={() => handleBack(pathStorage)}>
             Back
           </button>
         </div>
