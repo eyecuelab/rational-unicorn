@@ -17,7 +17,7 @@ const Helper = () => {
   const handleClose = () => setShowModal(false)
   const handleClick = value => {
     console.log(nodeState.nodeId)
-    const nextNode = useNextNode(value) // I think an if statement would go here to determine the back button values
+    const nextNode = useNextNode(value)
     setPathStorage([...pathStorage, value])
     console.log(pathStorage)
     setNodeState(nextNode)

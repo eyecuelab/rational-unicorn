@@ -12,7 +12,7 @@ const TextNodes = [
         description:
           "A business is an organization or enterprising entity engaged in commercial, industrial, or professional activities.",
         requiredState: null,
-        category: null,
+        resultText: 'Business Stuff goes here',
         prevNodeId: 1,
         nextNodeId: 2,
       },
@@ -22,7 +22,7 @@ const TextNodes = [
         description:
           "A not-for-profit organization does not earn any profits for its owners. Instead, the organization donates the money it receives to help fund the organization's objectives and goals. A not-for-profit might also use received donations to stay up and running.",
         requiredState: null,
-        category: "nonProfit",
+        resultText: "Non-Profit stuff goes here",
         prevNodeId: 1,
         nextNodeId: 2,
       },
@@ -32,7 +32,7 @@ const TextNodes = [
         description:
           "The IRS defines a hobby as an activity that an individual pursues without intent to generate a profit. Almost everyone partakes in some sort of hobby without worrying about whether it will generate income. However, as soon as you take steps to attempt to generate a profit you've got a business on your hands.",
         requiredState: null,
-        category: "intProperty",
+        resultText: "intellectual Property stuff goes here",
         prevNodeId: 1,
         nextNodeId: 2,
       },
@@ -41,7 +41,7 @@ const TextNodes = [
           "I’m an artist or entertainer and would like to my art to be my business",
         description: "Let's share your gift with the world.",
         requiredState: null,
-        category: "intProperty",
+        resultText: "intellectual Property stuff goes here",
         prevNodeId: 1,
         nextNodeId: 2,
       },
@@ -49,7 +49,7 @@ const TextNodes = [
         text: "I’m not sure",
         description: "That's okay, let's keep moving forward.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 1,
         nextNodeId: 2,
       },
@@ -64,24 +64,24 @@ const TextNodes = [
         text: "Just me as the sole owner and manager",
         description:
           "I'm really digging the lone wolf vibe you're putting out.",
-        requiredState: null, // if(options.category == "nonProfit") { prevNode = 2, nextNodeId = 7 }
-        category: null, // if(options.category == "intProperty") { prevNode = 2, nextNodeId = 4 }
+        requiredState: null, // if(options.resultText == "nonProfit") { prevNode = 2, nextNodeId = 7 }
+        resultText: 'Sole ownership stuff goes here', // if(options.resultText == "intProperty") { prevNode = 2, nextNodeId = 4 }
         prevNodeId: 2,
         nextNodeId: 3,
       },
       {
         text: "Me and one business partner",
         description: "It's good to know someone's got your back.",
-        requiredState: null, // if(options.category == "nonProfit") { prevNode = 2, nextNodeId = 7 }
-        category: "partner", // if(options.category == "intProperty") { prevNode = 2, nextNodeId = 4 }
+        requiredState: null, // if(options.resultText == "nonProfit") { prevNode = 2, nextNodeId = 7 }
+        resultText: "partner contract goes here", // if(options.resultText == "intProperty") { prevNode = 2, nextNodeId = 4 }
         prevNodeId: 2,
         nextNodeId: 3,
       },
       {
         text: "A board of directors",
         description: "Too big to fail",
-        requiredState: null, // if(options.category == "nonProfit") { prevNode = 2, nextNodeId = 7 }
-        category: "partner", // if(options.category == "intProperty") { prevNode = 2, nextNodeId = 4 }
+        requiredState: null, // if(options.resultText == "nonProfit") { prevNode = 2, nextNodeId = 7 }
+        resultText: "partner contract goes here", // if(options.resultText == "intProperty") { prevNode = 2, nextNodeId = 4 }
         prevNodeId: 2,
         nextNodeId: 3,
       },
@@ -89,7 +89,7 @@ const TextNodes = [
         text: "I'm not sure",
         description: "That's okay! Let's keep moving along.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 2,
         nextNodeId: 3,
       },
@@ -104,7 +104,7 @@ const TextNodes = [
         description:
           "refers to creations of the mind, such as inventions; literary and artistic works; designs; and symbols, names and images used in commerce.",
         requiredState: null,
-        category: "intProperty",
+        resultText: "intellectual propety stuff goes here",
         prevNodeId: 3,
         nextNodeId: 4,
       },
@@ -113,7 +113,7 @@ const TextNodes = [
         description:
           "What an EIN is, Licenses, Zoning Permits, business bank accounts, etc.",
         requiredState: null,
-        category: null,
+        resultText: 'business stuff goes here',
         prevNodeId: 3,
         nextNodeId: 7,
       },
@@ -122,7 +122,7 @@ const TextNodes = [
         description:
           "A state of disagreement or misunderstanding, resulting from the actual or perceived dissent of needs, beliefs, resources and relationship between the members of the organization.",
         requiredState: null,
-        category: "conflict",
+        resultText: "conflict stuff goes here",
         prevNodeId: 3,
         nextNodeId: 6,
       },
@@ -130,7 +130,7 @@ const TextNodes = [
         text: "I'm not sure",
         description: "That's okay! Let's keep moving along.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 3,
         nextNodeId: 4,
       },
@@ -146,7 +146,7 @@ const TextNodes = [
         description:
           "Copyright put simply is the right to copy. This means that the original creators of products and anyone they give authorization to are the only ones with the exclusive right to reproduce the work.",
         requiredState: null,
-        category: null,
+        resultText: "copyright stuff goes here",
         prevNodeId: 4,
         nextNodeId: 7,
       },
@@ -155,7 +155,7 @@ const TextNodes = [
         description:
           "A trademark is for a symbol, word, or words legally registered or established by use as representing a company or product.",
         requiredState: null,
-        category: null,
+        resultText: 'trademark stuff goes here',
         prevNodeId: 4,
         nextNodeId: 7,
       },
@@ -164,7 +164,7 @@ const TextNodes = [
         description:
           "Patents are a right granted to an inventor that allows them to exclude all others from making, using, or selling their invention for 20 years.",
         requiredState: null,
-        category: null,
+        resultText: 'patent stuff goes here',
         prevNodeId: 4,
         nextNodeId: 7,
       },
@@ -172,7 +172,7 @@ const TextNodes = [
         text: "I'm not sure",
         description: "I promise it's STILL okay. Let's keep moving along.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 4,
         nextNodeId: 5,
       },
@@ -187,7 +187,7 @@ const TextNodes = [
         text: "Vacation rental less than 30 days",
         description: "",
         requiredState: null,
-        category: null,
+        resultText: 'vacation rental contract goes here',
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -195,7 +195,7 @@ const TextNodes = [
         text: "A short term rental for more than 30 days",
         description: "",
         requiredState: null,
-        category: null,
+        resultText: 'short term rental contract goes here',
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -203,7 +203,7 @@ const TextNodes = [
         text: "A residential lease for 3 months, 6 months, or a year",
         description: "",
         requiredState: null,
-        category: null,
+        resultText: 'residential lease agreement goes here',
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -211,7 +211,7 @@ const TextNodes = [
         text: "An office share or office rental in a larger office",
         description: "",
         requiredState: null,
-        category: null,
+        resultText: 'office leasing agreement goes here',
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -219,7 +219,7 @@ const TextNodes = [
         text: "A commercial lease for just my businesse",
         description: "",
         requiredState: null,
-        category: null,
+        resultText: 'commercial leasing agreement goes here',
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -227,7 +227,7 @@ const TextNodes = [
         text: "I'm not sure",
         description: "I promise it's okay! Let's keep moving along.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 5,
         nextNodeId: 6,
       },
@@ -241,22 +241,22 @@ const TextNodes = [
         text: "Legal Demand Letter",
         description:
           "A demand letter is a preliminary tactic used by individuals or entities as an attempt to resolve a dispute, usually over a form of payment owed by one party to another. These letters are an effort by one party involved in the dispute to reach a resolution before taking formal legal action through the courts.",
-        requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
-        category: "demand",
+        requiredState: null, // if(options.resultText == "conflict") { prevNode = 3, nextNodeId = 0 }
+        resultText: "Legal demand letter goes here",
         prevNodeId: 6,
         nextNodeId: 7,
       },
       {
         text: "Small Claims Court",
         description: "Yes this is like Judge Judy",
-        requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
-        category: "claims",
+        requiredState: null, // if(options.resultText == "conflict") { prevNode = 3, nextNodeId = 0 }
+        resultText: "claims stuff goes here",
         prevNodeId: 6,
         nextNodeId: 7,
       },
       {
         text: "Alternative Dispute Resolution (ADR)",
-        description: `the use of methods such as ${(
+        description: `the use of methods such as' ${(
           <a href="https://corporate.findlaw.com/litigation-disputes/what-is-mediation-and-how-does-it-work.html">
             mediation
           </a>
@@ -265,8 +265,8 @@ const TextNodes = [
             arbitration
           </a>
         )} to resolve a dispute instead of litigation.`,
-        requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
-        category: "resolution",
+        requiredState: null, // if(options.resultText == "conflict") { prevNode = 3, nextNodeId = 0 }
+        resultText: "Alternate resolution options go here",
         prevNodeId: 6,
         nextNodeId: 7,
       },
@@ -274,8 +274,8 @@ const TextNodes = [
         text: "Litigation",
         description:
           " Ultimate legal method for settling controversies or disputes between and among persons, organizations, and the State.",
-        requiredState: null, // if(options.category == "conflict") { prevNode = 3, nextNodeId = 0 }
-        category: "litigation",
+        requiredState: null, // if(options.resultText == "conflict") { prevNode = 3, nextNodeId = 0 }
+        resultText: "litigation stuff goes here",
         prevNodeId: 6,
         nextNodeId: 7,
       },
@@ -283,7 +283,7 @@ const TextNodes = [
         text: "I'm not sure",
         description: "I promise it's okay! Let's keep moving along.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 6,
         nextNodeId: 7,
       },
@@ -298,7 +298,7 @@ const TextNodes = [
         description:
           "An Employer Identification Number (EIN) is a unique identification number that is assigned to a business entity so that it can easily be identified by the Internal Revenue Service (IRS). 1﻿ It is commonly used by employers for the purpose of reporting taxes.",
         requiredState: null,
-        category: null,
+        resultText: "EIN forms go here",
         prevNodeId: 7,
         nextNodeId: 8,
       },
@@ -310,7 +310,7 @@ const TextNodes = [
           </a>
         )}.`,
         requiredState: null,
-        category: null,
+        resultText: "City and County Licenses go here",
         prevNodeId: 7,
         nextNodeId: 8,
       },
@@ -322,7 +322,7 @@ const TextNodes = [
           </a>
         )}.`,
         requiredState: null,
-        category: null,
+        resultText: 'zoning and permitting stuff goes here',
         prevNodeId: 7,
         nextNodeId: 8,
       },
@@ -334,7 +334,7 @@ const TextNodes = [
           </a>
         )}.`,
         requiredState: null,
-        category: null,
+        resultText: 'information on business bank accounts goes here',
         prevNodeId: 7,
         nextNodeId: 8,
       },
@@ -342,7 +342,7 @@ const TextNodes = [
         text: "I'm not sure",
         description: "I promise it's okay! Let's keep moving along.",
         requiredState: null,
-        category: "void",
+        resultText: "void",
         prevNodeId: 7,
         nextNodeId: 8,
       },

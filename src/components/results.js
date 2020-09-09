@@ -1,18 +1,31 @@
 import React from "react" 
 
 const Results = ({ value }) => {
-    let output = []
-    for (let i = 1; i < value.length; i++) {
-    // console.log(value[i].text)
-        value[i].category !== "void" ? output.push(value[i].text) : null
-    }
-    console.log(output)
+    console.log(value);
+    // const output = []
+    // value.forEach((value) => {
+    //     const  { text, cateogry } = value || {};
+    //     if (text && resultText !== 'void') {
+    //         output.push(value.text)
+    //     }
+    // })
+        
+    // }
+    const output = value.reduce((outputTextArray, currentValue) => {
+        const returnArray = [...outputTextArray];
+        const { resultText } = currentValue || {};
+        if (resultText && resultText !== 'void') {
+            returnArray.push(resultText);
+        }
+        console.log(currentValue, returnArray, outputTextArray);
+        return returnArray;
+    }, []);
+
+    // console.log(output)
 
     return (
         <ul>
-            {output.map(outputText => {
-                <li>{outputText}</li>
-            })}
+            {output.map(outputText => <li>{outputText}</li>)}
         </ul>
     )
 } 
