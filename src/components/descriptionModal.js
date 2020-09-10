@@ -32,8 +32,13 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
         float: right;
       }
 
+      .modal-backdrop {
+        background-color: rgb(18, 63, 61);
+      }
+
       .modal {
         padding: 10em 2em;
+        margin-left: 15px;
         border-radius: 10px;
       }
 

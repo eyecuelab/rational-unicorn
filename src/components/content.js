@@ -296,7 +296,7 @@ const TextNodes = [
       {
         text: "EIN",
         description:
-          "An Employer Identification Number (EIN) is a unique identification number that is assigned to a business entity so that it can easily be identified by the Internal Revenue Service (IRS). 1﻿ It is commonly used by employers for the purpose of reporting taxes.",
+          "An Employer Identification Number (EIN) is a unique identification number that is assigned to a business entity so that it can easily be identified by the Internal Revenue Service (IRS). It is commonly used by employers for the purpose of reporting taxes.",
         requiredState: null,
         resultText: "EIN forms go here",
         prevNodeId: 7,
