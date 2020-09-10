@@ -33,7 +33,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
       }
 
       .modal {
-        padding: 2em;
+        padding: 10em 2em;
         border-radius: 10px;
       }
 
