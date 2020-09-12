@@ -40,10 +40,10 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()}, Tyler Bates | Ethan Firpo @{` `}
           <a href="https://www.eyecuelab.com">EyeCue Lab</a>
-        </footer>
+        </footer> */}
       </div>
     </>
   )

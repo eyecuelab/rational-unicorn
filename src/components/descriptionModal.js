@@ -7,67 +7,29 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
     <>
       <style type="text/css">
       {`
-      .btn-close {
-        background-color: rgb(46, 155, 149);
-        color: white;
-        border-radius: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 120px;
-        height: 30px;
-        float: left;
+        .btn-close {
+          background-color: rgb(46, 155, 149);
+          color: white;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: 30px;
+          float: left;
+        }
 
-      }
-
-      .btn-confirm {
-        background-color: rgb(18, 63, 61);
-        color: white;
-        border-radius: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 120px;
-        height: 30px;
-        float: right;
-      }
-
-      .modal-backdrop {
-        background-color: rgb(18, 63, 61);
-      }
-
-      .modal {
-        padding: 10em 2em;
-        margin-left: 15px;
-        border-radius: 10px;
-      }
-
-      .modal-header {
-        background-color: rgb(143, 2, 101);
-        color: white;
-        font-size: 10px;
-        padding: 0.5em, 1.5em;
-        text-align: center;
-      }
-
-      .modal-title {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-        font-size: 20px
-      }
-
-      .modal-body {
-        overflow-y: scroll;
-      }
-
-      .modal-footer {
-        display: inline-block;
-        margin: 0 auto;
-        white-space: nowrap;
-      }
+        .btn-confirm {
+          background-color: rgb(18, 63, 61);
+          color: white;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: 30px;
+          float: right;
+        }
       `}
       </style>
       <Modal show={true} onHide={onHide}>

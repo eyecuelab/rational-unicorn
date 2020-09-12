@@ -36,44 +36,60 @@ const Helper = () => {
   }
 
   return (
-    <Layout>
-      <SEO title="Service Guide" />
-      <div class="container">
-        {showModal ? (
-          <DescriptionModal
-            onHide={handleClose}
-            value={optionValue}
-            handleClick={handleClick}
-          />
-        ) : null}
-        <div id="text">
-          {nodeState !== TextNodes[8] ? nodeState.question : <h3>Here are your Results</h3>}
+    <>
+      <style type="text/css">
+        {`
+          .Button {
+            font-family: Montserrat;
+            font-style: normal;
+            text-align: left;
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;
+            outline:none;
+          }
+        `}
+        </style>
+      <Layout>
+        <SEO title="Service Guide" />
+        <div class="container">
+          {showModal ? (
+            <DescriptionModal
+              onHide={handleClose}
+              value={optionValue}
+              handleClick={handleClick}
+            />
+          ) : null}
+          <div id="text">
+            {nodeState !== TextNodes[8] ? <h1 className="questionStyles">{nodeState.question}</h1> : <h3>Here are your Results</h3>}
+          </div>
+          <div id="option-buttons" class="btn-grid">
+            {nodeState !== TextNodes[8]
+              ? nodeState.options.map(option => {
+                  return (
+                    <Button
+                      class="btn bg-transparent"
+                      node={option.text}
+                      handleClick={() => {
+                        setOptionValue(option)
+                        setShowModal(true)
+                      }}
+                    />
+                  )
+                })
+              : <Results value={pathStorage} />}
+            <button class="backButton" onClick={() => handleBack(pathStorage)}>
+              Back
+            </button>
+          </div>
         </div>
-        <div id="option-buttons" class="btn-grid">
-          {nodeState !== TextNodes[8]
-            ? nodeState.options.map(option => {
-                return (
-                  <Button
-                    node={option.text}
-                    handleClick={() => {
-                      setOptionValue(option)
-                      setShowModal(true)
-                    }}
-                  />
-                )
-              })
-            : <Results value={pathStorage} />}
-          <button class="btn" onClick={() => handleBack(pathStorage)}>
-            Back
-          </button>
-        </div>
-      </div>
-      <br />
-      <br />
-      <button class="home-btn">
-        <Link to="/">Start Over</Link>
-      </button>
-    </Layout>
+        <button class="home-btn">
+          <Link to="/">Start Over</Link>
+        </button>
+      </Layout>
+    </>
   )
 }
 

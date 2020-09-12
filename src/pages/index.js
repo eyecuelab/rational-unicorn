@@ -8,11 +8,15 @@ import SEO from "../components/seo"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <button class="start-btn">
-      <Link to="/helper/">Start</Link>
-    </button>{" "}
-    <br />
-    {/* <Link to="/using-typescript/">Go to "Using TypeScript"</Link> */}
+    <div className="splashContainer">
+      <h1>Choose your venture</h1>
+      <h2>An Interactive Guide To Your First Business Entity</h2>
+    </div>
+    <div className='buttonContainer'>
+      <button class="start-btn">
+        <Link to="/helper/">Start</Link>
+      </button>
+    </div>
   </Layout>
 )
 
