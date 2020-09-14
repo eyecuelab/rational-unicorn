@@ -35,23 +35,17 @@ const Helper = () => {
     setShowModal(false)
   }
 
+  function handleHome() {
+    window.location = 'http://localhost:8000/';
+  }
+
   return (
     <>
       <style type="text/css">
         {`
-          .Button {
-            font-family: Montserrat;
-            font-style: normal;
-            text-align: left;
-            background-color: Transparent;
-            background-repeat:no-repeat;
-            border: none;
-            cursor:pointer;
-            overflow: hidden;
-            outline:none;
-          }
+            
         `}
-        </style>
+      </style>
       <Layout>
         <SEO title="Service Guide" />
         <div class="container">
@@ -64,30 +58,36 @@ const Helper = () => {
           ) : null}
           <div id="text">
             {nodeState !== TextNodes[8] ? <h1 className="questionStyles">{nodeState.question}</h1> : <h3>Here are your Results</h3>}
+            <br /><br />
           </div>
           <div id="option-buttons" class="btn-grid">
             {nodeState !== TextNodes[8]
               ? nodeState.options.map(option => {
-                  return (
-                    <Button
-                      class="btn bg-transparent"
+                return (
+                  <>
+                    <li><Button
+                      variant="default"
+                      className="options"
                       node={option.text}
                       handleClick={() => {
                         setOptionValue(option)
                         setShowModal(true)
                       }}
-                    />
-                  )
-                })
+                    /></li><br />
+                  </>
+                )
+              })
               : <Results value={pathStorage} />}
-            <button class="backButton" onClick={() => handleBack(pathStorage)}>
-              Back
-            </button>
           </div>
         </div>
-        <button class="home-btn">
-          <Link to="/">Start Over</Link>
-        </button>
+        <div class="nav-btns">
+          <button className="home-btn" onClick={() => handleHome()}>
+            Start Over
+          </button>
+          <button className="back-btn" onClick={() => handleBack(pathStorage)}>
+            Back
+          </button>
+        </div>
       </Layout>
     </>
   )

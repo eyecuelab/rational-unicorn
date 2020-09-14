@@ -49,22 +49,49 @@ body {
 /* ------------------------------------------------------------- */
 
 .btn-grid {
+  color: #FFFFFF;
   display: table-row;
   width: auto;
-  gap: 30px;
+  gap: 100px;
   margin: 0 auto;
   max-height: contain;
   font-family: Montserrat;
   font-style: normal;
   text-align: left;
-  border-width: 0px;
-  -webkit-box-shadow: 0px 0px;
-  box-shadow: 0px 0px;
-  background-color: rgba(0,0,0,0.0) !important;
-  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
   }
+
+    /* ------this is doing nothing------- */
+
+  #option-buttons {
+    font-family: Montserrat;
+    font-style: normal;
+    color: #FFFFFF;
+    text-align: left;
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0) !important;
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  }
+
+  .options {
+    font-family: Montserrat;
+    font-style: normal;
+    color: #FFFFFF;
+    text-align: left;
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0) !important;
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  }
+
+/* tryin to get option buttons to be transparent without using Buttons because then it affects all the bootstrap buttons throughout the app */
+
 
 .start-btn {
   text-align: center;
@@ -86,30 +113,51 @@ body {
   clip-path: polygon(8% 39%, 92% 39%, 99% 50%, 92% 63%, 8% 63%, 1% 50%);
 }
 
-.home-btn {
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
-  width: 320px;
-  height: 300px;
-  font-family: Montserrat;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 28px;
-  line-height: 20px;
-  color: #810F5D;
-  background: #FFFFFF;
-  border-collapse: separate;
-  perspective: 1px;
-  border-radius: 8px;
-  outline: none;
-  clip-path: polygon(8% 39%, 92% 39%, 99% 50%, 92% 63%, 8% 63%, 1% 50%);
+.nav-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.buttonContainer {
+.home-btn {
+  width: 75px;
+  height: 44px;
+  white-space: normal;
+  background: #5CB8B2;
+  border-radius: 32px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  float: left;
+}
+
+.back-btn {
+  width: 125px;
+  height: 44px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #FFFFFF;
+  background-color: #429792;
+  border-radius: 32px;
+  float: center;
+  box-shadow: none;
+  outline: none;
+}
+
+.startContainer {
   max-height: 100%;
   display: inline-block;
   justify-content: center;
+  align-items: flex-end;
+  /* border: 1px solid black; */
+
   align-items: flex-end;
   /* border: 1px solid black; */
 }
