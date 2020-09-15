@@ -3,7 +3,7 @@ import React from "react"
 const OptionButton = props => {
   return (
     <>
-      <button class="option-btn" onClick={props.handleClick}>
+      <button className="option-btn" onClick={props.handleClick}>
         {props.node}
       </button>
     </>
