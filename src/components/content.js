@@ -4,7 +4,7 @@ const TextNodes = [
   {
     nodeId: 1,
     question:
-      "We are all at different places in life. That’s ok. I’ll meet you where you are. Which of these best describes you: ",
+      "We are all at different places in life. That’s ok.  Which of these best describes you: ",
     options: [
       {
         text:
@@ -296,7 +296,7 @@ const TextNodes = [
       {
         text: "EIN",
         description:
-          "An Employer Identification Number (EIN) is a unique identification number that is assigned to a business entity so that it can easily be identified by the Internal Revenue Service (IRS). 1﻿ It is commonly used by employers for the purpose of reporting taxes.",
+          "An Employer Identification Number (EIN) is a unique identification number that is assigned to a business entity so that it can easily be identified by the Internal Revenue Service (IRS). It is commonly used by employers for the purpose of reporting taxes.",
         requiredState: null,
         resultText: "EIN forms go here",
         prevNodeId: 7,

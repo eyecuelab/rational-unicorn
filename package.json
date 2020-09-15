@@ -21,8 +21,15 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.3.0",
+    "react-router-dom": "^5.1.2",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "typeface-montserrat": "0.0.75",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11"
   },
   "devDependencies": {
     "eslint": "^7.8.0",

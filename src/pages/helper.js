@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import Button from "../components/button"
-import { Link } from "gatsby"
+import OptionButton from "../components/optionButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TextNodes from "../components/content"
@@ -35,45 +34,67 @@ const Helper = () => {
     setShowModal(false)
   }
 
+  function handleHome() {
+    window.location = 'http://localhost:8000/';
+  }
+
+  function handleHelp() {
+    alert("Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!");
+  }
+
   return (
-    <Layout>
-      <SEO title="Service Guide" />
-      <div class="container">
-        {showModal ? (
-          <DescriptionModal
-            onHide={handleClose}
-            value={optionValue}
-            handleClick={handleClick}
-          />
-        ) : null}
-        <div id="text">
-          {nodeState !== TextNodes[8] ? nodeState.question : <h3>Here are your Results</h3>}
-        </div>
-        <div id="option-buttons" class="btn-grid">
-          {nodeState !== TextNodes[8]
-            ? nodeState.options.map(option => {
+    <>
+      <style type="text/css">
+        {`
+            
+        `}
+      </style>
+      <Layout>
+        <SEO title="Service Guide" />
+        <div class="pathwayContainer">
+          {showModal ? (
+            <DescriptionModal
+              onHide={handleClose}
+              value={optionValue}
+              handleClick={handleClick}
+            />
+          ) : null}
+          <div id="text">
+            {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> : <h3>Here are your Results</h3>}
+            <br /><br />
+          </div>
+          <div id="option-buttons">
+            {nodeState !== TextNodes[8]
+              ? nodeState.options.map(option => {
                 return (
-                  <Button
-                    node={option.text}
-                    handleClick={() => {
-                      setOptionValue(option)
-                      setShowModal(true)
-                    }}
-                  />
+                  <>
+                    <li><OptionButton
+                      id="option-btn"
+                      node={option.text}
+                      handleClick={() => {
+                        setOptionValue(option)
+                        setShowModal(true)
+                      }}
+                    /></li><br />
+                  </>
                 )
               })
-            : <Results value={pathStorage} />}
-          <button class="btn" onClick={() => handleBack(pathStorage)}>
+              : <Results value={pathStorage} />}
+          </div>
+        </div>
+        <div class="nav-btns">
+          <button className="home-btn" onClick={() => handleHome()}>
+            Start Over
+          </button>
+          <button className="back-btn" onClick={() => handleBack(pathStorage)}>
             Back
           </button>
+          <button className="home-btn" onClick={()=> handleHelp()}>
+            Help
+          </button>
         </div>
-      </div>
-      <br />
-      <br />
-      <button class="home-btn">
-        <Link to="/">Start Over</Link>
-      </button>
-    </Layout>
+      </Layout>
+    </>
   )
 }
 
