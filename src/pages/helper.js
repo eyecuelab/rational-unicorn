@@ -57,7 +57,7 @@ const Helper = () => {
             />
           ) : null}
           <div id="text">
-            {nodeState !== TextNodes[8] ? <h1 className="questionStyles">{nodeState.question}</h1> : <h3>Here are your Results</h3>}
+            {nodeState !== TextNodes[8] ? <h1>{nodeState.question}</h1> : <h3>Here are your Results</h3>}
             <br /><br />
           </div>
           <div id="option-buttons" class="btn-grid">

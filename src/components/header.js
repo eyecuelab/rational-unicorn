@@ -10,6 +10,12 @@ const navImg = {
 }
 const navLinkStyles = {
   marginLeft: "10%",
+  fontFamily: "Montserrat",
+  fontStyle: "normal",
+  fontWeight: "bold",
+  fontSize: "20px",
+  lineHeight: "20px",
+  color: "#FFFFFF"
 }
 
 
@@ -35,13 +41,6 @@ const Header = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             {/* <NavDropdown icon={faMenu} variant="dark" id="basic-nav-dropdown"> */}
-            <NavDropdown.Item>
-                <Link className="homeLink" onClick={()=>toHome()}>
-                  <div className="noWrap">
-                    <FontAwesomeIcon icon={faHome}/><p style={navLinkStyles}>Home</p>
-                  </div>
-                </Link>
-              </NavDropdown.Item>
               <NavDropdown.Item>
                 <Link className="homeLink" onClick={()=>toMainSite()}>
                   <div className="noWrap">
