@@ -10,9 +10,7 @@ const usePrevNode = (value) => {
             return ( 
                 TextNodes[i]
             ) 
-        } else {
-            window.location = 'http://localhost:8000/';
-        }
+        } 
     } 
 }
 

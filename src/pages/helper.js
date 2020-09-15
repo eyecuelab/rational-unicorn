@@ -60,7 +60,7 @@ const Helper = () => {
             />
           ) : null}
           <div id="text">
-            {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> : <h3>Here are your Results</h3>}
+            {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> : <h3>Great Job!</h3>}
             <br /><br />
           </div>
           <div id="option-buttons">
@@ -79,7 +79,10 @@ const Helper = () => {
                   </>
                 )
               })
-              : <Results value={pathStorage} />}
+              : <Results
+                  value={pathStorage}
+                  onHide={handleClose}
+                />}
           </div>
         </div>
         <div class="nav-btns">

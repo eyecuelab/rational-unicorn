@@ -169,6 +169,7 @@ body {
   perspective: 1px;
   border-radius: 8px;
   outline: none;
+  z-index: 10;
   transform: scale(1.1);
   clip-path: polygon(7% 40%, 93% 40%, 99% 50%, 93% 60%, 7% 60%, 1% 50%);
 
@@ -236,6 +237,9 @@ body {
 .home-btn:focus {
   outline: 0px;
   text-decoration: none;
+}
+.navbar-toggler:focus {
+  outline: 0px;
 }
 
 .back-btn {
