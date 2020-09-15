@@ -572,13 +572,10 @@ h1 {
 }
 
 .modal-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
   margin: 0 auto;
   font-size: 20px;
+  text-align: left;
 }
 
 .modal-body {
@@ -607,6 +604,7 @@ h1 {
   font-weight: 900;
   font-size: 20px;
   line-height: 20px;
+  transform: translate(0%, 80%);
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -732,11 +730,11 @@ main {
 li {
   list-style-type: none;
   position: relative;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 li::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -747,5 +745,4 @@ li::before {
   border-radius: 10px;
   background-color: #ffffff;
   opacity: 0.6;
-
 }
