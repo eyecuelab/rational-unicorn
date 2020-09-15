@@ -28,6 +28,9 @@ body {
   padding-bottom: 20px;
 }
 .container {
+  background-image: url(../images/Unicorn.png);
+  background-repeat: no-repeat;
+  background-position-x: left;
   width: 100vw;
   height: 100vh;
   margin: 0 auto;
