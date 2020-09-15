@@ -60,7 +60,12 @@ const Helper = () => {
             />
           ) : null}
           <div id="text">
-            {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> : <h3>Great Job!</h3>}
+            {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> :
+            <div className="splashContainer animated bounceInRight">
+              <h1 id="title">Choose<br/> your <br/>venture</h1>
+              <h2 id="subTitle-alt">An interactive <br/>guide to your first <br/>business entity</h2>
+            </div>
+            }
             <br /><br />
           </div>
           <div id="option-buttons">
@@ -81,7 +86,6 @@ const Helper = () => {
               })
               : <Results
                   value={pathStorage}
-                  onHide={handleClose}
                 />}
           </div>
         </div>
