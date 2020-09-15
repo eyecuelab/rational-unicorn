@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faHorseHead, faPaperPlane, faMenu } from '@fortawesome/free-solid-svg-icons'
 
 const navImg = {
-  width: "75px",
+  width: "70px",
 }
 const navLinkStyles = {
   marginLeft: "10%",

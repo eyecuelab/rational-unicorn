@@ -10,7 +10,7 @@ const IndexPage = () => (
     <div class="unicron" />
     <div class="container">
       <SEO title="Home" />
-      <div className="splashContainer">
+      <div className="splashContainer animated bounceInRight">
         <h1 id="title">Choose<br/> your <br/>venture</h1>
         <h2 id="subTitle">An interactive <br/>guide to your first <br/>business entity</h2>
       </div>
