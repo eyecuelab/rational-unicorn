@@ -33,6 +33,7 @@ const Helper = () => {
     console.log(pathStorage, "_______pathStorage")
     setNodeState(nextNode)
     setShowModal(false)
+    
   }
 
   function handleHome() {
@@ -54,7 +55,7 @@ const Helper = () => {
       </style>
       <Layout>
         <SEO title="Service Guide" />
-        <div class="pathwayContainer">
+        <div className="pathwayContainer">
           {showModal ? (
             <DescriptionModal
               onHide={handleClose}
@@ -89,10 +90,10 @@ const Helper = () => {
             {nodeState !== TextNodes[8] ? (
               nodeState.options.map(option => {
                 return (
-                  <>
+                  <span key={option.description}>
                     <li>
                       <OptionButton
-                        class="option-btn"
+                        className="option-btn"
                         node={option.text}
                         handleClick={() => {
                           setOptionValue(option)
@@ -101,7 +102,7 @@ const Helper = () => {
                       />
                     </li>
                     <br />
-                  </>
+                  </span>
                 )
               })
             ) : (
@@ -112,7 +113,7 @@ const Helper = () => {
             )}
           </div>
         </div>
-        <div class="nav-btns">
+        <div className="nav-btns">
           <button className="home-btn" onClick={() => handleHome()}>
             Start Over
           </button>

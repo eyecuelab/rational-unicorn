@@ -15,11 +15,11 @@ const Results = ({ value, showEmail }) => {
     // console.log(output)
 
     return (
-        <div class="result-container">
+        <div className="result-container">
             <h3 id="result-head">Your cheat sheet</h3>
             {output.map(outputText => <li id="result-text">{outputText}</li>)}<br/><br/>
-    <button class="end-btn" onClick={showEmail}>Email Me</button><br/>
-            <button class="end-btn">Download PDF</button>
+    <button className="end-btn" onClick={showEmail}>Email Me</button><br/>
+            <button className="end-btn">Download PDF</button>
         </div>
     )
 } 
