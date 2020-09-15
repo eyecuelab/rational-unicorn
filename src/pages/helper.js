@@ -20,7 +20,7 @@ const Helper = () => {
   const handleBack = value => {
     const prevNode = usePrevNode(value)
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
-    setPathStorage(newPathStorage);
+    setPathStorage(newPathStorage)
     console.log(pathStorage, "_________pathStorage after slice()")
     setNodeState(prevNode)
     setShowModal(false)
@@ -36,11 +36,13 @@ const Helper = () => {
   }
 
   function handleHome() {
-    window.location = 'http://localhost:8000/';
+    window.location = "http://localhost:8000/"
   }
 
   function handleHelp() {
-    alert("Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!");
+    alert(
+      "Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!"
+    )
   }
 
   return (
@@ -60,41 +62,54 @@ const Helper = () => {
               handleClick={handleClick}
             />
           ) : null}
-          {showModal && nodeState == TextNodes[8]? (
-            <EmailModal
-              onHide={handleClose}
-              value={pathStorage}
-            />
+          {showModal && nodeState == TextNodes[8] ? (
+            <EmailModal onHide={handleClose} value={pathStorage} />
           ) : null}
           <div id="text">
-            {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> :
-            <div className="splashContainer animated bounceInRight">
-              <h1 id="title">Choose<br/> your <br/>venture</h1>
-              <h2 id="subTitle-alt">An interactive <br/>guide to your first <br/>business entity</h2>
-            </div>
-            }
-            <br /><br />
+            {nodeState !== TextNodes[8] ? (
+              <h1 id="questionStyles">{nodeState.question}</h1>
+            ) : (
+              <div className="splashContainer animated bounceInRight">
+                <h1 id="title">
+                  Choose
+                  <br /> your <br />
+                  venture
+                </h1>
+                <h2 id="subTitle-alt">
+                  An interactive <br />
+                  guide to your first <br />
+                  business entity
+                </h2>
+              </div>
+            )}
+            <br />
+            <br />
           </div>
           <div id="option-buttons">
-            {nodeState !== TextNodes[8]
-              ? nodeState.options.map(option => {
+            {nodeState !== TextNodes[8] ? (
+              nodeState.options.map(option => {
                 return (
                   <>
-                    <li><OptionButton
-                      id="option-btn"
-                      node={option.text}
-                      handleClick={() => {
-                        setOptionValue(option)
-                        setShowModal(true)
-                      }}
-                    /></li><br />
+                    <li>
+                      <OptionButton
+                        class="option-btn"
+                        node={option.text}
+                        handleClick={() => {
+                          setOptionValue(option)
+                          setShowModal(true)
+                        }}
+                      />
+                    </li>
+                    <br />
                   </>
                 )
               })
-              : <Results
-                  value={pathStorage}
-                  showEmail={()=>setShowModal(true)}
-                />}
+            ) : (
+              <Results
+                value={pathStorage}
+                showEmail={() => setShowModal(true)}
+              />
+            )}
           </div>
         </div>
         <div class="nav-btns">
@@ -104,7 +119,7 @@ const Helper = () => {
           <button className="back-btn" onClick={() => handleBack(pathStorage)}>
             Back
           </button>
-          <button className="home-btn" onClick={()=> handleHelp()}>
+          <button className="home-btn" onClick={() => handleHelp()}>
             Help
           </button>
         </div>

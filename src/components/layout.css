@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&display=swap");
 
 *,
 *::before,
@@ -21,7 +21,12 @@ body {
   width: 100% !important;
   height: 100vh !important;
   text-align: center;
-  background: linear-gradient(180deg, #429792 12.67%, #99D8D4 100.16%, #F3F3F3 106.03%);
+  background: linear-gradient(
+    180deg,
+    #429792 12.67%,
+    #99d8d4 100.16%,
+    #f3f3f3 106.03%
+  );
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
@@ -42,39 +47,59 @@ body {
   color: #999;
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
-   -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-       animation: fadein 2s;
-  }
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+}
 
-  @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Firefox < 16 */
-  @-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Opera < 12.1 */
-  @-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
 .container {
   transform: translate(0, 20%);
@@ -90,13 +115,13 @@ body {
   padding: 0;
   width: 320px;
   height: 300px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 28px;
   line-height: 20px;
-  color: #810F5D;
-  background: #FFFFFF;
+  color: #810f5d;
+  background: #ffffff;
   border-collapse: separate;
   perspective: 1px;
   border-radius: 8px;
@@ -107,138 +132,155 @@ body {
 
   -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 2s; /* Firefox < 16 */
-   -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-       animation: fadein 2s;
-  }
+  -ms-animation: fadein 2s; /* Internet Explorer */
+  -o-animation: fadein 2s; /* Opera < 12.1 */
+  animation: fadein 2s;
+}
 
-  @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Firefox < 16 */
-  @-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  /* Opera < 12.1 */
-  @-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
-  .startContainer {
-    max-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: canter;
-    transform: translate(0, 20%);
-    /* border: 1px solid black; */
-  
-    align-items: flex-end;
-    /* border: 1px solid black; */
-  }
-  
-  .splashContainer {
-    margin: 0 auto;
-  
-    -webkit-animation: bounceInRight 2s; /* Safari, Chrome and Opera > 12.1 */
-    -moz-animation: bounceInRight 2s; /* Firefox < 16 */
-     -ms-animation: bounceInRight 2s; /* Internet Explorer */
-      -o-animation: bounceInRight 2s; /* Opera < 12.1 */
-         animation: bounceInRight 2s;
-  }
-  
-  /* .animated {
+.startContainer {
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: canter;
+  transform: translate(0, 20%);
+  /* border: 1px solid black; */
+
+  align-items: flex-end;
+  /* border: 1px solid black; */
+}
+
+.splashContainer {
+  margin: 0 auto;
+
+  -webkit-animation: bounceInRight 2s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: bounceInRight 2s; /* Firefox < 16 */
+  -ms-animation: bounceInRight 2s; /* Internet Explorer */
+  -o-animation: bounceInRight 2s; /* Opera < 12.1 */
+  animation: bounceInRight 2s;
+}
+
+/* .animated {
     -webkit-animation-duration: 2s;
     animation-duration: 2s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
   } */
-  
-  @keyframes bounceInRight {
-    0% {
-       opacity: 0;
-       transform: translateX(2000px);
-    }
-    60% {
-       opacity: 1;
-       transform: translateX(-30px);
-    }
-    80% {
-       transform: translateX(10px);
-    }
-    100% {
-       transform: translateX(0);
-    }
-  } 
-  
-  @-webkit-keyframes bounceInRight {
-    0% {
-       opacity: 0;
-       -webkit-transform: translateX(2000px);
-    }
-    60% {
-       opacity: 1;
-       -webkit-transform: translateX(-30px);
-    }
-    80% {
-       -webkit-transform: translateX(10px);
-    }
-    100% {
-       -webkit-transform: translateX(0);
-    }
-  } 
-  
-  
-  #title {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 52px;
-    line-height: 45px;
-    text-align: right;
-    letter-spacing: -0.5px;
-    text-transform: uppercase;
-    color: #FFFFFF;
-  }
 
-  #subTitle {
-    font-family: 'Libre Baskerville', serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 35px;
-    text-align: right;
-    color: #810F5D;
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
   }
-  
-  h1 {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 900;
-    font-size: 30px;
-    text-align: left;
-    letter-spacing: 0.5px;
-    line-height: 30px;
-    color: #FFFFFF;
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
   }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+  }
+  80% {
+    -webkit-transform: translateX(10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+  }
+}
 
+#title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 52px;
+  line-height: 45px;
+  text-align: right;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+#subTitle {
+  font-family: "Libre Baskerville", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: right;
+  color: #810f5d;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 0.5px;
+  line-height: 30px;
+  color: #ffffff;
+}
 
 /* ------------------------------------- NavBar Styles ---------------------------------------------- */
 
@@ -246,14 +288,28 @@ body {
   border-width: 0px;
   -webkit-box-shadow: 0px 0px;
   box-shadow: 0px 0px;
-  background-color: rgba(0,0,0,0.0) !important;
-  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+  background-image: -webkit-linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .navBar {
-  color: #FFFFFF;
+  color: #ffffff;
 }
 
 /* -------------------------------------Helper.js Styles-------------------------------------------- */
@@ -270,31 +326,16 @@ body {
   font-size: 32px;
   line-height: 33px;
   letter-spacing: -0.5px;
-  color: #FFFFFF;
+  color: #ffffff;
   transform: translate(0, 15%);
 }
 
-
 #option-buttons {
   max-width: 95%;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
-  color: #FFFFFF;
+  color: #ffffff;
   text-align: left;
-}
-
-.option-btn {
-  font-family: 'Montserrat';
-  font-style: normal;
-  color: #FFFFFF;
-  text-align: left;
-  border-width: 0px;
-  -webkit-box-shadow: 0px 0px;
-  box-shadow: 0px 0px;
-  background-color: rgba(0,0,0,0.0) !important;
-  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
 }
 
 .nav-btns {
@@ -302,23 +343,23 @@ body {
   justify-content: space-evenly;
   align-items: center;
   padding: 0 10%;
-  transform: translate(0, 130%)
+  transform: translate(0, 130%);
 }
 
 .home-btn {
   width: 75px;
   height: 44px;
   white-space: normal;
-  background: #5CB8B2;
+  background: #5cb8b2;
   border: none;
   border-radius: 32px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 16px;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   float: left;
 }
 .home-btn:focus {
@@ -332,12 +373,12 @@ body {
 .back-btn {
   width: 125px;
   height: 44px;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   font-style: normal;
   font-weight: 300;
   font-size: 16px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   background-color: #429792;
   border: none;
   border-radius: 32px;
@@ -351,52 +392,97 @@ body {
 }
 
 .optionStyles {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   text-align: left;
   border-width: 0px;
   -webkit-box-shadow: 0px 0px;
   box-shadow: 0px 0px;
-  background-color: rgba(0,0,0,0.0) !important;
-  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+  background-image: -webkit-linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
+.option-btn {
+  padding: 0 5%;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-style: normal;
+  text-align: left;
+  border-width: 0px;
+  -webkit-box-shadow: 0px 0px;
+  box-shadow: 0px 0px;
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+  background-image: -webkit-linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+.option-btn:focus {
+  outline: 0px;
+}
 
 /* ----------------------------------- RESULTS STYLES------------------------------------------- */
 
 #subTitle-alt {
-  font-family: 'Libre Baskerville', serif;
+  font-family: "Libre Baskerville", serif;
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
   line-height: 35px;
   text-align: right;
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.6;
 }
 /* .result-container{
 
 } */
 
-#result-head{
-  font-family: 'Montserrat', sans-serif;
+#result-head {
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 16px;
   line-height: 20px;
   text-align: left;
   text-transform: uppercase;
-  color: #810F5D;
+  color: #810f5d;
 }
-#result-text{
-  font-family: 'Montserrat';
+#result-text {
+  font-family: "Montserrat";
   font-style: normal;
   /* font-weight: bold; */
   font-size: 16px;
-  line-height: 35px;  
-  color: #FFFFFF;
+  line-height: 35px;
+  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -406,13 +492,13 @@ body {
   padding: 0 10%;
   width: 250px;
   height: 40px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
   line-height: 20px;
-  color: #810F5D;
-  background: #FFFFFF;
+  color: #810f5d;
+  background: #ffffff;
   border-collapse: separate;
   /* perspective: 1px; */
   border-radius: 8px;
@@ -422,40 +508,59 @@ body {
 
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
-    -ms-animation: fadein 1s; /* Internet Explorer */
-    -o-animation: fadein 1s; /* Opera < 12.1 */
-        animation: fadein 1s;
-  }
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
 
-  @keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes fadein {
+  from {
+    opacity: 0;
   }
-
-  /* Firefox < 16 */
-  @-moz-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  to {
+    opacity: 1;
   }
+}
 
-  /* Safari, Chrome and Opera > 12.1 */
-  @-webkit-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
   }
-
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  to {
+    opacity: 1;
   }
+}
 
-  /* Opera < 12.1 */
-  @-o-keyframes fadein {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
   }
+  to {
+    opacity: 1;
+  }
+}
 
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 /* ----------------------------------- Modal Styles ---------------------------------------------- */
 
@@ -483,7 +588,7 @@ body {
   align-items: center;
   text-align: center;
   margin: 0 auto;
-  font-size: 20px
+  font-size: 20px;
 }
 
 .modal-body {
@@ -498,7 +603,7 @@ body {
   justify-content: space-even;
 }
 
-.noWrap{
+.noWrap {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -506,42 +611,42 @@ body {
 
 /* ---------------------------------------EMAIL MODAL STYLES------------------------------------------- */
 
-#email-head{
-font-family: 'Montserrat', sans-serif;
-font-style: normal;
-font-weight: 900;
-font-size: 20px;
-line-height: 20px;
-text-transform: uppercase;
-color: #FFFFFF;
-}
-
-#email-title{
-  font-family: 'Montserrat', sans-serif;
+#email-head {
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 20px;
   line-height: 20px;
   text-transform: uppercase;
-  color: #C9E3E2;
+  color: #ffffff;
 }
 
-#email-subTitle{
-  font-family: 'Libre Baskerville', serif;
+#email-title {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #c9e3e2;
+}
+
+#email-subTitle {
+  font-family: "Libre Baskerville", serif;
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
   line-height: 20px;
-  color: #C9E3E2;
+  color: #c9e3e2;
 }
 
-#email-body{
-font-family: Montserrat;
-font-style: normal;
-font-weight: bold;
-font-size: 16px;
-line-height: 30px;
-color: #333333;
+#email-body {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 30px;
+  color: #333333;
 }
 
 #email-form {
@@ -551,56 +656,83 @@ color: #333333;
 
 /* -------------------------------------------Misc Styles------------------------------------------------------- */
 
-
 a {
   background-color: transparent;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 28px;
   line-height: 20px;
-  color: #810F5D;
+  color: #810f5d;
   text-decoration: none !important;
-  color: #810F5D !important;
+  color: #810f5d !important;
   -webkit-text-decoration-skip: objects;
 }
 a:active {
-  color: #810F5D !important;
+  color: #810f5d !important;
   text-decoration: none !important;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 28px;
   line-height: 20px;
-  color: #810F5D;
+  color: #810f5d;
   border-width: 0px;
   -webkit-box-shadow: 0px 0px;
   box-shadow: 0px 0px;
-  background-color: rgba(0,0,0,0.0) !important;
-  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+  background-image: -webkit-linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 a:hover {
-  color: #810F5D !important;
+  color: #810f5d !important;
   text-decoration: none !important;
   outline-width: 0;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 800;
   font-size: 28px;
   line-height: 20px;
-  color: #810F5D;
+  color: #810f5d;
   border-width: 0px;
   -webkit-box-shadow: 0px 0px;
   box-shadow: 0px 0px;
-  background-color: rgba(0,0,0,0.0) !important;
-  background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-  background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-  background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+  background-color: rgba(0, 0, 0, 0) !important;
+  background-image: -webkit-gradient(
+    linear,
+    50% 0%,
+    50% 100%,
+    color-stop(0%, rgba(0, 0, 0, 0)),
+    color-stop(100%, rgba(0, 0, 0, 0))
+  );
+  background-image: -webkit-linear-gradient(
+    270deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-main{
+main {
   max-height: 100%;
   margin: 0 auto;
   padding: 0;
