@@ -493,13 +493,60 @@ body {
 .modal-footer {
   display: inline-block;
   margin: 0 auto;
+  width: 100%;
   white-space: nowrap;
+  justify-content: space-even;
 }
 
 .noWrap{
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+}
+
+/* ---------------------------------------EMAIL MODAL STYLES------------------------------------------- */
+
+#email-head{
+font-family: 'Montserrat', sans-serif;
+font-style: normal;
+font-weight: 900;
+font-size: 20px;
+line-height: 20px;
+text-transform: uppercase;
+color: #FFFFFF;
+}
+
+#email-title{
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #C9E3E2;
+}
+
+#email-subTitle{
+  font-family: 'Libre Baskerville', serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #C9E3E2;
+}
+
+#email-body{
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 30px;
+color: #333333;
+}
+
+#email-form {
+  width: 300px;
+  margin: 0 auto;
 }
 
 /* -------------------------------------------Misc Styles------------------------------------------------------- */

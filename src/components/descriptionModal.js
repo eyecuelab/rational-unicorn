@@ -18,9 +18,12 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           height: 30px;
           float: left;
         }
+        .btn-close:active{
+          background-color: rgb(18, 63, 61);
+        }
 
         .btn-confirm {
-          background-color: rgb(18, 63, 61);
+          background-color: rgb(46, 155, 149);
           color: white;
           border-radius: 30px;
           display: flex;
@@ -29,6 +32,9 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           width: 120px;
           height: 30px;
           float: right;
+        }
+        .btn-confirm:active{
+          background-color: rgb(18, 63, 61);
         }
       `}
       </style>

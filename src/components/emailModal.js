@@ -28,11 +28,14 @@ const Results = ({ onHide, value }) => {
           align-items: center;
           width: 120px;
           height: 30px;
-          float: left;
+          transform: translate(-25%, 0%);
         }
+        .btn-close:active{
+            background-color: rgb(18, 63, 61);
+          }
 
         .btn-send {
-          background-color: rgb(18, 63, 61);
+          background-color: rgb(46, 155, 149);
           color: white;
           border-radius: 30px;
           display: flex;
@@ -40,22 +43,30 @@ const Results = ({ onHide, value }) => {
           align-items: center;
           width: 120px;
           height: 30px;
-          float: right;
+          transform: translate(-25%, 0%)
+        }
+        .btn-send:active{
+          background-color: rgb(18, 63, 61);
         }
       `}
       </style>
         <Modal show={true} onHide={onHide}>
             <Modal.Header>
-                <Modal.Title><h2 id="questionStyles">Here are your Results</h2></Modal.Title>
+                <Modal.Title>
+                    <p id="email-head">Choose your venture</p><br/>
+                    <p id='email-title'>Your Cheat Sheet</p><br/><br/>
+                    <p id='email-subTitle'>Presented by Rational Unicorn</p>
+                    </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <ul>
+                <br/>
+                <ul id="email-body">
                     {output.map(outputText => <li>{outputText}</li>)}
                 </ul>
             </Modal.Body>
             <Modal.Footer>
                 <Form inline>
-                    <FormControl type="text" placeholder="your-email@email.com" className="mr-sm-2" />
+                    <FormControl type="text" placeholder="email@email-address.com" id="email-form" />
                 </Form>
                 <Button variant="close" onClick={onHide}>
                     Close
