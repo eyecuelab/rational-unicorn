@@ -4,7 +4,7 @@ const TextNodes = [
   {
     nodeId: 1,
     question:
-      "We are all at different places in life. That’s ok. I’ll meet you where you are. Which of these best describes you: ",
+      "We are all at different places in life. That’s ok.  Which of these best describes you: ",
     options: [
       {
         text:
