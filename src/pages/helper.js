@@ -1,6 +1,5 @@
 import React, { useState } from "react"
-import Button from "../components/button"
-import { Link } from "gatsby"
+import OptionButton from "../components/optionButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TextNodes from "../components/content"
@@ -39,6 +38,10 @@ const Helper = () => {
     window.location = 'http://localhost:8000/';
   }
 
+  function handleHelp() {
+    alert("Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!");
+  }
+
   return (
     <>
       <style type="text/css">
@@ -60,14 +63,13 @@ const Helper = () => {
             {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> : <h3>Here are your Results</h3>}
             <br /><br />
           </div>
-          <div id="option-buttons" class="btn-grid">
+          <div id="option-buttons">
             {nodeState !== TextNodes[8]
               ? nodeState.options.map(option => {
                 return (
                   <>
-                    <li><Button
-                      variant="default"
-                      id="optionStyles"
+                    <li><OptionButton
+                      id="option-btn"
                       node={option.text}
                       handleClick={() => {
                         setOptionValue(option)

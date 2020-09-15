@@ -105,17 +105,17 @@ body {
   margin: 0 auto;
 }
 
-.btn-grid {
+/* .btn-grid {
   color: #FFFFFF;
   display: table-row;
   width: auto;
   gap: 100px;
   margin: 0 auto;
   max-height: contain;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat';
   font-style: normal;
   text-align: left;
-  }
+  } */
 
   #questionStyles {
     font-family: Montserrat;
@@ -125,20 +125,20 @@ body {
     line-height: 33px;
     letter-spacing: -0.5px;
     color: #FFFFFF;
+    transform: translate(0, 15%);
   }
 
-    /* ------this is doing nothing------- */
 
   #option-buttons {
-    max-width: 80%;
+    max-width: 95%;
     font-family: 'Montserrat';
     font-style: normal;
     color: #FFFFFF;
     text-align: left;
   }
 
-  #optionStyles {
-    font-family: 'Montserrat', sans-serif;
+  .option-btn {
+    font-family: 'Montserrat';
     font-style: normal;
     color: #FFFFFF;
     text-align: left;
@@ -150,8 +150,6 @@ body {
     background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
     background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
   }
-
-/* tryin to get option buttons to be transparent without using Buttons because then it affects all the bootstrap buttons throughout the app */
 
 
 .start-btn {
@@ -234,6 +232,10 @@ body {
   text-align: center;
   color: #FFFFFF;
   float: left;
+}
+.home-btn:focus {
+  outline: 0px;
+  text-decoration: none;
 }
 
 .back-btn {
