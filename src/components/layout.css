@@ -130,20 +130,14 @@ body {
     /* ------this is doing nothing------- */
 
   #option-buttons {
-    font-family: 'Montserrat', sans-serif;
+    max-width: 80%;
+    font-family: 'Montserrat';
     font-style: normal;
     color: #FFFFFF;
     text-align: left;
-    border-width: 0px;
-    -webkit-box-shadow: 0px 0px;
-    box-shadow: 0px 0px;
-    background-color: rgba(0,0,0,0.0) !important;
-    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
-    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
-    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
   }
 
-  .options {
+  #optionStyles {
     font-family: 'Montserrat', sans-serif;
     font-style: normal;
     color: #FFFFFF;
@@ -257,6 +251,10 @@ body {
   float: center;
   box-shadow: none;
   outline: none;
+}
+.back-btn:focus {
+  outline: 0px;
+  text-decoration: none;
 }
 
 .startContainer {

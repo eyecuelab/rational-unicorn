@@ -67,7 +67,7 @@ const Helper = () => {
                   <>
                     <li><Button
                       variant="default"
-                      className="options"
+                      id="optionStyles"
                       node={option.text}
                       handleClick={() => {
                         setOptionValue(option)
