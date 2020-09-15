@@ -1,6 +1,6 @@
 import React from "react"
 
-const Results = ({ value }) => {
+const Results = ({ value, showEmail }) => {
 
     const output = value.reduce((outputTextArray, currentValue) => {
         const returnArray = [...outputTextArray];
@@ -18,7 +18,7 @@ const Results = ({ value }) => {
         <div class="result-container">
             <h3 id="result-head">Your cheat sheet</h3>
             {output.map(outputText => <li id="result-text">{outputText}</li>)}<br/><br/>
-            <button class="end-btn">Email Me</button><br/>
+    <button class="end-btn" onClick={showEmail}>Email Me</button><br/>
             <button class="end-btn">Download PDF</button>
         </div>
     )

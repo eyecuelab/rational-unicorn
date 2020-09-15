@@ -374,7 +374,7 @@ body {
   line-height: 35px;
   text-align: right;
   color: #FFFFFF;
-  opacity: 0.4;
+  opacity: 0.6;
 }
 /* .result-container{
 
@@ -410,6 +410,7 @@ body {
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
+  line-height: 20px;
   color: #810F5D;
   background: #FFFFFF;
   border-collapse: separate;
@@ -419,11 +420,11 @@ body {
   z-index: 10;
   clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 7% 50%);
 
-  -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 2s; /* Firefox < 16 */
-    -ms-animation: fadein 2s; /* Internet Explorer */
-    -o-animation: fadein 2s; /* Opera < 12.1 */
-        animation: fadein 2s;
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+    -ms-animation: fadein 1s; /* Internet Explorer */
+    -o-animation: fadein 1s; /* Opera < 12.1 */
+        animation: fadein 1s;
   }
 
   @keyframes fadein {

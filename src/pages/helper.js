@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
+import EmailModal from "../components/emailModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
@@ -59,6 +60,12 @@ const Helper = () => {
               handleClick={handleClick}
             />
           ) : null}
+          {showModal && nodeState == TextNodes[8]? (
+            <EmailModal
+              onHide={handleClose}
+              value={pathStorage}
+            />
+          ) : null}
           <div id="text">
             {nodeState !== TextNodes[8] ? <h1 id="questionStyles">{nodeState.question}</h1> :
             <div className="splashContainer animated bounceInRight">
@@ -86,6 +93,7 @@ const Helper = () => {
               })
               : <Results
                   value={pathStorage}
+                  showEmail={()=>setShowModal(true)}
                 />}
           </div>
         </div>
