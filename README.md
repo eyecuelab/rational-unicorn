@@ -34,15 +34,15 @@ The user will be prompted a list of options attached to a question on what they'
 | :heavy_check_mark: | Clicking on an option opens a modal with a description of the legal service |
 | :heavy_check_mark: | User can confirm choice or back out from modal                   |
 | :heavy_check_mark: | Clicking confirm navigates to the next question        |
-|  | User can go back to previous question resetting last answer            |
-|  | User is given results at end of application with list of needed legal services       |
+| :heavy_check_mark: | User can go back to previous question resetting last answer            |
+| :heavy_check_mark: | User is given results at end of application with list of needed legal services       |
 
 <br/>
 <br/>
 
 |                    | Stretch Goals                                           |
 | ------------------ | ------------------------------------------------------- |
-|  | Clean, Responsive UI                                    |
+| :heavy_check_mark: | Clean, Responsive UI                                    |
 | :heavy_check_mark: | Site is deployed                                        |
 |                    | Client can update questions/options via Contentful CMS   |
 |                    | Client can add new questions/options via Contentful CMS    |
