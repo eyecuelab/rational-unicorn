@@ -499,8 +499,9 @@ h1 {
 
 .modal {
   padding: 10em 2em;
-  margin-left: 15px;
+  margin-left: 3px;
   border-radius: 10px;
+  max-width: 99vw;
 }
 
 .modal-header {
@@ -520,6 +521,7 @@ h1 {
 
 .modal-body {
   overflow-y: scroll;
+  max-width: 80vw;
 }
 
 .modal-footer {
@@ -578,12 +580,12 @@ h1 {
 }
 
 #email-form {
-  width: 300px;
-  margin-left: 0;
+  min-width: 290px;
+  max-width: auto;
   background: #FFFFFF;
   border: 1px solid #439893;
   border-radius: 4px;
-  transform: translate(0%, -20%);
+  transform: translate(-1%, -20%);
 }
 
 /* -------------------------------------------Misc Styles------------------------------------------------------- */
@@ -694,7 +696,7 @@ li::before {
 ti {
   list-style-type: none;
   position: relative;
-  padding-left: 30px;
+  padding-left: 40px;
   white-space: pre;
 }
 

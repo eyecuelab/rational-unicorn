@@ -68,12 +68,14 @@ const Results = ({ onHide, value }) => {
                 <Form inline>
                     <FormControl type="text" placeholder="email@email-address.com" id="email-form" />
                 </Form>
-                <Button variant="close" onClick={onHide}>
-                    Close
-                </Button>
-                <Button variant="send" onClick={onHide}>
-                    Send
-                </Button>
+                <div className="noWrap">
+                    <Button variant="close" onClick={onHide}>
+                        Close
+                    </Button>
+                    <Button variant="send" onClick={onHide}>
+                        Send
+                    </Button>
+                </div>
             </Modal.Footer>
         </Modal>
         </>
