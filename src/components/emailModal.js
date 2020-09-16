@@ -28,7 +28,7 @@ const Results = ({ onHide, value }) => {
           align-items: center;
           width: 120px;
           height: 30px;
-          transform: translate(-25%, 0%);
+          transform: translate(-30%, 0%) scale(1.1);
         }
         .btn-close:active{
             background-color: rgb(18, 63, 61);
@@ -43,7 +43,7 @@ const Results = ({ onHide, value }) => {
           align-items: center;
           width: 120px;
           height: 30px;
-          transform: translate(-25%, 0%)
+          transform: translate(-15%, 0%) scale(1.1);
         }
         .btn-send:active{
           background-color: rgb(18, 63, 61);
@@ -53,7 +53,7 @@ const Results = ({ onHide, value }) => {
         <Modal show={true} onHide={onHide}>
             <Modal.Header>
                 <Modal.Title>
-                    <p id="email-head">Choose your venture</p>
+                    <p id='email-head'>Choose your venture</p>
                     <p id='email-title'>Your Cheat Sheet</p>
                     <p id='email-subTitle'>Presented by Rational Unicorn</p>
                 </Modal.Title>
@@ -61,7 +61,7 @@ const Results = ({ onHide, value }) => {
             <Modal.Body>
                 <br/>
                 <ul id="email-body">
-                    {output.map(outputText => <li>{outputText}</li>)}
+                    {output.map(outputText => <ti>{outputText}</ti>)}
                 </ul>
             </Modal.Body>
             <Modal.Footer>

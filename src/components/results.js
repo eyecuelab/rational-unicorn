@@ -21,7 +21,7 @@ const Results = ({ value, showEmail }) => {
                     li {
                         list-style-type: none;
                         position: relative;
-                        padding-left: 10px;
+                        padding-left: 30px;
                         }
                         
                     li::before {
@@ -31,22 +31,22 @@ const Results = ({ value, showEmail }) => {
                         bottom: 0;
                         left: 0;
                         margin: auto;
-                        height: 10px;
-                        width: 10px;
+                        height: 25px;
+                        width: 25px;
                         display: block;
-                        background-image: url(https://github.com/eyecuelab/rational-unicorn/blob/modal/src/images/arrow-white.PNG);
+                        background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
                         background-repeat: no-repeat;
                         background-size: 100%;
-                        background-color: #810F5D;
-                        transform: translate(-50%, 0%);
+                        background-color: #ffffff;
+                        opacity: 1;
                     }    
                 `}
             </style>
             <div className="result-container">
                 <h3 id="result-head">Your cheat sheet</h3>
                 {output.map(outputText => <li id="result-text">{outputText}</li>)}<br/><br/>
-                <button className="end-btn" onClick={showEmail}>Email Me</button><br/>
-                <button className="end-btn">Download PDF</button>
+                <button className="end-btn1" onClick={showEmail}>Email Me</button><br/>
+                <button className="end-btn2">Download PDF</button>
             </div>
         </>
     )
