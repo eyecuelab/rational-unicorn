@@ -450,9 +450,9 @@ h1 {
   color: #ffffff;
   opacity: 0.6;
 }
-/* .result-container{
-
-} */
+.result-container {
+  margin-left: 0;
+}
 
 #result-head {
   font-family: "Montserrat", sans-serif;
@@ -490,10 +490,11 @@ h1 {
   border-collapse: separate;
   /* perspective: 1px; */
   border-radius: 8px;
-  outline: none;
+  outline: 0px;
+  border: none;
   z-index: 10;
   white-space: nowrap;
-  clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 7% 50%);
+  clip-path: polygon(0% 5%, 93% 5%, 99% 50%, 93% 95%, 0% 95%, 0% 50%);
 
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -572,13 +573,10 @@ h1 {
 }
 
 .modal-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
   flex-direction: column;
   margin: 0 auto;
   font-size: 20px;
+  text-align: left;
 }
 
 .modal-body {
@@ -607,6 +605,7 @@ h1 {
   font-weight: 900;
   font-size: 20px;
   line-height: 20px;
+  transform: translate(0%, 80%);
   text-transform: uppercase;
   color: #ffffff;
 }
@@ -732,11 +731,11 @@ main {
 li {
   list-style-type: none;
   position: relative;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
 li::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   bottom: 0;
@@ -747,5 +746,5 @@ li::before {
   border-radius: 10px;
   background-color: #ffffff;
   opacity: 0.6;
-
 }
+
