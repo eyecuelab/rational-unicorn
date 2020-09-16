@@ -494,12 +494,12 @@ h1 {
 /* ----------------------------------- Modal Styles ---------------------------------------------- */
 
 .modal-backdrop {
-  background-color: rgb(18, 63, 61);
+  background-color: rgb(23, 105, 101);
 }
 
 .modal {
   padding: 10em 2em;
-  margin-left: 3px;
+  margin-left: 0;
   border-radius: 10px;
   max-width: 99vw;
 }
@@ -525,11 +525,12 @@ h1 {
 }
 
 .modal-footer {
-  display: inline-block;
+  display: flex;
   margin: 0 auto;
   width: 100%;
   white-space: nowrap;
-  justify-content: space-even;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .noWrap {
@@ -562,7 +563,7 @@ h1 {
 }
 
 #email-subTitle {
-  font-family: "Libre Baskerville", serif;
+  font-family: "Libre Baskerville";
   font-style: normal;
   font-weight: bold;
   font-size: 14px;
@@ -580,12 +581,14 @@ h1 {
 }
 
 #email-form {
-  min-width: 290px;
-  max-width: auto;
+  min-width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background: #FFFFFF;
   border: 1px solid #439893;
   border-radius: 4px;
-  transform: translate(-1%, -20%);
+  transform: translate(0%, -20%);
 }
 
 /* -------------------------------------------Misc Styles------------------------------------------------------- */
