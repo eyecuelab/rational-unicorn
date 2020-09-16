@@ -115,7 +115,7 @@ const Helper = () => {
         </div>
         <div className="nav-btns">
           <button className="home-btn" onClick={() => handleHome()}>
-            Start Over
+            Start<br/>Over
           </button>
           <button className="back-btn" onClick={() => handleBack(pathStorage)}>
             Back
