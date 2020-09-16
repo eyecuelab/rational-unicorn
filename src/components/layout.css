@@ -310,6 +310,26 @@ h1 {
   outline: none;
   clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
 }
+.option-btn:hover {
+  outline: 0px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 10%;
+  width: 360px;
+  height: 80px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #810f5d;
+  background: #ffffff !important;
+  border-collapse: separate;
+  perspective: 1px;
+  border-radius: 10px;
+  outline: none;
+  clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+}
 
 /* ----------------------------------- RESULTS STYLES------------------------------------------- */
 
