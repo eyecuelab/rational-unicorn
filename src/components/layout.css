@@ -508,7 +508,7 @@ h1 {
   background-color: rgb(143, 2, 101);
   color: white;
   font-size: 10px;
-  padding: 0.5em, 1.5em;
+  padding: 0.5em;
   text-align: center;
 }
 
@@ -531,6 +531,7 @@ h1 {
   white-space: nowrap;
   justify-content: space-around;
   align-items: center;
+  border-top: 0 none;
 }
 
 .noWrap {
