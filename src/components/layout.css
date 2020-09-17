@@ -357,7 +357,10 @@ h1 {
   text-transform: uppercase;
   color: #810f5d;
 }
-#result-text {
+.results-li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 30px;
   font-family: "Montserrat";
   font-style: normal;
   /* font-weight: bold; */
@@ -366,6 +369,23 @@ h1 {
   color: #ffffff;
   white-space: nowrap;
 }
+
+  .results-li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 25px;
+    width: 25px;
+    display: block;
+    background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #ffffff;
+    opacity: 1;
+  }
 
 .end-btn1 {
   text-align: left;
@@ -530,6 +550,30 @@ color: #FFFFFF;
   color: #333333;
 }
 
+.email-li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 10%;
+  white-space: nowrap;
+}
+
+.email-li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 25px;
+  width: 25px;
+  display: block;
+  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-purple.PNG);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 1;
+}
+
 #email-form {
   min-width: 300px;
   display: flex;
@@ -647,30 +691,6 @@ li::before {
   opacity: 0.6;
 }
 
-ti {
-  list-style-type: none;
-  position: relative;
-  padding-left: 40px;
-  white-space: pre;
-}
-
-ti::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  height: 25px;
-  width: 25px;
-  display: block;
-  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-purple.PNG);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  opacity: 1;
-  white-space: normal;
-}
 
 /* ------------------------------ Animation Key-Frames ------------------------------------------ */
 

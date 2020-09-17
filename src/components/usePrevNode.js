@@ -10,8 +10,6 @@ const usePrevNode = (value) => {
             return ( 
                 TextNodes[i]
             ) 
-        } else {
-            return TextNodes[0]
         }
     } 
 }

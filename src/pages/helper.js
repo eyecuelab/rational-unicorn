@@ -44,9 +44,10 @@ const Helper = () => {
   }
 
   const handleClick = async(value) => {
+    console.log(value, "_________Value argument in handleClick")
     console.log(nodeState.nodeId, "_______ Current Node ID")
     const nextNode = useNextNode(value)
-    const nextPathStorage = [...pathStorage, value]
+    const nextPathStorage = ([...pathStorage, value])
     await reactLocalStorage.set('results', JSON.stringify(nextPathStorage))
     setPathStorage([...pathStorage, value])
     console.log(pathStorage, "_______pathStorage")
@@ -57,6 +58,8 @@ const Helper = () => {
   const handleClose = () => setShowModal(false)
 
   function handleHome() {
+    const resetPath = reactLocalStorage.clear()
+    setPathStorage(resetPath)
     window.location = "http://localhost:8000/"
   }
 
