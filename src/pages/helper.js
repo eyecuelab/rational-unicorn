@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import OptionButton from "../components/optionButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,33 +8,53 @@ import EmailModal from "../components/emailModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
+import { reactLocalStorage } from 'reactjs-localstorage';
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
-  const [pathStorage, setPathStorage] = useState([null])
+  const [pathStorage, setPathStorage] = useState(reactLocalStorage.get('results')? JSON.parse(reactLocalStorage.get('results')) : [])
+  
+  useEffect((pathStorage)=> {
+    console.log(pathStorage, "------pathStorage argument in UseEffect-------")
+    const lastNode = pathStorage?.length -1;
+    for (let i = 0; i < TextNodes.length; i++) {
+      if (pathStorage?.[lastNode]?.nextNodeId == TextNodes[i].nodeId) { 
+        setNodeState(TextNodes[i]);
+      } 
+    }
+  },[])
 
-  const handleClose = () => setShowModal(false)
 
-  const handleBack = value => {
+  const handleBack = async(value) => {
     const prevNode = usePrevNode(value)
-    const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
-    setPathStorage(newPathStorage)
-    console.log(pathStorage, "_________pathStorage after slice()")
-    setNodeState(prevNode)
-    setShowModal(false)
+    const resetPath = reactLocalStorage.clear()
+    if(nodeState==TextNodes[0]) {
+      setPathStorage(resetPath),
+      window.location = "http://localhost:8000/"
+    } else {
+      const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
+      await reactLocalStorage.set('results', JSON.stringify(newPathStorage))
+      setPathStorage(newPathStorage)
+      console.log(pathStorage, "_________pathStorage after slice()")
+      setNodeState(prevNode)
+      setShowModal(false)
+    }
   }
 
-  const handleClick = value => {
+  const handleClick = async(value) => {
     console.log(nodeState.nodeId, "_______ Current Node ID")
     const nextNode = useNextNode(value)
+    const nextPathStorage = [...pathStorage, value]
+    await reactLocalStorage.set('results', JSON.stringify(nextPathStorage))
     setPathStorage([...pathStorage, value])
     console.log(pathStorage, "_______pathStorage")
     setNodeState(nextNode)
-    setShowModal(false)
-    
+    setShowModal(false) 
   }
+  
+  const handleClose = () => setShowModal(false)
 
   function handleHome() {
     window.location = "http://localhost:8000/"
@@ -46,13 +66,10 @@ const Helper = () => {
     )
   }
 
+  
+
   return (
     <>
-      <style type="text/css">
-        {`
-            
-        `}
-      </style>
       <Layout>
         <SEO title="Service Guide" />
         <div className="pathwayContainer">

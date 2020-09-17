@@ -292,7 +292,7 @@ h1 {
 }
 .option-btn:focus {
   outline: 0px;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   padding: 0 10%;
   width: 360px;
@@ -312,7 +312,7 @@ h1 {
 }
 .option-btn:hover {
   outline: 0px;
-  text-align: center;
+  text-align: left;
   margin: 0 auto;
   padding: 0 10%;
   width: 360px;
@@ -453,6 +453,18 @@ h1 {
   margin: 0 auto;
   font-size: 20px;
   text-align: left;
+}
+
+#question-head {
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+/* or 125% */
+
+
+color: #FFFFFF;
 }
 
 .modal-body {
