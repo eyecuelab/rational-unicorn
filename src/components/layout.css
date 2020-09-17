@@ -63,6 +63,7 @@ body {
 }
 
 .start-btn {
+  position: absolute;
   text-align: center;
   margin: 0 auto;
   padding: 0;
@@ -80,7 +81,7 @@ body {
   border-radius: 10px;
   outline: 0px;
   border: none;
-  transform: translate(0%, 300%);
+  transform: translate(0%, 400%);
   z-index: 10;
   clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
 
@@ -175,6 +176,22 @@ h1 {
 
 .navBar {
   color: #ffffff;
+}
+
+.homeLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* -------------------------------------Helper.js Styles-------------------------------------------- */
@@ -370,22 +387,22 @@ h1 {
   white-space: nowrap;
 }
 
-  .results-li::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    margin: auto;
-    height: 25px;
-    width: 25px;
-    display: block;
-    background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-color: #ffffff;
-    opacity: 1;
-  }
+.results-li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 25px;
+  width: 25px;
+  display: block;
+  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #ffffff;
+  opacity: 1;
+}
 
 .end-btn1 {
   text-align: left;

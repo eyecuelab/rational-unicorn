@@ -1,9 +1,7 @@
-import { Link } from "gatsby"
-// import { Redirect } from "react-router-dom"
-import React, { useState } from "react"
+import React from "react"
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faHorseHead, faPaperPlane, faMenu } from '@fortawesome/free-solid-svg-icons'
+import { faHorseHead, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 const navImg = {
   width: "70px",
@@ -40,20 +38,20 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {/* <NavDropdown icon={faMenu} variant="dark" id="basic-nav-dropdown"> */}
-              <NavDropdown.Item>
-                <Link className="homeLink" onClick={()=>toMainSite()}>
-                  <div className="noWrap">
-                    <FontAwesomeIcon icon={faHorseHead}/><p style={navLinkStyles}>Main Site</p>
-                  </div>
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item className="contactLink" onClick={toContact}>
+            <NavDropdown.Item>
+              <div className="homeLink" onClick={()=>toMainSite()}>
+                <div className="noWrap">
+                  <FontAwesomeIcon icon={faHorseHead}/><p style={navLinkStyles}>Main Site</p>
+                </div>
+              </div>
+            </NavDropdown.Item>
+            <NavDropdown.Item>
+              <div className="contactLink" onClick={toContact}>
                 <div className="noWrap">
                   <FontAwesomeIcon icon={faPaperPlane}/><p style={navLinkStyles}>Contact Us</p>
                 </div>
-              </NavDropdown.Item>
-            {/* </NavDropdown> */}
+              </div>
+            </NavDropdown.Item>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

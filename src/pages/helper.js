@@ -9,6 +9,7 @@ import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from 'reactjs-localstorage';
+// import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
@@ -32,6 +33,11 @@ const Helper = () => {
     const resetPath = reactLocalStorage.clear()
     if(nodeState==TextNodes[0]) {
       setPathStorage(resetPath),
+      // <Router>
+      //   <Switch>
+      //     <Route path="/" />
+      //   </Switch>
+      // </Router>
       window.location = "http://localhost:8000/"
     } else {
       const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
@@ -44,7 +50,7 @@ const Helper = () => {
   }
 
   const handleClick = async(value) => {
-    console.log(value, "_________Value argument in handleClick")
+    // console.log(value, "_________Value argument in handleClick")
     console.log(nodeState.nodeId, "_______ Current Node ID")
     const nextNode = useNextNode(value)
     const nextPathStorage = ([...pathStorage, value])
@@ -59,7 +65,12 @@ const Helper = () => {
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
-    setPathStorage(resetPath)
+    setPathStorage(resetPath),
+    // <Router>
+    //   <Switch>
+    //     <Route path="/" />
+    //   </Switch>
+    // </Router>
     window.location = "http://localhost:8000/"
   }
 
