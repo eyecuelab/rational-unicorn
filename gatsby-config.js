@@ -8,10 +8,11 @@ require("dotenv").config({
   path: `.env`
 })
 
+
 module.exports = {
   siteMetadata: {
-    title: `Unicorn Testing Facility`,
-    description: `framework to test out back end functionality`,
+    title: `Rational Unicorn Choose Your Venture`,
+    description: `Application to help users navigate and educate through the various resources and services required to start a business.`,
     author: `Tyler Bates, Ethan Firpo`,
   },
   plugins: [
@@ -34,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/LogoCircle.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

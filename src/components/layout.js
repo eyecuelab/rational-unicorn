@@ -27,23 +27,12 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          marginLeft: `4vw`,
-          marginTop: `40vh`,
-          maxWidth: 960,
-          height: `90vh`,
-          display: `grid`,
-          justifyContent: `center`,
-          alignItems: `center`,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <div>
         <main>{children}</main>
-        <footer>
+        {/* <footer>
           © {new Date().getFullYear()}, Tyler Bates | Ethan Firpo @{` `}
           <a href="https://www.eyecuelab.com">EyeCue Lab</a>
-        </footer>
+        </footer> */}
       </div>
     </>
   )

@@ -60,7 +60,7 @@ The user will be prompted a list of options attached to a question on what they'
 
 3. After you've modified your selection simply click the green "Publish Changes" button to the right of the form.
 
-    <img src='src\images\publish_changes.png' alt="app design">
+    <img src='.\src\images\publish_changes.PNG' alt='app design'>
 
 4. The application will automatically re-deploy your updates to the live application through Netlify's [Continuous Deployment](https://www.netlify.com/products/build/#start)
 

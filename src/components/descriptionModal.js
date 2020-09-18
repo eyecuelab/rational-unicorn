@@ -5,18 +5,50 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
 
   return (
     <>
+      <style type="text/css">
+      {`
+        .btn-close {
+          background-color: rgb(46, 155, 149);
+          color: white;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: 30px;
+          transform: translate(-30%, 0%) scale(1.1);
+        }
+        .btn-close:active{
+          background-color: rgb(18, 63, 61);
+        }
+
+        .btn-confirm {
+          background-color: rgb(46, 155, 149);
+          color: white;
+          border-radius: 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: 30px;
+          transform: translate(-15%, 0%) scale(1.1);
+        }
+        .btn-confirm:active{
+          background-color: rgb(18, 63, 61);
+        }
+      `}
+      </style>
       <Modal show={true} onHide={onHide}>
-        <Modal.Header closeButton>
-          <Modal.Title>{value.text}</Modal.Title>
+        <Modal.Header>
+          <Modal.Title><p id="question-head">{value.text}</p></Modal.Title>
         </Modal.Header>
         <Modal.Body>{value.description}</Modal.Body>
         <Modal.Footer>
-          <p>Is this what you were looking for?</p>
-          <Button variant="outline-dark" onClick={onHide}>
-            Nope
+          <Button variant="close" onClick={onHide}>
+            Close
           </Button>
-          <Button variant="outline-success" onClick={()=>handleClick(value)}>
-            Yup!
+          <Button variant="confirm" onClick={()=>handleClick(value)}>
+            Confirm
           </Button>
         </Modal.Footer>
       </Modal>
