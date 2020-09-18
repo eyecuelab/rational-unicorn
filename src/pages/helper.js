@@ -104,7 +104,7 @@ const Helper = () => {
               <h1 id="questionStyles">{nodeState.question}</h1>
             ) : (
               <div className="splashContainer animated bounceInRight">
-                <h1 id="title">
+                <h1 id="title-alt">
                   Choose
                   <br /> your <br />
                   venture
