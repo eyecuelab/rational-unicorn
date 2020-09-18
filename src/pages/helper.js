@@ -8,70 +8,80 @@ import EmailModal from "../components/emailModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
-import { reactLocalStorage } from 'reactjs-localstorage';
+import { reactLocalStorage } from "reactjs-localstorage"
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
-  const [pathStorage, setPathStorage] = useState(reactLocalStorage.get('results')? JSON.parse(reactLocalStorage.get('results')) : [])
-  
-  useEffect((pathStorage)=> {
-    console.log(pathStorage, "------pathStorage argument in UseEffect-------")
-    const lastNode = pathStorage?.length -1;
-    for (let i = 0; i < TextNodes.length; i++) {
-      if (pathStorage?.[lastNode]?.nextNodeId == TextNodes[i].nodeId) { 
-        setNodeState(TextNodes[i]);
-      } 
-    }
-  },[])
+  const [pathStorage, setPathStorage] = useState(
+    reactLocalStorage.get("results")
+      ? JSON.parse(reactLocalStorage.get("results"))
+      : []
+  )
+  const [showResults, setShowResults] = useState(false)
 
-
-  const handleBack = async(value) => {
-    const prevNode = usePrevNode(value)
-    const resetPath = reactLocalStorage.clear()
-    if(nodeState==TextNodes[0]) {
-      setPathStorage(resetPath),
-      // <Router>
-      //   <Switch>
-      //     <Route path="/" />
-      //   </Switch>
-      // </Router>
-      window.location = "http://localhost:8000/"
+  useEffect(() => {
+    const lastNode = pathStorage?.length - 1
+    if (pathStorage?.[lastNode]?.nextNodeId == 8) {
+      setShowResults(true)
+    } else if (pathStorage) {
+      for (let i = 0; i < TextNodes.length; i++) {
+        if (pathStorage?.[lastNode]?.nextNodeId == TextNodes[i].nodeId) {
+          setNodeState(TextNodes[i])
+        }
+      }
     } else {
-      const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
-      await reactLocalStorage.set('results', JSON.stringify(newPathStorage))
-      setPathStorage(newPathStorage)
-      console.log(pathStorage, "_________pathStorage after slice()")
-      setNodeState(prevNode)
-      setShowModal(false)
+      window.location = "http://localhost:8000/"
     }
+  }, [])
+
+  const handleBack = async value => {
+    const prevNode = usePrevNode(value)
+    const lastNode = pathStorage?.length - 1 // returning 4
+    const backNode = pathStorage?.[lastNode]?.prevNodeId // returning 7
+    const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
+    await reactLocalStorage.set("results", JSON.stringify(newPathStorage))
+    if (pathStorage.length < 1) {
+      window.location = "http://localhost:8000/"
+    } else if (showResults) {
+      for (let i = 0; i < TextNodes.length; i++) {
+        if (TextNodes[i].nodeId == backNode) {
+          setNodeState(TextNodes[i])
+        }
+      }
+      setShowResults(false)
+    } else {
+      setNodeState(prevNode)
+    }
+    setPathStorage(newPathStorage)
+    setShowModal(false)
   }
 
-  const handleClick = async(value) => {
-    // console.log(value, "_________Value argument in handleClick")
-    console.log(nodeState.nodeId, "_______ Current Node ID")
+  const handleClick = async value => {
     const nextNode = useNextNode(value)
-    const nextPathStorage = ([...pathStorage, value])
-    await reactLocalStorage.set('results', JSON.stringify(nextPathStorage))
+    const nextPathStorage = [...pathStorage, value]
+    await reactLocalStorage.set("results", JSON.stringify(nextPathStorage))
     setPathStorage([...pathStorage, value])
-    console.log(pathStorage, "_______pathStorage")
+    setShowModal(false)
+    if (nextNode === TextNodes[8]) {
+      setShowResults(true)
+    }
     setNodeState(nextNode)
-    setShowModal(false) 
   }
-  
+
   const handleClose = () => setShowModal(false)
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
     setPathStorage(resetPath),
-    // <Router>
-    //   <Switch>
-    //     <Route path="/" />
-    //   </Switch>
-    // </Router>
-    window.location = "http://localhost:8000/"
+      // <Router>
+      //   <Switch>
+      //     <Route path="/" />
+      //   </Switch>
+      // </Router>
+      (window.location = "http://localhost:8000/")
   }
 
   function handleHelp() {
@@ -79,8 +89,6 @@ const Helper = () => {
       "Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!"
     )
   }
-
-  
 
   return (
     <>
@@ -94,11 +102,11 @@ const Helper = () => {
               handleClick={handleClick}
             />
           ) : null}
-          {showModal && nodeState == TextNodes[8] ? (
+          {showModal && showResults ? (
             <EmailModal onHide={handleClose} value={pathStorage} />
           ) : null}
           <div id="text">
-            {nodeState !== TextNodes[8] ? (
+            {!showResults ? (
               <h1 id="questionStyles">{nodeState.question}</h1>
             ) : (
               <div className="splashContainer animated bounceInRight">
@@ -118,7 +126,7 @@ const Helper = () => {
             <br />
           </div>
           <div id="option-buttons">
-            {nodeState !== TextNodes[8] ? (
+            {!showResults ? (
               nodeState.options.map(option => {
                 return (
                   <span key={option.description}>
@@ -146,7 +154,9 @@ const Helper = () => {
         </div>
         <div className="nav-btns">
           <button className="home-btn" onClick={() => handleHome()}>
-            Start<br/>Over
+            Start
+            <br />
+            Over
           </button>
           <button className="back-btn" onClick={() => handleBack(pathStorage)}>
             Back
