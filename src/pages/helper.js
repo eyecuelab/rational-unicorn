@@ -39,8 +39,8 @@ const Helper = () => {
 
   const handleBack = async value => {
     const prevNode = usePrevNode(value)
-    const lastNode = pathStorage?.length - 1 // returning 4
-    const backNode = pathStorage?.[lastNode]?.prevNodeId // returning 7
+    const lastNode = pathStorage?.length - 1 
+    const backNode = pathStorage?.[lastNode]?.prevNodeId 
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
     await reactLocalStorage.set("results", JSON.stringify(newPathStorage))
     if (pathStorage.length < 1) {
