@@ -111,7 +111,7 @@ const Helper = () => {
                 </h1>
                 <h2 id="subTitle-alt">
                   An interactive <br />
-                  guide to your first <br />
+                  guide to your new <br />
                   business entity
                 </h2>
               </div>
