@@ -361,6 +361,7 @@ h1 {
 
 /* ----------------------------------- RESULTS STYLES------------------------------------------- */
 
+
 #title-alt {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -455,6 +456,11 @@ h1 {
   -o-animation: fadein 1s; /* Opera < 12.1 */
   animation: fadein 1s;
 }
+.end-btn1::focus {
+  outline: 0px;
+  border: none;
+  text-decoration: none;
+}
 
 .end-btn2 {
   text-align: left;
@@ -484,6 +490,11 @@ h1 {
   -ms-animation: fadein 1s; /* Internet Explorer */
   -o-animation: fadein 1s; /* Opera < 12.1 */
   animation: fadein 1s;
+}
+.end-btn2::focus {
+  outline: 0px;
+  border: none;
+  text-decoration: none;
 }
 
 .end-btn1-text {
@@ -1157,7 +1168,7 @@ li::before {
 
 
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Desktop Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Small Desktop Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
  
 
@@ -1203,18 +1214,125 @@ li::before {
 
 }
 
+@media screen and (min-width: 670px) {
+
+  .option-btn:focus {
+    display: flex;
+    align-items: center;
+    padding: 2% 10% 2% 5%;
+    margin: 0 auto;
+    transform: translate(-20%, 0%);
+  }
+  .option-btn:hover {
+    display: flex;
+    align-items: center;
+    padding: 2% 10% 2% 5%;
+    margin: 0 auto;
+    transform: translate(-20%, 0%);
+  }
+
+}
+
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
-/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Wide Desktop Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Square Desktop Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
  
 
 @media screen and (min-width: 800px) {
 
   #title-alt {
-    transform: translate(-10%, 0%) scale(1.2);
+    transform: translate(-10%, 60%) scale(1.2);
   }
 
   #subTitle-alt {
-    transform: translate(-10%, 20%) scale(1.2);
+    transform: translate(-10%, 100%) scale(1.2);
   }
+
+  .splashContainer {
+    transform: translate(0%, -30%) scale(1);
+  }
+
+  .resultUnicron {
+    background-image: url(../images/Unicorn.png);
+    position: absolute;
+    width: inherit;
+    z-index: -1;
+    background-repeat: no-repeat;
+    transform: translate(20%, -70%) scale(1.2);
+    width: 100vw;
+    height: 80vh;
+    color: #999;
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+  }
+
+  .unicron {
+    transform: translate(10%,-5%) scale(1.2);
+  }
+
+  .start-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    transform: translate(70%, 80%);
+  }
+
+  .option-btn:focus {
+    transform: translate(-30%, 0%);
+  }
+  .option-btn:hover {
+    transform: translate(-30%, 0%);
+  }
+
+}
+
+
+
+@media screen and (min-width: 900px) {
+  
+  .option-btn:focus {
+    padding: 7% 10% 7% 6%;
+    transform: translate(-40%, 0%);
+  }
+  .option-btn:hover {
+    padding: 7% 10% 7% 6%;
+    transform: translate(-40%, 0%);
+  }
+
+
+}
+
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Wide Desktop Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+ 
+
+
+@media screen and (min-width: 1100px) {
+
+  .splashContainer{
+    transform: translate(-18%, -10%) scale(1.5);
+  }
+
+  .start-btn {
+    position: absolute;
+    transform: translate(-5%, -90%);
+  }
+
+  .unicron{
+    transform: translate(10%,-5%) scale(1.2);
+  }
+
+  .option-btn:focus {
+    transform: translate(-60%, 0%);
+  }
+  .option-btn:hover {
+    transform: translate(-60%, 0%);
+  }
+
 }

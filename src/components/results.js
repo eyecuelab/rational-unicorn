@@ -14,6 +14,7 @@ const Results = ({ value, showEmail }) => {
 
     return (
         <>
+            <div className="resultUnicron" />
             <div className="result-container">
                 <h3 id="result-head">Your cheat sheet</h3>
                 {output.map(outputText => <li className="results-li">{outputText}</li>)}<br/><br/>
