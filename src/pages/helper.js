@@ -39,8 +39,8 @@ const Helper = () => {
 
   const handleBack = async value => {
     const prevNode = usePrevNode(value)
-    const lastNode = pathStorage?.length - 1 
-    const backNode = pathStorage?.[lastNode]?.prevNodeId 
+    const lastNode = pathStorage?.length - 1
+    const backNode = pathStorage?.[lastNode]?.prevNodeId
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
     await reactLocalStorage.set("results", JSON.stringify(newPathStorage))
     if (pathStorage.length < 1) {
@@ -75,13 +75,7 @@ const Helper = () => {
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
-    setPathStorage(resetPath),
-      // <Router>
-      //   <Switch>
-      //     <Route path="/" />
-      //   </Switch>
-      // </Router>
-      (window.location = "http://localhost:8000/")
+    setPathStorage(resetPath), (window.location = "http://localhost:8000/")
   }
 
   function handleHelp() {
@@ -95,7 +89,7 @@ const Helper = () => {
       <Layout>
         <SEO title="Service Guide" />
         <div className="pathwayContainer">
-          {showModal ? (
+          {showModal && !showResults ? (
             <DescriptionModal
               onHide={handleClose}
               value={optionValue}
@@ -147,7 +141,9 @@ const Helper = () => {
             ) : (
               <Results
                 value={pathStorage}
-                showEmail={() => setShowModal(true)}
+                showEmail={
+                  (() => setShowResults(true), () => setShowModal(true))
+                }
               />
             )}
           </div>
