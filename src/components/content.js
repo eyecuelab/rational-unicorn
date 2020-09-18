@@ -12,7 +12,7 @@ const TextNodes = [
         description:
           "A business is an organization or enterprising entity engaged in commercial, industrial, or professional activities.",
         requiredState: null,
-        resultText: 'Business Stuff goes here',
+        resultText: "Business Stuff goes here",
         prevNodeId: 1,
         nextNodeId: 2,
       },
@@ -65,7 +65,7 @@ const TextNodes = [
         description:
           "I'm really digging the lone wolf vibe you're putting out.",
         requiredState: null, // if(options.resultText == "nonProfit") { prevNode = 2, nextNodeId = 7 }
-        resultText: 'Sole ownership stuff goes here', // if(options.resultText == "intProperty") { prevNode = 2, nextNodeId = 4 }
+        resultText: "Sole ownership stuff goes here", // if(options.resultText == "intProperty") { prevNode = 2, nextNodeId = 4 }
         prevNodeId: 2,
         nextNodeId: 3,
       },
@@ -113,7 +113,7 @@ const TextNodes = [
         description:
           "What an EIN is, Licenses, Zoning Permits, business bank accounts, etc.",
         requiredState: null,
-        resultText: 'business stuff goes here',
+        resultText: "business stuff goes here",
         prevNodeId: 3,
         nextNodeId: 7,
       },
@@ -155,7 +155,7 @@ const TextNodes = [
         description:
           "A trademark is for a symbol, word, or words legally registered or established by use as representing a company or product.",
         requiredState: null,
-        resultText: 'trademark stuff goes here',
+        resultText: "trademark stuff goes here",
         prevNodeId: 4,
         nextNodeId: 7,
       },
@@ -164,7 +164,7 @@ const TextNodes = [
         description:
           "Patents are a right granted to an inventor that allows them to exclude all others from making, using, or selling their invention for 20 years.",
         requiredState: null,
-        resultText: 'patent stuff goes here',
+        resultText: "patent stuff goes here",
         prevNodeId: 4,
         nextNodeId: 7,
       },
@@ -187,7 +187,7 @@ const TextNodes = [
         text: "Vacation rental less than 30 days",
         description: "",
         requiredState: null,
-        resultText: 'vacation rental contract goes here',
+        resultText: "vacation rental contract goes here",
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -195,7 +195,7 @@ const TextNodes = [
         text: "A short term rental for more than 30 days",
         description: "",
         requiredState: null,
-        resultText: 'short term rental contract goes here',
+        resultText: "short term rental contract goes here",
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -203,7 +203,7 @@ const TextNodes = [
         text: "A residential lease for 3 months, 6 months, or a year",
         description: "",
         requiredState: null,
-        resultText: 'residential lease agreement goes here',
+        resultText: "residential lease agreement goes here",
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -211,7 +211,7 @@ const TextNodes = [
         text: "An office share or office rental in a larger office",
         description: "",
         requiredState: null,
-        resultText: 'office leasing agreement goes here',
+        resultText: "office leasing agreement goes here",
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -219,7 +219,7 @@ const TextNodes = [
         text: "A commercial lease for just my businesse",
         description: "",
         requiredState: null,
-        resultText: 'commercial leasing agreement goes here',
+        resultText: "commercial leasing agreement goes here",
         prevNodeId: 5,
         nextNodeId: 7,
       },
@@ -322,7 +322,7 @@ const TextNodes = [
           </a>
         )}.`,
         requiredState: null,
-        resultText: 'zoning and permitting stuff goes here',
+        resultText: "zoning and permitting stuff goes here",
         prevNodeId: 7,
         nextNodeId: 8,
       },
@@ -334,7 +334,7 @@ const TextNodes = [
           </a>
         )}.`,
         requiredState: null,
-        resultText: 'information on business bank accounts goes here',
+        resultText: "information on business bank accounts goes here",
         prevNodeId: 7,
         nextNodeId: 8,
       },

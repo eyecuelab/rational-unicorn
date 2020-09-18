@@ -63,6 +63,7 @@ body {
 }
 
 .start-btn {
+  position: absolute;
   text-align: center;
   margin: 0 auto;
   padding: 0;
@@ -80,7 +81,7 @@ body {
   border-radius: 10px;
   outline: 0px;
   border: none;
-  transform: translate(0%, 300%);
+  transform: translate(0%, 400%);
   z-index: 10;
   clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
 
@@ -175,6 +176,22 @@ h1 {
 
 .navBar {
   color: #ffffff;
+}
+
+.homeLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contactLink{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* -------------------------------------Helper.js Styles-------------------------------------------- */
@@ -292,7 +309,27 @@ h1 {
 }
 .option-btn:focus {
   outline: 0px;
-  text-align: center;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0 10%;
+  width: 360px;
+  height: 80px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #810f5d;
+  background: #ffffff !important;
+  border-collapse: separate;
+  perspective: 1px;
+  border-radius: 10px;
+  outline: none;
+  clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+}
+.option-btn:hover {
+  outline: 0px;
+  text-align: left;
   margin: 0 auto;
   padding: 0 10%;
   width: 360px;
@@ -337,7 +374,10 @@ h1 {
   text-transform: uppercase;
   color: #810f5d;
 }
-#result-text {
+.results-li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 30px;
   font-family: "Montserrat";
   font-style: normal;
   /* font-weight: bold; */
@@ -345,6 +385,23 @@ h1 {
   line-height: 35px;
   color: #ffffff;
   white-space: nowrap;
+}
+
+.results-li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 25px;
+  width: 25px;
+  display: block;
+  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #ffffff;
+  opacity: 1;
 }
 
 .end-btn1 {
@@ -435,6 +492,18 @@ h1 {
   text-align: left;
 }
 
+#question-head {
+font-family: Montserrat;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 20px;
+/* or 125% */
+
+
+color: #FFFFFF;
+}
+
 .modal-body {
   overflow-y: scroll;
   max-width: 80vw;
@@ -496,6 +565,30 @@ h1 {
   font-size: 16px;
   line-height: 30px;
   color: #333333;
+}
+
+.email-li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 10%;
+  white-space: nowrap;
+}
+
+.email-li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 25px;
+  width: 25px;
+  display: block;
+  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-purple.PNG);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 1;
 }
 
 #email-form {
@@ -615,30 +708,6 @@ li::before {
   opacity: 0.6;
 }
 
-ti {
-  list-style-type: none;
-  position: relative;
-  padding-left: 40px;
-  white-space: pre;
-}
-
-ti::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  height: 25px;
-  width: 25px;
-  display: block;
-  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-purple.PNG);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  opacity: 1;
-  white-space: normal;
-}
 
 /* ------------------------------ Animation Key-Frames ------------------------------------------ */
 

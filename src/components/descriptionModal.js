@@ -40,7 +40,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
       </style>
       <Modal show={true} onHide={onHide}>
         <Modal.Header>
-          <Modal.Title>{value.text}</Modal.Title>
+          <Modal.Title><p id="question-head">{value.text}</p></Modal.Title>
         </Modal.Header>
         <Modal.Body>{value.description}</Modal.Body>
         <Modal.Footer>

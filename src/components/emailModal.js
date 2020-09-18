@@ -61,7 +61,7 @@ const Results = ({ onHide, value }) => {
             <Modal.Body>
                 <br/>
                 <ul id="email-body">
-                    {output.map(outputText => <ti>{outputText}</ti>)}
+                    {output.map(outputText => <li className="email-li">{outputText}</li>)}
                 </ul>
             </Modal.Body>
             <Modal.Footer>
