@@ -9,11 +9,8 @@ const Results = ({ onHide, value }) => {
         if (resultText && resultText !== 'void') {
             returnArray.push(resultText);
         }
-        // console.log(currentValue, returnArray, outputTextArray);
         return returnArray;
     }, []);
-
-    // console.log(output)
 
     return (
         <>
@@ -26,11 +23,12 @@ const Results = ({ onHide, value }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          margin: 0 auto;
           width: 120px;
           height: 30px;
-          transform: translate(-30%, 0%) scale(1.1);
+          transform: translate(10%, 0%) scale(1.1);
         }
-        .btn-close:active{
+        .btn-close:hover{
             background-color: rgb(18, 63, 61);
           }
 
@@ -41,12 +39,25 @@ const Results = ({ onHide, value }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          margin: 0 auto;
           width: 120px;
           height: 30px;
-          transform: translate(-15%, 0%) scale(1.1);
+          transform: translate(0%, 0%) scale(1.1);
         }
-        .btn-send:active{
+        .btn-send:hover{
           background-color: rgb(18, 63, 61);
+        }
+        @media screen and (min-width: 460px) {
+            .btn-close {
+                justify-content: space-evenly;
+                margin: 0 auto;
+                transform: translate(0%, 0%);
+            }
+            .btn-send {
+                justify-content: space-evenly;
+                margin: 0 auto;
+                transform: translate(0%, 0%);
+            }
         }
       `}
       </style>

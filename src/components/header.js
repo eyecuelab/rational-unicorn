@@ -40,14 +40,14 @@ const Header = () => {
           <Nav className="mr-auto">
             <NavDropdown.Item>
               <div className="homeLink" onClick={()=>toMainSite()}>
-                <div className="noWrap">
+                <div className="navNoWrap">
                   <FontAwesomeIcon icon={faHorseHead}/><p style={navLinkStyles}>Main Site</p>
                 </div>
               </div>
             </NavDropdown.Item>
             <NavDropdown.Item>
               <div className="contactLink" onClick={toContact}>
-                <div className="noWrap">
+                <div className="navNoWrap">
                   <FontAwesomeIcon icon={faPaperPlane}/><p style={navLinkStyles}>Contact Us</p>
                 </div>
               </div>

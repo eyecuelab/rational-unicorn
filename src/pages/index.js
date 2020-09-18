@@ -10,7 +10,7 @@ const IndexPage = () => (
       <SEO title="Home" />
       <div className="splashContainer animated bounceInRight">
         <h1 id="title">Choose<br/> your <br/>venture</h1>
-        <h2 id="subTitle">An interactive <br/>guide to your first <br/>business entity</h2>
+        <h2 id="subTitle">An interactive <br/>guide to your new <br/>business entity</h2>
       </div>
       <div className='startContainer'>
         <button className="start-btn">
