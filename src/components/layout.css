@@ -560,14 +560,15 @@ color: #FFFFFF;
 }
 
 .modal-footer {
-  box-sizing:border-box;
+  box-sizing: border-box;
   display: flex;
+  /* padding: 0 !important; */
   margin: 0 auto !important;
   width: 100%;
   white-space: nowrap;
-  justify-content: space-around;
+  justify-content: space-around !important;
   align-items: center;
-  border-top: 1 none;
+  border-top: 0px !important;
 }
 
 .noWrap {
@@ -636,7 +637,7 @@ color: #FFFFFF;
   margin: auto;
   height: 25px;
   width: 25px;
-  display: block;
+  display: flex;
   background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-purple.PNG);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -653,19 +654,25 @@ color: #FFFFFF;
   margin: 0 auto;
 }
 
-#email-form {
-  position: inherit;
-  box-sizing:border-box;
-  min-width: 100%;
-  max-width: inherit;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-  align-items: center;
-  background: #FFFFFF;
-  border: 1px solid #439893;
-  border-radius: 4px;
-  transform: translate(-40%, -20%);
+.form-control {
+  box-sizing: border-box !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: calc(1.5em + .75rem + 2px) !important;
+  background: #FFFFFF !important;
+  border: 1px solid #439893 !important;
+  border-radius: .25rem !important;
+  display: inline-block !important;
+  padding: .375rem .75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  line-height: 1.5 !important;
+  color: #495057 !important;
+  background-clip: padding-box !important;
+
 }
 
 /* -------------------------------------------Misc Styles------------------------------------------------------- */

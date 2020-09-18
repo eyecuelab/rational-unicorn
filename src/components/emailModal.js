@@ -1,5 +1,5 @@
 import React from "react";
-import {Modal, Button, Form, FormControl} from 'react-bootstrap';
+import {Modal, Button, Form, Col} from 'react-bootstrap';
 
 const Results = ({ onHide, value }) => {
 
@@ -76,9 +76,16 @@ const Results = ({ onHide, value }) => {
                 </ul>
             </Modal.Body>
             <Modal.Footer>
-                <Form inline>
-                    <FormControl type="text" placeholder="email@email-address.com" id="email-form" />
-                </Form>
+                <Form.Group>
+                    <Form.Row>
+                        <Col xs={12}>
+                            <Form.Control type="email" placeholder="email@email-address.com" />
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Col>
+                    </Form.Row>
+                </Form.Group>
                 <div className="noWrap">
                     <Button variant="close" onClick={onHide}>
                         Close
