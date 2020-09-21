@@ -9,6 +9,9 @@ import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
+// import html2canvas from 'html2canvas';
+// import { jsPDF } from "jspdf";
+// import ResultsPDF from "../components/resultsPDF";
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
@@ -70,6 +73,16 @@ const Helper = () => {
     }
     setNodeState(nextNode)
   }
+
+//   const downloadPDF = () => {
+//     const divToDisplay = document.getElementById('capture')
+//     html2canvas(divToDisplay).then(async(canvas) => {
+//       const divImage = await canvas.toDataURL("image/png");
+//       const pdf = new jsPDF();
+//       await pdf.addImage(divImage, 'PNG', 0, 0);
+//       await pdf.save("download.pdf");
+//     })
+//  }
 
   const handleClose = () => setShowModal(false)
 
@@ -139,12 +152,16 @@ const Helper = () => {
                 )
               })
             ) : (
-              <Results
-                value={pathStorage}
-                showEmail={
-                  (() => setShowResults(true), () => setShowModal(true))
-                }
-              />
+              <>
+                <Results
+                  value={pathStorage}
+                  showEmail={
+                    (() => setShowResults(true), () => setShowModal(true))
+                  }
+                  // download={downloadPDF()}
+                />
+                {/* <div id='capture'><ResultsPDF value={pathStorage}/></div> */}
+              </>
             )}
           </div>
         </div>

@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
+    <div className="left-filler"/>
     <div className="unicron" />
     <div className="container">
       <SEO title="Home" />
@@ -18,6 +19,7 @@ const IndexPage = () => (
         </button>
       </div>
     </div>
+    <div className="right-filler"/>
   </Layout>
 )
 

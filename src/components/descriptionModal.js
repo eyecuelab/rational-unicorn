@@ -16,7 +16,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           align-items: center;
           width: 120px;
           height: 30px;
-          transform: translate(-30%, 0%) scale(1.1);
+          transform: scale(1.1);
         }
         .btn-close:active{
           background-color: rgb(18, 63, 61);
@@ -31,7 +31,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           align-items: center;
           width: 120px;
           height: 30px;
-          transform: translate(-15%, 0%) scale(1.1);
+          transform: scale(1.1);
         }
         .btn-confirm:active{
           background-color: rgb(18, 63, 61);
