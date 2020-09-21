@@ -384,11 +384,11 @@ h1 {
   color: #ffffff;
   opacity: 0.6;
 }
-.result-container {
+.results-container {
   margin-left: 0;
 }
 
-#result-head {
+.results-head {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 900;
@@ -512,6 +512,83 @@ h1 {
   margin: 0 auto;
 }
 
+/* ----------------------------------- PDF RESULTS STYLES------------------------------------------- */
+
+#capture {
+  display: none;
+}
+.resultsPDF-container {
+  margin-left: 0;
+  padding-bottom: 2.5rem;
+}
+
+.resultsPDF-head {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #810f5d;
+}
+.resultsPDF-li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 30px;
+  font-family: "Montserrat";
+  font-style: normal;
+  /* font-weight: bold; */
+  font-size: 16px;
+  line-height: 35px;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.resultsPDF-li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 25px;
+  width: 25px;
+  display: block;
+  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-color: #ffffff;
+  opacity: 1;
+}
+
+.PDF-footer{
+background-color: #810f5d;
+position: absolute;
+bottom: 0;
+width: 100%;
+height: 2.5rem;
+padding: .75rem;
+text-align: left;
+}
+
+.footer-title{
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 35px;
+  color: #ffffff;
+}
+
+.footer-body{
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 35px;
+  color: #ffffff;
+}
 
 /* ----------------------------------- Modal Styles ---------------------------------------------- */
 
