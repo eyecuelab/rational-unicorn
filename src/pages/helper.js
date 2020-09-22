@@ -15,6 +15,32 @@ import { reactLocalStorage } from "reactjs-localstorage"
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
+  const data = useStaticQuery(
+    graphql`
+  query {
+  allContentfulUniNodeV4 {
+    edges {
+      node {
+        answers {
+          answers {
+            description
+            nextNodeId
+            prevNodeId
+            resultText
+            text
+          }
+        }
+        question {
+          question
+        }
+        nodeId
+      }
+    }
+  }
+}
+    `
+  )
+
   const [nodeState, setNodeState] = useState(TextNodes[0])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
@@ -74,15 +100,15 @@ const Helper = () => {
     setNodeState(nextNode)
   }
 
-//   const downloadPDF = () => {
-//     const divToDisplay = document.getElementById('capture')
-//     html2canvas(divToDisplay).then(async(canvas) => {
-//       const divImage = await canvas.toDataURL("image/png");
-//       const pdf = new jsPDF();
-//       await pdf.addImage(divImage, 'PNG', 0, 0);
-//       await pdf.save("download.pdf");
-//     })
-//  }
+  //   const downloadPDF = () => {
+  //     const divToDisplay = document.getElementById('capture')
+  //     html2canvas(divToDisplay).then(async(canvas) => {
+  //       const divImage = await canvas.toDataURL("image/png");
+  //       const pdf = new jsPDF();
+  //       await pdf.addImage(divImage, 'PNG', 0, 0);
+  //       await pdf.save("download.pdf");
+  //     })
+  //  }
 
   const handleClose = () => setShowModal(false)
 
@@ -116,19 +142,19 @@ const Helper = () => {
             {!showResults ? (
               <h1 id="questionStyles">{nodeState.question}</h1>
             ) : (
-              <div className="splashContainer animated bounceInRight">
-                <h1 id="title-alt">
-                  Choose
+                <div className="splashContainer animated bounceInRight">
+                  <h1 id="title-alt">
+                    Choose
                   <br /> your <br />
                   venture
                 </h1>
-                <h2 id="subTitle-alt">
-                  An interactive <br />
+                  <h2 id="subTitle-alt">
+                    An interactive <br />
                   guide to your new <br />
                   business entity
                 </h2>
-              </div>
-            )}
+                </div>
+              )}
             <br />
             <br />
           </div>
@@ -152,17 +178,17 @@ const Helper = () => {
                 )
               })
             ) : (
-              <>
-                <Results
-                  value={pathStorage}
-                  showEmail={
-                    (() => setShowResults(true), () => setShowModal(true))
-                  }
+                <>
+                  <Results
+                    value={pathStorage}
+                    showEmail={
+                      (() => setShowResults(true), () => setShowModal(true))
+                    }
                   // download={downloadPDF()}
-                />
-                {/* <div id='capture'><ResultsPDF value={pathStorage}/></div> */}
-              </>
-            )}
+                  />
+                  {/* <div id='capture'><ResultsPDF value={pathStorage}/></div> */}
+                </>
+              )}
           </div>
         </div>
         <div className="nav-btns">
@@ -186,34 +212,6 @@ const Helper = () => {
 export default Helper
 
 // --------------graphQL logic----------------------
-
-// const Helper = () => {
-//   const data = useStaticQuery(
-//     graphql`
-//       query {
-//         allContentfulTestTypeForUnicorn {
-//           edges {
-//             node {
-//               uniTitle
-//               uniId
-//               slug
-//               id
-//               uniBodyText {
-//                 uniBodyText
-//               }
-//             }
-//           }
-//         }
-//         allContentfulTestTypeForUnicornDoWeNeedJsonJsonNode {
-//           edges {
-//             node {
-//               buttons
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
 
 //--------------Render-------------------
 
