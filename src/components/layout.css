@@ -1277,6 +1277,46 @@ li::before {
     -o-animation: fadein 1s; /* Opera < 12.1 */
     animation: fadein 1s;
   }
+  .option-btn:focus {
+    outline: 0px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #810f5d;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: none;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+  }
+  .option-btn:hover {
+    outline: 0px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #810f5d;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: none;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+  }
 }
 
 .modal-footer {
@@ -1293,6 +1333,7 @@ li::before {
 .noWrap {
   min-width: 100%;
 }
+
 
 
 
