@@ -26,13 +26,18 @@ const Menu = ({toggle, value}) => {
             <div className="navNoWrap">
                 <h2 ><Link to="/about"><FontAwesomeIcon className="icon-font" icon={faInfoCircle}/>  About</Link></h2>
             </div>
-            <hr />
             <div className="navNoWrap">
                 <h2 ><a href="https://rationalunicornlegalservices.com/"><FontAwesomeIcon className="icon-font" icon={faHorseHead}/>  Company Site</a></h2>
             </div>
             <div className="navNoWrap">
                 <h2 ><a href="https://rationalunicornlegalservices.com/contact"><FontAwesomeIcon className="icon-font" icon={faPaperPlane}/>  Contact Us</a></h2>
             </div>
+            <div className="menu-footer">
+                    <p className="footer-title">Rational Unicorn LLC</p>
+                    <hr />
+                    <p className="footer-body">107 SE WASHINGTON ST, STE 156 PORTLAND, OR 97214<br/>
+                    www.RationalUnicornLegalServices.com</p>
+                </div>
           </div>
         </>
     )

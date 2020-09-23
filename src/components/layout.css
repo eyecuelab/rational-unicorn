@@ -315,6 +315,35 @@ h1 {
   color: #810f5d;
 }
 
+.menu-footer{
+  color: #810f5d;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 23vh;
+  padding: 3vh 5vw 3vh 5vw;
+  text-align: left;
+  }
+  
+  .footer-title{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: #810f5d;
+  }
+  
+  .footer-body{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 25px;
+    color: #810f5d;
+  }
+
 
 
 /* -------------------------------------Helper.js Styles-------------------------------------------- */
@@ -1277,6 +1306,46 @@ li::before {
     -o-animation: fadein 1s; /* Opera < 12.1 */
     animation: fadein 1s;
   }
+  .option-btn:focus {
+    outline: 0px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #810f5d;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: none;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+  }
+  .option-btn:hover {
+    outline: 0px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #810f5d;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: none;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+  }
 }
 
 .modal-footer {
@@ -1293,6 +1362,7 @@ li::before {
 .noWrap {
   min-width: 100%;
 }
+
 
 
 
