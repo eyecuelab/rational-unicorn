@@ -11,7 +11,7 @@ import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
-import ResultsPDF from "../components/resultsPDF";
+// import ResultsPDF from "../components/resultsPDF";
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
@@ -81,7 +81,7 @@ const Helper = () => {
       const divImage = await canvas.toDataURL("image/png");
       const pdf = new jsPDF();
       await pdf.addImage(divImage, 'PNG', 0, 0);
-      await pdf.save("download.pdf");
+      await pdf.save("unicorn-results.pdf");
     })
  }
 
@@ -118,7 +118,7 @@ const Helper = () => {
               <h1 id="questionStyles">{nodeState.question}</h1>
             ) : //null here when rendering result PDF
             (
-              <div className="splashContainer animated bounceInRight">
+              <div className="splashContainer animated bounceInRight" id="splashContainer-alt">
                 <h1 id="title-alt">
                   Choose
                   <br /> your <br />
