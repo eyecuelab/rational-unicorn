@@ -33,8 +33,8 @@ const Menu = ({toggle, value}) => {
                 <h2 ><a href="https://rationalunicornlegalservices.com/contact"><FontAwesomeIcon className="icon-font" icon={faPaperPlane}/>  Contact Us</a></h2>
             </div>
             <div className="menu-footer">
-                    <p className="footer-title">Rational Unicorn LLC</p>
                     <hr />
+                    <p className="footer-title">Rational Unicorn LLC</p>
                     <p className="footer-body">107 SE WASHINGTON ST, STE 156 PORTLAND, OR 97214<br/>
                     www.RationalUnicornLegalServices.com</p>
                 </div>
