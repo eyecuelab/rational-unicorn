@@ -474,6 +474,11 @@ h1 {
 
 /* ----------------------------------- RESULTS STYLES------------------------------------------- */
 
+#splashContainer-alt {
+  margin: 0 auto; 
+  padding-top: 0%;
+}
+
 
 #title-alt {
   font-family: "Montserrat", sans-serif;
@@ -537,7 +542,6 @@ h1 {
   background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: #ffffff;
   opacity: 1;
 }
 

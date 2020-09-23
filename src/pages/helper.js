@@ -118,7 +118,7 @@ const Helper = () => {
               <h1 id="questionStyles">{nodeState.question}</h1>
             ) : //null here when rendering result PDF
             (
-              <div className="splashContainer animated bounceInRight">
+              <div className="splashContainer animated bounceInRight" id="splashContainer-alt">
                 <h1 id="title-alt">
                   Choose
                   <br /> your <br />
