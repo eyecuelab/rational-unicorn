@@ -15,6 +15,8 @@ const Results = ({ onHide, value }) => {
     const sendEmail = (event) => {
         event.preventDefault();
         const address = document.getElementById('email-value')
+        const refText = "here"
+        const refLink = refText.link("https://rationalunicornlegalservices.com/referrals")
         const listText = output.map((outputText) => `%0D%0A •  ${outputText} %0D%0A`) 
         let a = document.createElement('a');
         console.log(address, "email address") // not showing up
@@ -26,7 +28,7 @@ const Results = ({ onHide, value }) => {
         %0D%0A ${listText}
         %0D%0A Here are some additional resources to help get you on your way:
         %0D%0A
-    %0D%0A Referrals to vetted professionals that offer additional services can be found ${<a href="https://rationalunicornlegalservices.com/referrals"> here</a>}`
+        %0D%0A Referrals to vetted professionals that offer additional services can be found ${refLink}.`
         a.target = '_blank'; // this opens in a new tab
         a.rel ='noopener noreferrer'
         a.click();

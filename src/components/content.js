@@ -104,7 +104,7 @@ const TextNodes = [
         description:
           "refers to creations of the mind, such as inventions; literary and artistic works; designs; and symbols, names and images used in commerce.",
         requiredState: null,
-        resultText: "intellectual propety stuff goes here",
+        resultText: "intellectual property stuff goes here",
         prevNodeId: 3,
         nextNodeId: 4,
       },
