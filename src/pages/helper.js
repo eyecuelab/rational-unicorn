@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import OptionButton from "../components/optionButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TextNodes from "../components/content"
+// import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 import EmailModal from "../components/emailModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
+import { useStaticQuery } from 'gatsby'
 // import html2canvas from 'html2canvas';
 // import { jsPDF } from "jspdf";
 // import ResultsPDF from "../components/resultsPDF";
@@ -17,31 +18,53 @@ import { reactLocalStorage } from "reactjs-localstorage"
 const Helper = () => {
   const data = useStaticQuery(
     graphql`
-  query {
-  allContentfulUniNodeV4 {
-    edges {
-      node {
-        answers {
-          answers {
-            description
-            nextNodeId
-            prevNodeId
-            resultText
-            text
+    query {
+      allContentfulUnicornNode {
+        edges {
+          node {
+            question {
+              question
+            }
+            answers {
+              answers {
+                description
+                nextNodeId
+                prevNodeId
+                resultText
+                text
+              }
+            }
+            nodeId
           }
         }
-        question {
-          question
-        }
-        nodeId
       }
     }
-  }
-}
+    
     `
   )
+  const TextNodes = useMemo(() => {
+    return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
+      return {
+        nodeId: edge.node.nodeId,
+        question: edge.node.question,
+        options: edge.node.answers.answers.map(answer => {
+          return {
+            text: answer.text,
+            description: answer.description,
+            resultText: answer.resultText,
+            prevNodeId: answer.prevNodeId,
+            nextNodeId: answer.nextNodeId
+          }
+        })
+      }
+    })
+      ?? [];
+  }, [data])
 
-  const [nodeState, setNodeState] = useState(TextNodes[0])
+  console.log("CONSOLE DATA:")
+  console.table(data)
+
+  const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
   const [pathStorage, setPathStorage] = useState(
@@ -50,8 +73,11 @@ const Helper = () => {
       : []
   )
   const [showResults, setShowResults] = useState(false)
+  console.log("NODESTATE:")
+  console.log(nodeState)
 
   useEffect(() => {
+
     const lastNode = pathStorage?.length - 1
     if (pathStorage?.[lastNode]?.nextNodeId == 8) {
       setShowResults(true)
@@ -67,7 +93,7 @@ const Helper = () => {
   }, [])
 
   const handleBack = async value => {
-    const prevNode = usePrevNode(value)
+    const prevNode = usePrevNode(value, TextNodes)
     const lastNode = pathStorage?.length - 1
     const backNode = pathStorage?.[lastNode]?.prevNodeId
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
@@ -76,7 +102,7 @@ const Helper = () => {
       window.location = "http://localhost:8000/"
     } else if (showResults) {
       for (let i = 0; i < TextNodes.length; i++) {
-        if (TextNodes[i].nodeId == backNode) {
+        if (TextNodes[i].node.nodeId == backNode) {
           setNodeState(TextNodes[i])
         }
       }
@@ -89,7 +115,7 @@ const Helper = () => {
   }
 
   const handleClick = async value => {
-    const nextNode = useNextNode(value)
+    const nextNode = useNextNode(value, TextNodes)
     const nextPathStorage = [...pathStorage, value]
     await reactLocalStorage.set("results", JSON.stringify(nextPathStorage))
     setPathStorage([...pathStorage, value])
@@ -140,7 +166,7 @@ const Helper = () => {
           ) : null}
           <div id="text">
             {!showResults ? (
-              <h1 id="questionStyles">{nodeState.question}</h1>
+              <h1 id="questionStyles">{nodeState.question.question}</h1>
             ) : (
                 <div className="splashContainer animated bounceInRight">
                   <h1 id="title-alt">
