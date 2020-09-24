@@ -129,6 +129,14 @@ body {
     animation: bounceInRight 2s;
     padding-top: 15%;
   }
+
+  .noWrap {
+    width: 80vw !important;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
 
 .container {
@@ -651,7 +659,7 @@ h1 {
   margin: 0 auto;
 }
 .end-btn2-text {
-  transform: translate(-15%, 0%);
+  transform: translate(-3%, 0%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -723,7 +731,7 @@ color: #FFFFFF;
 }
 
 .noWrap {
-  max-width: inherit;
+  width: 70vw;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
@@ -796,6 +804,7 @@ color: #FFFFFF;
   opacity: 1;
 }
 
+
 .form-inline {
   box-sizing:border-box;
   display: flex;
@@ -824,6 +833,14 @@ color: #FFFFFF;
   color: #495057 !important;
   background-clip: padding-box !important;
 
+}
+
+.noWrap {
+  width: 70vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 
 /* -------------------------------------------Misc Styles------------------------------------------------------- */
@@ -1346,6 +1363,10 @@ li::before {
     outline: none;
     clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
   }
+  .noWrap {
+    width: 100%;
+  }
+
 }
 
 .modal-footer {
@@ -1362,6 +1383,7 @@ li::before {
 .noWrap {
   min-width: 100%;
 }
+
 
 
 

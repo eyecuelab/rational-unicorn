@@ -12,7 +12,6 @@ const Menu = ({toggle, value}) => {
       visibility = "show"
     }
 
-    console.log(visibility, " visiblity status")
 
     return (
         <>
