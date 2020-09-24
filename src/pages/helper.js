@@ -1,21 +1,70 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import OptionButton from "../components/optionButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import TextNodes from "../components/content"
+// import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 import EmailModal from "../components/emailModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
+import { useStaticQuery } from 'gatsby'
 // import html2canvas from 'html2canvas';
 // import { jsPDF } from "jspdf";
 // import ResultsPDF from "../components/resultsPDF";
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
-  const [nodeState, setNodeState] = useState(TextNodes[0])
+  const data = useStaticQuery(
+    graphql`
+    query {
+      allContentfulUnicornNode {
+        edges {
+          node {
+            question {
+              question
+            }
+            answers {
+              answers {
+                description
+                nextNodeId
+                prevNodeId
+                resultText
+                text
+              }
+            }
+            nodeId
+          }
+        }
+      }
+    }
+    
+    `
+  )
+  const TextNodes = useMemo(() => {
+    return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
+      return {
+        nodeId: edge.node.nodeId,
+        question: edge.node.question,
+        options: edge.node.answers.answers.map(answer => {
+          return {
+            text: answer.text,
+            description: answer.description,
+            resultText: answer.resultText,
+            prevNodeId: answer.prevNodeId,
+            nextNodeId: answer.nextNodeId
+          }
+        })
+      }
+    })
+      ?? [];
+  }, [data])
+
+  console.log("CONSOLE DATA:")
+  console.table(data)
+
+  const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
   const [pathStorage, setPathStorage] = useState(
@@ -24,8 +73,11 @@ const Helper = () => {
       : []
   )
   const [showResults, setShowResults] = useState(false)
+  console.log("NODESTATE:")
+  console.log(nodeState)
 
   useEffect(() => {
+
     const lastNode = pathStorage?.length - 1
     if (pathStorage?.[lastNode]?.nextNodeId == 8) {
       setShowResults(true)
@@ -41,7 +93,7 @@ const Helper = () => {
   }, [])
 
   const handleBack = async value => {
-    const prevNode = usePrevNode(value)
+    const prevNode = usePrevNode(value, TextNodes)
     const lastNode = pathStorage?.length - 1
     const backNode = pathStorage?.[lastNode]?.prevNodeId
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
@@ -50,7 +102,7 @@ const Helper = () => {
       window.location = "http://localhost:8000/"
     } else if (showResults) {
       for (let i = 0; i < TextNodes.length; i++) {
-        if (TextNodes[i].nodeId == backNode) {
+        if (TextNodes[i].node.nodeId == backNode) {
           setNodeState(TextNodes[i])
         }
       }
@@ -63,7 +115,7 @@ const Helper = () => {
   }
 
   const handleClick = async value => {
-    const nextNode = useNextNode(value)
+    const nextNode = useNextNode(value, TextNodes)
     const nextPathStorage = [...pathStorage, value]
     await reactLocalStorage.set("results", JSON.stringify(nextPathStorage))
     setPathStorage([...pathStorage, value])
@@ -74,15 +126,15 @@ const Helper = () => {
     setNodeState(nextNode)
   }
 
-//   const downloadPDF = () => {
-//     const divToDisplay = document.getElementById('capture')
-//     html2canvas(divToDisplay).then(async(canvas) => {
-//       const divImage = await canvas.toDataURL("image/png");
-//       const pdf = new jsPDF();
-//       await pdf.addImage(divImage, 'PNG', 0, 0);
-//       await pdf.save("download.pdf");
-//     })
-//  }
+  //   const downloadPDF = () => {
+  //     const divToDisplay = document.getElementById('capture')
+  //     html2canvas(divToDisplay).then(async(canvas) => {
+  //       const divImage = await canvas.toDataURL("image/png");
+  //       const pdf = new jsPDF();
+  //       await pdf.addImage(divImage, 'PNG', 0, 0);
+  //       await pdf.save("download.pdf");
+  //     })
+  //  }
 
   const handleClose = () => setShowModal(false)
 
@@ -114,21 +166,21 @@ const Helper = () => {
           ) : null}
           <div id="text">
             {!showResults ? (
-              <h1 id="questionStyles">{nodeState.question}</h1>
+              <h1 id="questionStyles">{nodeState.question.question}</h1>
             ) : (
-              <div className="splashContainer animated bounceInRight">
-                <h1 id="title-alt">
-                  Choose
+                <div className="splashContainer animated bounceInRight">
+                  <h1 id="title-alt">
+                    Choose
                   <br /> your <br />
                   venture
                 </h1>
-                <h2 id="subTitle-alt">
-                  An interactive <br />
+                  <h2 id="subTitle-alt">
+                    An interactive <br />
                   guide to your new <br />
                   business entity
                 </h2>
-              </div>
-            )}
+                </div>
+              )}
             <br />
             <br />
           </div>
@@ -152,17 +204,17 @@ const Helper = () => {
                 )
               })
             ) : (
-              <>
-                <Results
-                  value={pathStorage}
-                  showEmail={
-                    (() => setShowResults(true), () => setShowModal(true))
-                  }
+                <>
+                  <Results
+                    value={pathStorage}
+                    showEmail={
+                      (() => setShowResults(true), () => setShowModal(true))
+                    }
                   // download={downloadPDF()}
-                />
-                {/* <div id='capture'><ResultsPDF value={pathStorage}/></div> */}
-              </>
-            )}
+                  />
+                  {/* <div id='capture'><ResultsPDF value={pathStorage}/></div> */}
+                </>
+              )}
           </div>
         </div>
         <div className="nav-btns">
@@ -186,34 +238,6 @@ const Helper = () => {
 export default Helper
 
 // --------------graphQL logic----------------------
-
-// const Helper = () => {
-//   const data = useStaticQuery(
-//     graphql`
-//       query {
-//         allContentfulTestTypeForUnicorn {
-//           edges {
-//             node {
-//               uniTitle
-//               uniId
-//               slug
-//               id
-//               uniBodyText {
-//                 uniBodyText
-//               }
-//             }
-//           }
-//         }
-//         allContentfulTestTypeForUnicornDoWeNeedJsonJsonNode {
-//           edges {
-//             node {
-//               buttons
-//             }
-//           }
-//         }
-//       }
-//     `
-//   )
 
 //--------------Render-------------------
 
