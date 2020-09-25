@@ -65,7 +65,7 @@ const Results = ({ onHide, value }) => {
             <Modal.Header>
                 <Modal.Title>
                     <p id='email-head'>Choose your venture</p>
-                    <p id='email-title'>Your Cheat Sheet</p>
+                    <p id='email-title'>Results Cheat Sheet</p>
                     <p id='email-subTitle'>Presented by Rational Unicorn</p>
                 </Modal.Title>
             </Modal.Header>

@@ -19,8 +19,8 @@ html {
   margin: 0 auto;
 }
 body {
-  margin: 0 auto;
-  width: 100%;
+  margin: 0 auto !important;
+  width: 100vw;
   height: 100vh;
   text-align: center;
   background: linear-gradient(
@@ -34,6 +34,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding-bottom: 20px;
+  overflow: hidden !important;
 }
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
 /* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ Mobile Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
@@ -58,6 +59,78 @@ body {
   animation: fadein 2s;
 } 
 
+@media screen and (max-width: 376px) {
+  
+  .container {
+    transform: translate(0%, 0%) !important;
+    width: auto;
+    max-height: 80%;
+    margin: 0 auto;
+    color: #999;
+  }
+  .start-btn {
+    position: absolute;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 320px;
+    height: 75px;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: 0px;
+    border: none;
+    z-index: 10;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+    -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein 2s; /* Firefox < 16 */
+    -ms-animation: fadein 2s; /* Internet Explorer */
+    -o-animation: fadein 2s; /* Opera < 12.1 */
+    animation: fadein 2s;
+  }
+  
+  .start-btn a{
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 20px;
+    color: #810f5d;
+  }
+  
+  .start-btn a:active {
+    color: #810f5d;
+    text-decoration: none;
+  }
+  
+  .start-btn a:hover {
+    color: #810f5d;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .startContainer {
+    height: fit-content;
+    width: auto;
+    top: 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  
+  .splashContainer {
+    margin: 0 auto;
+    -webkit-animation: bounceInRight 2s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: bounceInRight 2s; /* Firefox < 16 */
+    -ms-animation: bounceInRight 2s; /* Internet Explorer */
+    -o-animation: bounceInRight 2s; /* Opera < 12.1 */
+    animation: bounceInRight 2s;
+    padding-top: 15%;
+  }
+}
+
 .container {
   transform: translate(0, 50%);
   width: auto;
@@ -73,12 +146,6 @@ body {
   padding: 0;
   width: 320px;
   height: 75px;
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 28px;
-  line-height: 20px;
-  color: #810f5d;
   background: #ffffff;
   border-collapse: separate;
   perspective: 1px;
@@ -94,6 +161,26 @@ body {
   -ms-animation: fadein 2s; /* Internet Explorer */
   -o-animation: fadein 2s; /* Opera < 12.1 */
   animation: fadein 2s;
+}
+
+.start-btn a{
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 28px;
+  line-height: 20px;
+  color: #810f5d;
+}
+.start-btn a:active {
+  color: #810f5d;
+  text-decoration: none;
+}
+
+.start-btn a:hover {
+  color: #810f5d;
+  cursor: pointer;
+  text-decoration: none;
+  transform: scale(1.1, 1.1);
 }
 
 .startContainer {
@@ -152,57 +239,112 @@ h1 {
   color: #ffffff;
 }
 
-/* ------------------------------------- NavBar Styles ---------------------------------------------- */
+/* ------------------------------------- Menu Styles ---------------------------------------------- */
 
-.Navbar .Navbar.Toggle .Navbar.Collapse .NavDropDown {
-  border-width: 0px;
-  -webkit-box-shadow: 0px 0px;
-  box-shadow: 0px 0px;
-  background-color: rgba(0, 0, 0, 0);
-  background-image: -webkit-gradient(
-    linear,
-    50% 0%,
-    50% 100%,
-    color-stop(0%, rgba(0, 0, 0, 0)),
-    color-stop(100%, rgba(0, 0, 0, 0))
-  );
-  background-image: -webkit-linear-gradient(
-    270deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-  background-image: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+#logoButton {
+  background-image: url(https://i.ibb.co/2nVm0Y3/Rational-Unicorn-1.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-bottom: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0px;
+  outline: none;
+  transform: translate(30%, 20%);
+  transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+}
+ 
+#logoButton:hover {
+  border: none;
+  outline: 0px;
+  cursor: pointer;
+  transform: translate(50%, 40%) scale(1.2, 1.2);
+}
+ 
+#logoButton:active {
+  border: none;
+  outline: 0px;
 }
 
-.navBar {
-  color: #ffffff;
+
+
+#flyoutMenu {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(240, 240, 240);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform .3s cubic-bezier(0, .52, 0, 1) !important;
+  overflow: scroll;
+  z-index: 1000;
 }
 
-.navNoWrap {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+ 
+#flyoutMenu.hide {
+  transform: translateX(-100vw);
+}
+ 
+#flyoutMenu.show {
+  transform: translateX(0vw);
+  overflow: hidden;
+}
+ 
+#flyoutMenu h2 a {
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  letter-spacing: 0em;
+  line-height: .8em;
+  text-transform: none;
+  color: #b0b0b0;
+  margin-left: 5vw;
+  margin-top: 5vh;
+  text-decoration: none;
+  transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+}
+ 
+#flyoutMenu h2 a:hover {
+  color: #810f5d;
+  transform: scale(1.2, 1.2);
 }
 
-.homeLink{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  text-align: center;
+.icon-font{
+  color: #810f5d;
 }
 
-.contactLink{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-  text-align: center;
-}
+.menu-footer{
+  color: #810f5d;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 23vh;
+  padding: 3vh 5vw 3vh 5vw;
+  text-align: left;
+  }
+  
+  .footer-title{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    color: #810f5d;
+  }
+  
+  .footer-body{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 25px;
+    color: #810f5d;
+  }
+
+
 
 /* -------------------------------------Helper.js Styles-------------------------------------------- */
 
@@ -322,8 +464,8 @@ h1 {
   outline: 0px;
   text-align: left;
   margin: 0 auto;
-  padding: 0 10%;
-  width: 360px;
+  padding: 5% 10%;
+  width: 80vw;
   height: 80px;
   font-family: Montserrat;
   font-style: normal;
@@ -342,8 +484,8 @@ h1 {
   outline: 0px;
   text-align: left;
   margin: 0 auto;
-  padding: 0 10%;
-  width: 360px;
+  padding: 5% 10%;
+  width: 80vw;
   height: 80px;
   font-family: Montserrat;
   font-style: normal;
@@ -360,6 +502,11 @@ h1 {
 }
 
 /* ----------------------------------- RESULTS STYLES------------------------------------------- */
+
+#splashContainer-alt {
+  margin: 0 auto; 
+  padding-top: 0%;
+}
 
 
 #title-alt {
@@ -424,7 +571,6 @@ h1 {
   background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
   background-repeat: no-repeat;
   background-size: 100%;
-  background-color: #ffffff;
   opacity: 1;
 }
 
@@ -512,86 +658,14 @@ h1 {
   margin: 0 auto;
 }
 
-/* ----------------------------------- PDF RESULTS STYLES------------------------------------------- */
 
-#capture {
-  display: none;
-}
-.resultsPDF-container {
-  margin-left: 0;
-  padding-bottom: 2.5rem;
-}
-
-.resultsPDF-head {
-  font-family: "Montserrat", sans-serif;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: left;
-  text-transform: uppercase;
-  color: #810f5d;
-}
-.resultsPDF-li {
-  list-style-type: none;
-  position: relative;
-  padding-left: 30px;
-  font-family: "Montserrat";
-  font-style: normal;
-  /* font-weight: bold; */
-  font-size: 16px;
-  line-height: 35px;
-  color: #ffffff;
-  white-space: nowrap;
-}
-
-.resultsPDF-li::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  margin: auto;
-  height: 25px;
-  width: 25px;
-  display: block;
-  background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-color: #ffffff;
-  opacity: 1;
-}
-
-.PDF-footer{
-background-color: #810f5d;
-position: absolute;
-bottom: 0;
-width: 100%;
-height: 2.5rem;
-padding: .75rem;
-text-align: left;
-}
-
-.footer-title{
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 35px;
-  color: #ffffff;
-}
-
-.footer-body{
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: lighter;
-  font-size: 16px;
-  line-height: 35px;
-  color: #ffffff;
-}
 
 /* ----------------------------------- Modal Styles ---------------------------------------------- */
 
+
+.modal-content {
+  transform: translate(5%, 0%);
+}
 .modal-backdrop {
   background-color: rgb(23, 105, 101);
 }
@@ -761,7 +835,7 @@ a {
   font-weight: 800;
   font-size: 28px;
   line-height: 20px;
-  color: #810f5d !important;
+  color: #810f5d;
   text-decoration: none;
   -webkit-text-decoration-skip: objects;
 }
@@ -796,7 +870,7 @@ a:active {
     rgba(0, 0, 0, 0) 100%
   );
 }
-a:hover {
+start-btn a:hover {
   color: #810f5d;
   text-decoration: none;
   outline-width: 0;
@@ -1232,6 +1306,46 @@ li::before {
     -o-animation: fadein 1s; /* Opera < 12.1 */
     animation: fadein 1s;
   }
+  .option-btn:focus {
+    outline: 0px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #810f5d;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: none;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+  }
+  .option-btn:hover {
+    outline: 0px;
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+    width: 400px;
+    height: 80px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    color: #810f5d;
+    background: #ffffff;
+    border-collapse: separate;
+    perspective: 1px;
+    border-radius: 10px;
+    outline: none;
+    clip-path: polygon(7% 5%, 93% 5%, 99% 50%, 93% 95%, 7% 95%, 1% 50%);
+  }
 }
 
 .modal-footer {
@@ -1248,6 +1362,7 @@ li::before {
 .noWrap {
   min-width: 100%;
 }
+
 
 
 
@@ -1419,4 +1534,118 @@ li::before {
     transform: translate(-60%, 0%);
   }
 
+    /* ----------------------------------- PDF RESULTS STYLES------------------------------------------- */
+
+  #capture {
+    display: none;
+  }
+  
+  .pdf-wrapper {
+    width: 2480px;
+    height: 3508px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  .resultsPDF {
+    width: 2480px;
+    max-width: 2480px !important;
+    height: 3508px;
+    max-height: 3508px !important;
+    margin-left: 0;
+    padding-bottom: 2.5rem;
+  }
+  
+  
+  .resultsPDF-head {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    text-transform: uppercase;
+    color: #810f5d;
+  }
+  .resultsPDF-li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 30px;
+    font-family: "Montserrat";
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 16px;
+    line-height: 35px;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+  
+  .resultsPDF-li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    height: 25px;
+    width: 25px;
+    display: block;
+    background-image: url(https://raw.githubusercontent.com/eyecuelab/rational-unicorn/modal/src/images/arrow-white.PNG);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #ffffff;
+    opacity: 1;
+  }
+  
+  .PDF-footer{
+  background-color: #810f5d;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  padding: 3vh 5vw 3vh 5vw;
+  text-align: left;
+  }
+  
+  .footer-title{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 75px;
+    color: #ffffff;
+  }
+  
+  .footer-body{
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 50px;
+    line-height: 75px;
+    color: #ffffff;
+  }
+  
+    .pdf-title{
+    transform: translate(-92%, 0%) scale(2.5);
+  }
+  
+    .pdf-unicorn{
+      background-image: url(../images/Unicorn.png);
+      position: absolute;
+      width: inherit;
+      z-index: -1;
+      background-repeat: no-repeat;
+      width: 100%;
+      height: 100%;
+      color: #999;
+      transform: translate(150%, 175%) scale(4.5);
+    }
+    
+  
+    .pdf-content{
+      transform: translate(215%, 500%) scale(5);
+    }
+  
 }
