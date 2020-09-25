@@ -1,27 +1,50 @@
 import Layout from "../components/layout"
 import React from "react"
+import { useStaticQuery } from "gatsby"
+
 
 
 const Instructions = () => {
 
+  const data cm = useStaticQuery(
+    graphql`
+    query {
+      allContentfulUnicornNode {
+        edges {
+          node {
+            answers {
+              answers {
+                nextNodeId
+                prevNodeId
+              }
+            }
+            nodeId
+          }
+        }
+      }
+    }
+    
+    
+  )
+
   const JSONTemplate = `{
     "answers": [
-        {
-            "text": "What the user will select as an option goes here.",
-            "description": "This is the response that pops up upon selection.",
-            "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
-            "prevNodeId": "ID of previous node",
-            "nextNodeId": "ID of node this response links to"
-        },
-        {
-          "text": "What the user will select as an option goes here.",
-          "description": "This is the response that pops up upon selection.",
-          "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
-          "prevNodeId": "ID of previous node",
-          "nextNodeId": "ID of node this response links to"
+      {
+        "text": "What the user will select as an option goes here.",
+        "description": "This is the response that pops up upon selection.",
+        "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
+        "prevNodeId": "ID of previous node",
+        "nextNodeId": "ID of node this response links to"
+      },
+      {
+        "text": "What the user will select as an option goes here.",
+        "description": "This is the response that pops up upon selection.",
+        "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
+        "prevNodeId": "ID of previous node",
+        "nextNodeId": "ID of node this response links to"
       }
     ]
-}`
+  }`
 
   return (
     <Layout>
