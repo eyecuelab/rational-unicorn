@@ -206,13 +206,15 @@ const Helper = () => {
               })
             ) : (
                 <>
-                  <Results
+                  <div id='capture'>
+                    <Results
                     value={pathStorage}
                     showEmail={
                       (() => setShowResults(true), () => setShowModal(true))
                     }
-                  download={downloadPDF()}
-                  />
+                    download={downloadPDF()}
+                    />
+                  </div>
                   {/* <div id='capture'><ResultsPDF value={pathStorage}/></div> */}
                 </>
               )}
