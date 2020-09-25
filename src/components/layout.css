@@ -316,7 +316,7 @@ h1 {
 }
 
 .menu-footer{
-  color: #810f5d;
+  color: #b0b0b0;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -332,7 +332,7 @@ h1 {
     font-weight: bold;
     font-size: 20px;
     line-height: 25px;
-    color: #810f5d;
+    /* color: #810f5d; */
   }
   
   .footer-body{
@@ -341,7 +341,7 @@ h1 {
     font-weight: bolder;
     font-size: 15px;
     line-height: 25px;
-    color: #810f5d;
+    /* color: #810f5d; */
   }
 
 
