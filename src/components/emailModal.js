@@ -49,7 +49,7 @@ const Results = ({ onHide, value }) => {
           margin: 0 auto;
           width: 120px;
           height: 30px;
-          transform: translate(10%, 0%) scale(1.1);
+          transform: translate(0%, 0%) scale(1.1);
         }
         .btn-close:hover{
             background-color: rgb(18, 63, 61);
