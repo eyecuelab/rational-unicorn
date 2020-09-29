@@ -8,11 +8,9 @@ import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
-import { useStaticQuery } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
-// import TextNodes from "../components/content"
-// import ResultsPDF from "../components/resultsPDF";
 
 const Helper = () => {
   const data = useStaticQuery(
@@ -123,13 +121,13 @@ const Helper = () => {
   const downloadPDF = () => {
     const divToDisplay = document.getElementById("capture")
     console.log(divToDisplay, "  div to display")
-    html2canvas(divToDisplay).then(async(canvas) => {
+    html2canvas(divToDisplay).then(async (canvas) => {
       const divImage = await canvas.toDataURL("image/png");
       const pdf = new jsPDF();
       await pdf.addImage(divImage, 'PNG', 0, 0);
       await pdf.save("unicorn-results.pdf");
     })
- }
+  }
 
   const handleClose = () => setShowModal(false)
 
@@ -199,18 +197,18 @@ const Helper = () => {
                 )
               })
             ) : (
-              <>
-              <div id="capture"> {/* <ResultsPDF value={pathStorage}/></div> */}
-             <Results
-               value={pathStorage}
-               showEmail={
-                 (() => setShowResults(true), () => setShowModal(true))
-               } 
-               download={downloadPDF}
-             />
-             </div>
-           </>
-         )}
+                <>
+                  <div id="capture"> {/* <ResultsPDF value={pathStorage}/></div> */}
+                    <Results
+                      value={pathStorage}
+                      showEmail={
+                        (() => setShowResults(true), () => setShowModal(true))
+                      }
+                      download={downloadPDF}
+                    />
+                  </div>
+                </>
+              )}
           </div>
         </div>
         <div className="nav-btns">
