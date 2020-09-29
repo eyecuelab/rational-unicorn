@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import {Modal, Button, Form, Col} from 'react-bootstrap';
 
 const Results = ({ onHide, value }) => {
+
+    const [email, setEmail] = useState('')
 
     const output = value.reduce((outputTextArray, currentValue) => {
         const returnArray = [...outputTextArray];
@@ -14,13 +16,12 @@ const Results = ({ onHide, value }) => {
 
     const sendEmail = (event) => {
         event.preventDefault();
-        const address = document.getElementById('email-value')
         const refText = "here"
         const refLink = refText.link("https://rationalunicornlegalservices.com/referrals")
         const listText = output.map((outputText) => `%0D%0A •  ${outputText} %0D%0A`) 
         let a = document.createElement('a');
-        console.log(address, "email address") // not showing up
-        a.href=`mailto:${address}?subject=Your Cheat Sheet from Rational Unicorn&body=Congratulations on your first step to becoming an entrepreneur!
+        console.log(email, "email address") // not showing up
+        a.href=`mailto:${email}?subject=Your Cheat Sheet from Rational Unicorn&body=Congratulations on your first step to becoming an entrepreneur!
         %0D%0A
         %0D%0AAt Rational Unicorn, we know it’s a daunting task to sort out all the legal requirements on your own. This is why we created this app to help potential business owners like you through the process.
         %0D%0A
@@ -104,7 +105,7 @@ const Results = ({ onHide, value }) => {
                     <Form.Group>
                         <Form.Row>
                             <Col xs={12}>
-                                <Form.Control type="email" id="email-value" placeholder="Enter E-mail Here" /><br/>
+                                <Form.Control type="email" onChange= {(e)=> setEmail(e.target.value)} placeholder="Enter E-mail Here" /><br/>
                                 <Form.Check type="checkbox" label="Sign me up for the Newsletter" defaultValue="checked"/>
                                 <Form.Text className="text-muted">
                                     ( We'll never share your email with anyone else )

@@ -15,6 +15,7 @@ import { jsPDF } from "jspdf";
 // import ResultsPDF from "../components/resultsPDF";
 
 const Helper = () => {
+
   const data = useStaticQuery(
     graphql`
     query {
@@ -37,10 +38,9 @@ const Helper = () => {
           }
         }
       }
-    }
-    
-    `
+    }`
   )
+  
   const TextNodes = useMemo(() => {
     return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
       return {
@@ -122,7 +122,7 @@ const Helper = () => {
 
   const downloadPDF = () => {
     const divToDisplay = document.getElementById("capture")
-    console.log(divToDisplay, "  div to display")
+    console.log(divToDisplay, "  -------div to display")
     html2canvas(divToDisplay).then(async(canvas) => {
       const divImage = await canvas.toDataURL("image/png");
       const pdf = new jsPDF();
@@ -201,13 +201,13 @@ const Helper = () => {
             ) : (
               <>
               <div id="capture"> {/* <ResultsPDF value={pathStorage}/></div> */}
-             <Results
-               value={pathStorage}
-               showEmail={
-                 (() => setShowResults(true), () => setShowModal(true))
-               } 
-               download={downloadPDF}
-             />
+                <Results
+                  value={pathStorage}
+                  showEmail={
+                    (() => setShowResults(true), () => setShowModal(true))
+                  } 
+                  download={downloadPDF}
+                />
              </div>
            </>
          )}
