@@ -9,9 +9,7 @@ import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
-import { useStaticQuery } from 'gatsby'
-// import html2canvas from 'html2canvas';
-// import { jsPDF } from "jspdf";
+import { useStaticQuery, graphql } from 'gatsby'
 // import ResultsPDF from "../components/resultsPDF";
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 

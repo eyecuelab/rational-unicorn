@@ -1,12 +1,31 @@
 import Layout from "../components/layout"
-import React from "react"
-import { useStaticQuery } from "gatsby"
+import React, { useMemo, useEffect } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { Graph } from "react-d3-graph"
 
+const JSONTemplate = JSON.stringify({
+  "answers": [
+    {
+      "text": "What the user will select as an option goes here.",
+      "description": "This is the response that pops up upon selection.",
+      "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
+      "prevNodeId": "ID of previous node",
+      "nextNodeId": "ID of node this response links to"
+    },
+    {
+      "text": "What the user will select as an option goes here.",
+      "description": "This is the response that pops up upon selection.",
+      "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
+      "prevNodeId": "ID of previous node",
+      "nextNodeId": "ID of node this response links to"
+    }
+  ]
+}, undefined, 4);
 
 
 const Instructions = () => {
 
-  const data cm = useStaticQuery(
+  const data = useStaticQuery(
     graphql`
     query {
       allContentfulUnicornNode {
@@ -23,28 +42,84 @@ const Instructions = () => {
         }
       }
     }
-    
-    
+    `
   )
 
-  const JSONTemplate = `{
-    "answers": [
-      {
-        "text": "What the user will select as an option goes here.",
-        "description": "This is the response that pops up upon selection.",
-        "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
-        "prevNodeId": "ID of previous node",
-        "nextNodeId": "ID of node this response links to"
-      },
-      {
-        "text": "What the user will select as an option goes here.",
-        "description": "This is the response that pops up upon selection.",
-        "resultText": "This is the pertinent data that will be included in the final cheat sheet.",
-        "prevNodeId": "ID of previous node",
-        "nextNodeId": "ID of node this response links to"
+
+  const nodes = useMemo(() => {
+    return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
+      return {
+        id: edge.node.nodeId
       }
-    ]
-  }`
+    })
+  }, [data])
+
+  // const links = []
+
+  // const linkCheck = useMemo(() => {
+  //   const nodeIds = data?.allContentfulUnicornNode?.edges?.map?.(edge => edge.node.nodeId)
+  //   data?.allContentfulUnicornNode?.edges?.forEach?.((edge) => {
+
+  //   })
+
+  //   if (nodeIds.includes)
+  // })
+
+
+  const [links, errors] = useMemo(() => {
+    const nodeIds = data?.allContentfulUnicornNode?.edges?.map?.(edge => edge.node.nodeId);
+    const good = []
+    const bad = [];
+    data?.allContentfulUnicornNode?.edges?.forEach?.((edge) => {
+      edge.node.answers.answers.forEach(({ nextNodeId }) => {
+        const source = edge.node.nodeId;
+        const target = nextNodeId;
+        if (nodeIds.includes(target) && !good.includes({ source, target })) {
+          good.push({ source, target })
+        } else {
+          bad.push(edge);
+        }
+      })
+    });
+    return [good, bad];
+  }, [data])
+  //                  question
+  /*                  /      \
+                  answer     answer
+                 /              \
+  * question   -  answer  -    question 
+                 \
+                 answer
+                       \
+                         question   
+  
+  */
+
+
+
+  const flowChartData = {
+    d3: { linkLength: 300, },
+    nodes, links
+  }
+  const chartConfig = {
+    directed: true,
+    node: {
+      color: "pink",
+      size: 900,
+      fontSize: 14,
+      labelPosition: "center"
+
+    },
+    link: {
+      color: "purple",
+      markerHeight: 12,
+      markerWidth: 20
+    },
+    d3: { linkLength: 200, gravity: -200 }
+  }
+
+  console.log("NODES: ", nodes)
+  console.log("LINKS: ", links)
 
   return (
     <Layout>
@@ -65,10 +140,9 @@ const Instructions = () => {
         </div>
         <div>
           <h2>Answers field JSON template</h2>
-          <textarea style={{ width: "50%", height: "40vh" }}>
-            {JSONTemplate}
-          </textarea>
+          <textarea defaultValue={JSONTemplate} style={{ width: "50%", height: "40vh" }} />
         </div>
+        <Graph id="flowChart" data={flowChartData} config={chartConfig} />
       </div>
     </Layout>
   )

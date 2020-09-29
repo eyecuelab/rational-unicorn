@@ -159,14 +159,14 @@ import { useStaticQuery } from "gatsby"
 //       prevNodeId: 3,
 //       nextNodeId: 7,
 //     },
-//     {
-//       text: "I have a business conflict",
-//       description:
-//         "A state of disagreement or misunderstanding, resulting from the actual or perceived dissent of needs, beliefs, resources and relationship between the members of the organization.",
-//       requiredState: null,
+// {
+//   text: "I have a business conflict",
+//     description:
+//   "A state of disagreement or misunderstanding, resulting from the actual or perceived dissent of needs, beliefs, resources and relationship between the members of the organization.",
+//     requiredState: null,
 //       resultText: "conflict stuff goes here",
-//       prevNodeId: 3,
-//       nextNodeId: 6,
+//         prevNodeId: 3,
+//           nextNodeId: 6,
 //     },
 //     {
 //       text: "I'm not sure",
