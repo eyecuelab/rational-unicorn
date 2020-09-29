@@ -2,7 +2,6 @@ import React, { useState, useEffect, useMemo } from "react"
 import OptionButton from "../components/optionButton"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import TextNodes from "../components/content"
 import DescriptionModal from "../components/descriptionModal"
 import EmailModal from "../components/emailModal"
 import useNextNode from "../components/useNextNode"
@@ -12,6 +11,7 @@ import { reactLocalStorage } from "reactjs-localstorage"
 import { useStaticQuery } from 'gatsby'
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
+// import TextNodes from "../components/content"
 // import ResultsPDF from "../components/resultsPDF";
 // import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
@@ -61,9 +61,6 @@ const Helper = () => {
       ?? [];
   }, [data])
 
-  console.log("CONSOLE DATA:")
-  console.table(data)
-
   const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
@@ -73,13 +70,11 @@ const Helper = () => {
       : []
   )
   const [showResults, setShowResults] = useState(false)
-  console.log("NODESTATE:")
-  console.log(nodeState)
 
   useEffect(() => {
 
     const lastNode = pathStorage?.length - 1
-    if (pathStorage?.[lastNode]?.nextNodeId == 8) {
+    if (pathStorage?.[lastNode]?.nextNodeId == "last") {
       setShowResults(true)
     } else if (pathStorage) {
       for (let i = 0; i < TextNodes.length; i++) {
@@ -102,7 +97,7 @@ const Helper = () => {
       window.location = "http://localhost:8000/"
     } else if (showResults) {
       for (let i = 0; i < TextNodes.length; i++) {
-        if (TextNodes[i].node.nodeId == backNode) {
+        if (TextNodes[i].nodeId == backNode) {
           setNodeState(TextNodes[i])
         }
       }
@@ -120,7 +115,7 @@ const Helper = () => {
     await reactLocalStorage.set("results", JSON.stringify(nextPathStorage))
     setPathStorage([...pathStorage, value])
     setShowModal(false)
-    if (nextNode === TextNodes[8]) {
+    if (value.nextNodeId === "last") {
       setShowResults(true)
     }
     setNodeState(nextNode)
@@ -239,24 +234,3 @@ const Helper = () => {
 
 export default Helper
 
-// --------------graphQL logic----------------------
-
-//--------------Render-------------------
-
-// <Layout>
-//   <SEO title="Service Guide" />
-//   <div>
-//     <AnswerNode props={data}></AnswerNode>
-//   </div>
-//   <div class="container">
-//     {data.allContentfulTestTypeForUnicorn.edges.map(edge => {
-//       return (
-//         <>
-//           <h1>{edge.node.uniTitle}</h1>
-//           <p>{edge.node.id}</p>
-//           <p>{edge.node.uniBodyText.uniBodyText}</p>
-//         </>
-//       )
-//     })}
-//   </div>
-// </Layout>
