@@ -13,7 +13,6 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
 // import TextNodes from "../components/content"
 // import ResultsPDF from "../components/resultsPDF";
-// import { Switch, Route, Router } from 'react-router-dom'; // use this to replace window.location = "http://localhost:8000/"
 
 const Helper = () => {
   const data = useStaticQuery(
@@ -83,7 +82,7 @@ const Helper = () => {
         }
       }
     } else {
-      window.location = "http://localhost:8000/"
+      window.location.pathname = '/'
     }
   }, [])
 
@@ -94,7 +93,7 @@ const Helper = () => {
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
     await reactLocalStorage.set("results", JSON.stringify(newPathStorage))
     if (pathStorage.length < 1) {
-      window.location = "http://localhost:8000/"
+      window.location.pathname = '/'
     } else if (showResults) {
       for (let i = 0; i < TextNodes.length; i++) {
         if (TextNodes[i].nodeId == backNode) {
@@ -136,7 +135,7 @@ const Helper = () => {
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
-    setPathStorage(resetPath), (window.location = "http://localhost:8000/")
+    setPathStorage(resetPath), (window.location.pathname = '/')
   }
 
   function handleHelp() {
