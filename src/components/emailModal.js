@@ -12,6 +12,29 @@ const Results = ({ onHide, value }) => {
         return returnArray;
     }, []);
 
+    const sendEmail = (event) => {
+        event.preventDefault();
+        const address = document.getElementById('email-value')
+        const refText = "here"
+        const refLink = refText.link("https://rationalunicornlegalservices.com/referrals")
+        const listText = output.map((outputText) => `%0D%0A •  ${outputText} %0D%0A`) 
+        let a = document.createElement('a');
+        console.log(address, "email address") // not showing up
+        a.href=`mailto:${address}?subject=Your Cheat Sheet from Rational Unicorn&body=Congratulations on your first step to becoming an entrepreneur!
+        %0D%0A
+        %0D%0AAt Rational Unicorn, we know it’s a daunting task to sort out all the legal requirements on your own. This is why we created this app to help potential business owners like you through the process.
+        %0D%0A
+        %0D%0A Based on your selections, here is what you may need to get you on your way!
+        %0D%0A ${listText}
+        %0D%0A Here are some additional resources to help get you on your way:
+        %0D%0A
+        %0D%0A Referrals to vetted professionals that offer additional services can be found ${refLink}.`
+        a.target = '_blank'; // this opens in a new tab
+        a.rel ='noopener noreferrer'
+        a.click();
+        onHide;
+    }
+
     return (
         <>
         <style type="text/css">
@@ -26,7 +49,7 @@ const Results = ({ onHide, value }) => {
           margin: 0 auto;
           width: 120px;
           height: 30px;
-          transform: translate(10%, 0%) scale(1.1);
+          transform: translate(0%, 0%) scale(1.1);
         }
         .btn-close:hover{
             background-color: rgb(18, 63, 61);
@@ -46,6 +69,7 @@ const Results = ({ onHide, value }) => {
         }
         .btn-send:hover{
           background-color: rgb(18, 63, 61);
+          color: #FFFFF !important;
         }
         @media screen and (min-width: 460px) {
             .btn-close {
@@ -72,32 +96,35 @@ const Results = ({ onHide, value }) => {
             <Modal.Body>
                 <br/>
                 <ul id="email-body">
-                    {output.map(outputText => <li className="email-li">{outputText}</li>)}
+                    {output.map(outputText => <li key={outputText?.replace(/\s/,'-')} className="email-li">{outputText}</li>)}
                 </ul>
             </Modal.Body>
             <Modal.Footer>
-                <Form.Group>
-                    <Form.Row>
-                        <Col xs={12}>
-                            <Form.Control type="email" placeholder="email@email-address.com" />
-                            <Form.Text className="text-muted">
-                                We'll never share your email with anyone else.
-                            </Form.Text>
-                        </Col>
-                    </Form.Row>
-                </Form.Group>
-                <div className="noWrap">
-                    <Button variant="close" onClick={onHide}>
-                        Close
-                    </Button>
-                    <Button variant="send" onClick={onHide}>
-                        Send
-                    </Button>
-                </div>
+                <Form onSubmit={sendEmail}>
+                    <Form.Group>
+                        <Form.Row>
+                            <Col xs={12}>
+                                <Form.Control type="email" id="email-value" placeholder="Enter E-mail Here" /><br/>
+                                <Form.Check type="checkbox" label="Sign me up for the Newsletter" defaultValue="checked"/>
+                                <Form.Text className="text-muted">
+                                    ( We'll never share your email with anyone else )
+                                </Form.Text>
+                            </Col>
+                        </Form.Row>
+                    </Form.Group>
+                    <div className="noWrap">
+                        <Button variant="close" onClick={onHide}>
+                            Close
+                        </Button>
+                        <Button variant="send" type="submit">
+                            Send
+                        </Button>
+                    </div>
+                </Form>
             </Modal.Footer>
         </Modal>
         </>
     );
 } 
 
-export default Results
+export default Results;
