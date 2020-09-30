@@ -200,7 +200,7 @@ const Helper = () => {
               })
             ) : (
               <>
-              <div id="capture"> {/* <ResultsPDF value={pathStorage}/></div> */}
+              <div id="capture">
                 <Results
                   value={pathStorage}
                   showEmail={

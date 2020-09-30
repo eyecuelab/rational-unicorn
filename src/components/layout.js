@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
+      <div>{/* id="html2canvas-container" */}
         <main>{children}</main>
         {/* <footer>
           © {new Date().getFullYear()}, Tyler Bates | Ethan Firpo @{` `}
