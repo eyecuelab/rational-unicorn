@@ -553,7 +553,7 @@ h1 {
 }
 .results-container {
   margin-left: 0;
-  /* background: greenyellow !important; */
+  transform: translate(0px, -20px);
 }
 
 .results-head {
@@ -571,13 +571,14 @@ h1 {
   list-style-type: none;
   position: relative;
   padding-left: 30px;
+  padding-right: 15%;
   font-family: "Montserrat";
   font-style: normal;
   /* font-weight: bold; */
   font-size: 16px;
-  line-height: 35px;
+  line-height: 16px;
   color: #ffffff;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .results-li::before {
@@ -1605,7 +1606,7 @@ li::before {
   background-repeat: no-repeat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  min-height: 500px;
+  min-height: 600px;
   min-width: 100%;
   overflow: visible;
   padding-top: 20%;
@@ -1682,12 +1683,13 @@ li::before {
   list-style-type: none;
   position: relative;
   padding-left: 15%;
+  padding-right: 36%;
   font-family: "Montserrat";
   font-style: normal;
   font-size: 10px;
-  line-height: 20px;
+  line-height: 10px;
   color: #ffffff;
-  white-space: nowrap;
+  white-space: normal;
   transform: translate(0px, -35px);
 }
 
@@ -1723,7 +1725,7 @@ li::before {
   height: 5rem;
   padding: 5% 5% 30% 5%;
   text-align: left;
-  transform: translate(0px, -20px);
+  transform: translate(0px, -50%);
   }
   
   .PDF-footer-title{
@@ -1731,8 +1733,8 @@ li::before {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: bold;
-    font-size: 10px;
-    line-height: 10px;
+    font-size: 8px;
+    line-height: 8px;
     color: #ffffff;
   }
   
@@ -1741,7 +1743,14 @@ li::before {
     font-family: "Montserrat";
     font-style: normal;
     font-weight: lighter;
-    font-size: 8px;
-    line-height: 10px;
+    font-size: 6px;
+    line-height: 6px;
     color: #ffffff;
   }
+
+  .pdf-hr {
+    margin-top: -10px !important;
+    margin-bottom: 2% !important;
+    border: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
