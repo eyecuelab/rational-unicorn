@@ -1798,9 +1798,11 @@ li::before {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  width: auto;
+  height: 50vh;
 }
 
-.spinner1.spinner1 {
+/* .spinner1.spinner1 {
   animation-delay: 0.01s;
 }
 .spinner2.spinner2 {
@@ -1811,4 +1813,4 @@ li::before {
 }
 .spinner4.spinner4 {
   animation-delay: 0.3s;
-}
+} */

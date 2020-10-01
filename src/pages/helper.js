@@ -130,8 +130,9 @@ const Helper = () => {
     return (
       <div className="spinnerz">
         <div className="spin-position">
-          <img src="../src/images/unicorn-gif.gif" />
-          <img src="../src/images/text-gif.gif" />
+          <img src="https://raw.githubusercontent.com/eyecuelab/rational-unicorn/loader/src/images/logo-gif.gif" />
+          <br/>
+          <img src="https://github.com/eyecuelab/rational-unicorn/blob/test-branch-1/src/images/magic-text.gif" />
           {/* <Spinner className="spinner1" animation="grow" variant="info" />
           <Spinner className="spinner2" animation="grow" variant="warning" />
           <Spinner className="spinner3" animation="grow" variant="danger" />
