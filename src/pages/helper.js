@@ -130,13 +130,11 @@ const Helper = () => {
     return (
       <div className="spinnerz">
         <div className="spin-position">
-          <img src="https://raw.githubusercontent.com/eyecuelab/rational-unicorn/loader/src/images/logo-gif.gif" />
-          <br/>
-          <img src="https://github.com/eyecuelab/rational-unicorn/blob/test-branch-1/src/images/magic-text.gif" />
-          {/* <Spinner className="spinner1" animation="grow" variant="info" />
-          <Spinner className="spinner2" animation="grow" variant="warning" />
-          <Spinner className="spinner3" animation="grow" variant="danger" />
-          <Spinner className="spinner4" animation="grow" variant="success" /> */}
+          <h1 className="loader-head">Downloading</h1><br/>
+          <Spinner className="spinner1" animation="grow" variant="light" />
+          <Spinner className="spinner2" animation="grow" variant="light" />
+          <Spinner className="spinner3" animation="grow" variant="light" />
+          <Spinner className="spinner4" animation="grow" variant="light" />
         </div>
       </div>
     )
@@ -144,18 +142,18 @@ const Helper = () => {
 
   const downloadPDF = async () => {
     setIsLoading(true)
-    // setDownloadClick(true)
-    // setTimeout(async () => {
-    //   const divToDisplay = document.getElementById("capture")
-    //   html2canvas(divToDisplay).then(async canvas => {
-    //     const divImage = await canvas.toDataURL("image/png")
-    //     const pdf = new jsPDF()
-    //     await pdf.addImage(divImage, "PNG", 0, 0)
-    //     await pdf.save("unicorn-results.pdf")
-    //     setDownloadClick(false)
-    //     setIsLoading(false)
-    //   })
-    // }, 0)
+    setDownloadClick(true)
+    setTimeout(async () => {
+      const divToDisplay = document.getElementById("capture")
+      html2canvas(divToDisplay).then(async canvas => {
+        const divImage = await canvas.toDataURL("image/png")
+        const pdf = new jsPDF()
+        await pdf.addImage(divImage, "PNG", 0, 0)
+        await pdf.save("unicorn-results.pdf")
+        setDownloadClick(false)
+        setIsLoading(false)
+      })
+    }, 0)
   }
 
   const handleClose = () => {
