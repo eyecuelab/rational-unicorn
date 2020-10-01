@@ -64,6 +64,7 @@ const Helper = () => {
   const [downloadClick, setDownloadClick] = useState(false)
   const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
+  const [showHelp, setShowHelp] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
   const [pathStorage, setPathStorage] = useState(
     reactLocalStorage.get("results")
@@ -146,17 +147,18 @@ const Helper = () => {
     }, 0)
  }
 
-  const handleClose = () => setShowModal(false)
+  const handleClose = () => {
+    setShowModal(false)
+    setShowHelp(false)
+  }
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
     setPathStorage(resetPath), (window.location.pathname = '/')
   }
 
-  const handleHelp = ()=> {
-    return (
-      <HelpModal onHide={handleClose} />
-   )
+  function handleHelp() {
+    setShowHelp(true)
   }
 
   return (
@@ -164,6 +166,9 @@ const Helper = () => {
       <Layout>
         <SEO title="Service Guide" />
         <div className="pathwayContainer">
+          {showHelp ? (
+            <HelpModal onHide={handleClose} />
+          ) : null }
           {showModal && !showResults ? (
             <DescriptionModal
               onHide={handleClose}

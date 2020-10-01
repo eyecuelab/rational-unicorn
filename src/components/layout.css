@@ -757,6 +757,28 @@ color: #FFFFFF;
   flex-wrap: nowrap;
 }
 
+/* -----------------------------------------HELP MODAL STYLES--------------------------------------------*/
+
+.info-head{
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+strong {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color:#810f5d
+}
+
 
 /* ---------------------------------------EMAIL MODAL STYLES------------------------------------------- */
 
