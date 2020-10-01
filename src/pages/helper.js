@@ -124,16 +124,15 @@ const Helper = () => {
   const downloadPDF = async () => {
     setDownloadClick(true)
     setTimeout(async() => {
-    const divToDisplay = document.getElementById("capture")
-    console.log(divToDisplay, "  -------div to display")
-    html2canvas(divToDisplay).then(async(canvas) => {
-      const divImage = await canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      await pdf.addImage(divImage, 'PNG', 0, 0);
-      await pdf.save("unicorn-results.pdf");
-      setDownloadClick(false)
-    })
-  }, 0)
+      const divToDisplay = document.getElementById("capture")
+      html2canvas(divToDisplay).then(async(canvas) => {
+        const divImage = await canvas.toDataURL("image/png");
+        const pdf = new jsPDF();
+        await pdf.addImage(divImage, 'PNG', 0, 0);
+        await pdf.save("unicorn-results.pdf");
+        setDownloadClick(false)
+      })
+    }, 0)
  }
 
   const handleClose = () => setShowModal(false)

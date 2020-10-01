@@ -587,8 +587,8 @@ h1 {
   bottom: 0;
   left: 0;
   margin: auto;
-  height: 25px;
-  width: 25px;
+  height: 25px !important;
+  width: 25px !important;
   display: block;
   border-radius: 50%;
   background-image: url(../images/icon_circle-arrow.svg);
@@ -1589,3 +1589,159 @@ li::before {
   }
 
 }
+
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ PDF Styles $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+/* $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ */
+
+.PDF-format{
+  background: linear-gradient(
+      180deg,
+      #429792 12.67%,
+      #99d8d4 100.16%,
+      #f3f3f3 106.03%
+    );
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 500px;
+  min-width: 100%;
+  overflow: visible;
+  padding-top: 20%;
+  padding-left: 0%;
+  white-space: normal;
+  transform: translate(-1px, 0%);
+}
+
+.pdf-unicorn{
+  background-image: url(../images/Unicorn.png);
+  position: absolute;
+  width: inherit;
+  z-index: 0;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  color: #999;
+  -webkit-transform: translate(15%, -30%) scale(0.5) scaleX(-1);
+  transform: translate(15%, -30%) scale(0.5) scaleX(-1);
+}
+
+.unicorn-hide {
+  display: none;
+}
+
+.alt-top-head {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transform: translate(20px, -35px);
+}
+
+.top-head-hide {
+  display: none;
+}
+
+.alt-head{
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #810f5d;
+  transform: translate(20px, -35px);
+}
+.alt-text{
+  text-align: left;
+  list-style-type: none;
+  position: relative;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-size: 10px;
+  line-height: 10px;
+  color: #ffffff;
+  transform: translate(20px, -35px);
+}
+.alt-text-hide{
+  display: none;
+}
+
+.btn-hide{
+  display: none;
+}
+
+.alt-li {
+  text-align: left;
+  list-style-type: none;
+  position: relative;
+  padding-left: 15%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #ffffff;
+  white-space: nowrap;
+  transform: translate(0px, -35px);
+}
+
+.alt-li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  height: 15px !important;
+  width: 15px !important;
+  display: block;
+  Z-index: 500;
+  border-radius: 50%;
+  background-image: url(../images/icon_circle-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  opacity: 1;
+  transform: translate(20px, 0%);
+}
+
+.footer-hide{
+  display: none;
+}
+
+.PDF-footer{
+  background-color: #810f5d;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  padding: 5% 5% 30% 5%;
+  text-align: left;
+  transform: translate(0px, -20px);
+  }
+  
+  .PDF-footer-title{
+    position: relative;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 10px;
+    color: #ffffff;
+  }
+  
+  .PDF-footer-body{
+    position: relative;
+    font-family: "Montserrat";
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 8px;
+    line-height: 10px;
+    color: #ffffff;
+  }
