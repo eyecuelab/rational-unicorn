@@ -1,7 +1,10 @@
 import Layout from "../components/layout"
-import React, { useMemo, useEffect } from "react"
+import React, { useMemo, useState } from "react"
+import { Modal, Button } from "react-bootstrap"
 import { useStaticQuery, graphql } from "gatsby"
 import { Graph } from "react-d3-graph"
+import "../components/layout.css"
+import InstructionsModal from "../components/instructionsModal"
 
 const JSONTemplate = JSON.stringify({
   "answers": [
@@ -24,17 +27,22 @@ const JSONTemplate = JSON.stringify({
 
 
 const Instructions = () => {
-
+  const [showModal, setShowModal] = useState(false)
+  const [selectedNode, setSelectNode] = useState(null)
   const data = useStaticQuery(
     graphql`
     query {
       allContentfulUnicornNode {
         edges {
           node {
+            question {
+              question
+            }
             answers {
               answers {
                 nextNodeId
                 prevNodeId
+                text
               }
             }
             nodeId
@@ -42,9 +50,9 @@ const Instructions = () => {
         }
       }
     }
+    
     `
   )
-
 
   const nodes = useMemo(() => {
     return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
@@ -54,18 +62,6 @@ const Instructions = () => {
     })
   }, [data])
 
-  // const links = []
-
-  // const linkCheck = useMemo(() => {
-  //   const nodeIds = data?.allContentfulUnicornNode?.edges?.map?.(edge => edge.node.nodeId)
-  //   data?.allContentfulUnicornNode?.edges?.forEach?.((edge) => {
-
-  //   })
-
-  //   if (nodeIds.includes)
-  // })
-
-
   const [links, errors] = useMemo(() => {
     const nodeIds = data?.allContentfulUnicornNode?.edges?.map?.(edge => edge.node.nodeId);
     const good = []
@@ -74,8 +70,11 @@ const Instructions = () => {
       edge.node.answers.answers.forEach(({ nextNodeId }) => {
         const source = edge.node.nodeId;
         const target = nextNodeId;
-        if (nodeIds.includes(target) && !good.includes({ source, target })) {
-          good.push({ source, target })
+        if (nodeIds.includes(target)) {
+          const exists = good.some(el => el.source === source && el.target === target)
+          if (!exists) {
+            good.push({ source, target })
+          }
         } else {
           bad.push(edge);
         }
@@ -83,47 +82,49 @@ const Instructions = () => {
     });
     return [good, bad];
   }, [data])
-  //                  question
-  /*                  /      \
-                  answer     answer
-                 /              \
-  * question   -  answer  -    question 
-                 \
-                 answer
-                       \
-                         question   
-  
-  */
-
-
 
   const flowChartData = {
-    d3: { linkLength: 300, },
     nodes, links
   }
   const chartConfig = {
+    nodeHighlightBehavior: true,
     directed: true,
     node: {
       color: "pink",
       size: 900,
       fontSize: 14,
-      labelPosition: "center"
-
+      labelPosition: "center",
+      highlightFontSize: 14,
+      highlightColor: "cyan"
     },
     link: {
       color: "purple",
       markerHeight: 12,
-      markerWidth: 20
+      markerWidth: 12,
+      highlightColor: "cyan",
+      markerColor: "cyan"
     },
-    d3: { linkLength: 200, gravity: -200 }
+    d3: {
+      linkLength: 200,
+      gravity: -300
+    }
   }
 
-  console.log("NODES: ", nodes)
-  console.log("LINKS: ", links)
+  const selectNode = (nodeId) => {
+    console.log("CLICKED NODE: " + nodeId)
+
+    setSelectNode(data.allContentfulUnicornNode.edges.filter(edge => edge.node.nodeId === nodeId
+    ))
+    console.log("SELECTED: " + selectedNode)
+    setShowModal(true)
+  }
+  const handleClose = () => {
+    setShowModal(false)
+  }
 
   return (
     <Layout>
-      <div classname="container">
+      <div style={{ padding: "2%" }}>
         <h1>Instructions for Adding Content to RULS "Choose Your Venture"</h1>
         <div>
           <ol>
@@ -138,12 +139,23 @@ const Instructions = () => {
             <li>You're done!</li>
           </ol>
         </div>
-        <div>
-          <h2>Answers field JSON template</h2>
+
+
+        <h2>Answers field JSON template</h2>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          {showModal ? (
+            // console.log(selectedNode[0])
+            <InstructionsModal
+              node={selectedNode[0]}
+              onHide={handleClose} />
+          ) : null}
           <textarea defaultValue={JSONTemplate} style={{ width: "50%", height: "40vh" }} />
+          <Graph id="flowChart" data={flowChartData} config={chartConfig} onClickNode={selectNode} />
+
         </div>
-        <Graph id="flowChart" data={flowChartData} config={chartConfig} />
+
       </div>
+      <div></div>
     </Layout>
   )
 
