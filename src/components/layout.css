@@ -1895,11 +1895,11 @@ li::before {
   text-transform: uppercase;
   opacity: 0.6;
 
-  -webkit-animation: bounceInDown 2s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: bounceInDown 2s; /* Firefox < 16 */
-  -ms-animation: bounceInDown 2s; /* Internet Explorer */
-  -o-animation: bounceInDown 2s; /* Opera < 12.1 */
-  animation: bounceInDown 2s;
+  -webkit-animation: bounceInDown 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: bounceInDown 1s; /* Firefox < 16 */
+  -ms-animation: bounceInDown 1s; /* Internet Explorer */
+  -o-animation: bounceInDown 1s; /* Opera < 12.1 */
+  animation: bounceInDown 1s;
 }
 
 .spinner1.spinner1 {
