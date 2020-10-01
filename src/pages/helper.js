@@ -9,59 +9,63 @@ import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
 import { reactLocalStorage } from "reactjs-localstorage"
-import { useStaticQuery, graphql } from 'gatsby'
-import html2canvas from 'html2canvas';
-import { jsPDF } from "jspdf";
-import { Spinner } from "react-bootstrap";
+import { useStaticQuery, graphql } from "gatsby"
+import html2canvas from "html2canvas"
+import { jsPDF } from "jspdf"
+import { Spinner } from "react-bootstrap"
 // import TextNodes from "../components/content"
 
 const Helper = () => {
-
   const data = useStaticQuery(
     graphql`
-    query {
-      allContentfulUnicornNode {
-        edges {
-          node {
-            question {
-              question
-            }
-            answers {
-              answers {
-                description
-                nextNodeId
-                prevNodeId
-                resultText
-                text
+      query {
+        allContentfulUnicornNode {
+          edges {
+            node {
+              question {
+                question
               }
+              answers {
+                answers {
+                  description
+                  nextNodeId
+                  prevNodeId
+                  resultText
+                  text
+                }
+              }
+              nodeId
             }
-            nodeId
           }
         }
       }
-    }`
+    `
   )
-  
+
+  // const formatDescription = text => (text?.[0] === "`" ? eval(text) : text)
+
   const TextNodes = useMemo(() => {
-    return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
-      return {
-        nodeId: edge.node.nodeId,
-        question: edge.node.question,
-        options: edge.node.answers.answers.map(answer => {
-          return {
-            text: answer.text,
-            description: answer.description,
-            resultText: answer.resultText,
-            prevNodeId: answer.prevNodeId,
-            nextNodeId: answer.nextNodeId
-          }
-        })
-      }
-    })
-      ?? [];
+    return (
+      data?.allContentfulUnicornNode?.edges?.map?.(edge => {
+        return {
+          nodeId: edge.node.nodeId,
+          question: edge.node.question,
+          options: edge.node.answers.answers.map(answer => {
+            return {
+              text: answer.text,
+              description: answer.description,
+              resultText: answer.resultText,
+              prevNodeId: answer.prevNodeId,
+              nextNodeId: answer.nextNodeId,
+            }
+          }),
+        }
+      }) ?? []
+    )
   }, [data])
 
   const [downloadClick, setDownloadClick] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
@@ -74,7 +78,6 @@ const Helper = () => {
   const [showResults, setShowResults] = useState(false)
 
   useEffect(() => {
-
     const lastNode = pathStorage?.length - 1
     if (pathStorage?.[lastNode]?.nextNodeId == "last") {
       setShowResults(true)
@@ -85,7 +88,7 @@ const Helper = () => {
         }
       }
     } else {
-      window.location.pathname = '/'
+      window.location.pathname = "/"
     }
   }, [])
 
@@ -96,7 +99,7 @@ const Helper = () => {
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
     await reactLocalStorage.set("results", JSON.stringify(newPathStorage))
     if (pathStorage.length < 1) {
-      window.location.pathname = '/'
+      window.location.pathname = "/"
     } else if (showResults) {
       for (let i = 0; i < TextNodes.length; i++) {
         if (TextNodes[i].nodeId == backNode) {
@@ -123,29 +126,35 @@ const Helper = () => {
     setNodeState(nextNode)
   }
 
-    const loadingScreen = (
-    <div className="spinnerz">
-      <Spinner className="spinner1" animation="grow" variant="info" />
-      <Spinner className="spinner2" animation="grow" variant="warning" />
-      <Spinner className="spinner3" animation="grow" variant="danger" />
-      <Spinner className="spinner4" animation="grow" variant="success" />
-    </div>
-  )
-  
+  const loadingScreen = () => {
+    return (
+      <div className="spinnerz">
+        <div className="spin-position">
+          <h1 className="loader-head">Downloading</h1><br/>
+          <Spinner className="spinner1" animation="grow" variant="light" />
+          <Spinner className="spinner2" animation="grow" variant="light" />
+          <Spinner className="spinner3" animation="grow" variant="light" />
+          <Spinner className="spinner4" animation="grow" variant="light" />
+        </div>
+      </div>
+    )
+  }
 
   const downloadPDF = async () => {
+    setIsLoading(true)
     setDownloadClick(true)
-    setTimeout(async() => {
+    setTimeout(async () => {
       const divToDisplay = document.getElementById("capture")
-      html2canvas(divToDisplay).then(async(canvas) => {
-        const divImage = await canvas.toDataURL("image/png");
-        const pdf = new jsPDF();
-        await pdf.addImage(divImage, 'PNG', 0, 0);
-        await pdf.save("unicorn-results.pdf");
+      html2canvas(divToDisplay).then(async canvas => {
+        const divImage = await canvas.toDataURL("image/png")
+        const pdf = new jsPDF()
+        await pdf.addImage(divImage, "PNG", 0, 0)
+        await pdf.save("unicorn-results.pdf")
         setDownloadClick(false)
+        setIsLoading(false)
       })
     }, 0)
- }
+  }
 
   const handleClose = () => {
     setShowModal(false)
@@ -154,7 +163,7 @@ const Helper = () => {
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
-    setPathStorage(resetPath), (window.location.pathname = '/')
+    setPathStorage(resetPath), (window.location.pathname = "/")
   }
 
   function handleHelp() {
@@ -166,9 +175,7 @@ const Helper = () => {
       <Layout>
         <SEO title="Service Guide" />
         <div className="pathwayContainer">
-          {showHelp ? (
-            <HelpModal onHide={handleClose} />
-          ) : null }
+          {showHelp ? <HelpModal onHide={handleClose} /> : null}
           {showModal && !showResults ? (
             <DescriptionModal
               onHide={handleClose}
@@ -183,19 +190,19 @@ const Helper = () => {
             {!showResults ? (
               <h1 id="questionStyles">{nodeState.question.question}</h1>
             ) : (
-                <div className="splashContainer animated bounceInRight">
-                  <h1 id="title-alt">
-                    Choose
+              <div className="splashContainer animated bounceInRight">
+                <h1 id="title-alt">
+                  Choose
                   <br /> your <br />
                   venture
                 </h1>
-                  <h2 id="subTitle-alt">
-                    An interactive <br />
+                <h2 id="subTitle-alt">
+                  An interactive <br />
                   guide to your new <br />
                   business entity
                 </h2>
-                </div>
-              )}
+              </div>
+            )}
             <br />
             <br />
           </div>
@@ -220,18 +227,19 @@ const Helper = () => {
               })
             ) : (
               <>
-              <div id="capture">
-                <Results
-                  classToggle={downloadClick ? "PDF-format" : null}
-                  value={pathStorage}
-                  showEmail={
-                    (() => setShowResults(true), () => setShowModal(true))
-                  } 
-                  download={downloadPDF}
+                {isLoading ? loadingScreen() : null}
+                <div id="capture">
+                  <Results
+                    classToggle={downloadClick ? "PDF-format" : null}
+                    value={pathStorage}
+                    showEmail={
+                      (() => setShowResults(true), () => setShowModal(true))
+                    }
+                    download={downloadPDF}
                   />
-             </div>
-           </>
-         )}
+                </div>
+              </>
+            )}
           </div>
         </div>
         <div className="nav-btns">
@@ -253,4 +261,3 @@ const Helper = () => {
 }
 
 export default Helper
-
