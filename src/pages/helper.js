@@ -130,10 +130,12 @@ const Helper = () => {
     return (
       <div className="spinnerz">
         <div className="spin-position">
-          <Spinner className="spinner1" animation="grow" variant="info" />
+          <img src="../src/images/unicorn-gif.gif" />
+          <img src="../src/images/text-gif.gif" />
+          {/* <Spinner className="spinner1" animation="grow" variant="info" />
           <Spinner className="spinner2" animation="grow" variant="warning" />
           <Spinner className="spinner3" animation="grow" variant="danger" />
-          <Spinner className="spinner4" animation="grow" variant="success" />
+          <Spinner className="spinner4" animation="grow" variant="success" /> */}
         </div>
       </div>
     )
@@ -141,18 +143,18 @@ const Helper = () => {
 
   const downloadPDF = async () => {
     setIsLoading(true)
-    setDownloadClick(true)
-    setTimeout(async () => {
-      const divToDisplay = document.getElementById("capture")
-      html2canvas(divToDisplay).then(async canvas => {
-        const divImage = await canvas.toDataURL("image/png")
-        const pdf = new jsPDF()
-        await pdf.addImage(divImage, "PNG", 0, 0)
-        await pdf.save("unicorn-results.pdf")
-        setDownloadClick(false)
-        setIsLoading(false)
-      })
-    }, 0)
+    // setDownloadClick(true)
+    // setTimeout(async () => {
+    //   const divToDisplay = document.getElementById("capture")
+    //   html2canvas(divToDisplay).then(async canvas => {
+    //     const divImage = await canvas.toDataURL("image/png")
+    //     const pdf = new jsPDF()
+    //     await pdf.addImage(divImage, "PNG", 0, 0)
+    //     await pdf.save("unicorn-results.pdf")
+    //     setDownloadClick(false)
+    //     setIsLoading(false)
+    //   })
+    // }, 0)
   }
 
   const handleClose = () => {

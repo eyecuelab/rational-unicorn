@@ -610,6 +610,7 @@ h1 {
   z-index: 10;
   white-space: nowrap;
   clip-path: polygon(0% 5%, 93% 5%, 99% 50%, 93% 95%, 0% 95%, 0% 50%);
+  transform: translate(0px, -20px);
 
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -645,6 +646,7 @@ h1 {
   transform: translate(0%, 20%);
   white-space: nowrap;
   clip-path: polygon(0% 5%, 93% 5%, 99% 50%, 93% 95%, 0% 95%, 0% 50%);
+  transform: translate(0px, -20px);
 
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 1s; /* Firefox < 16 */
@@ -1315,9 +1317,9 @@ li::before {
     opacity: 0.6;
     transform: translate(10%, -40%) scale(0.7);
   }
-  .result-container {
+  .results-container {
     margin-left: 0;
-    transform: translate(0%, -50%) scale(1);
+    transform: translate(0%, -22%) scale(1);
   }
 
   .end-btn1 {
@@ -1446,9 +1448,9 @@ li::before {
     flex-wrap: nowrap;
   }
 
-  .result-container {
+  .results-container {
     margin-left: 0;
-    transform: translate(0%, -70%) scale(1);
+    transform: translate(0%, -55%) scale(1);
   }
 
   .end-btn1-text {
@@ -1482,6 +1484,8 @@ li::before {
 @media screen and (min-width: 670px) {
   .option-btn:focus {
     display: flex;
+    width: 400px;
+    height: 80px;
     align-items: center;
     padding: 2% 10% 2% 5%;
     margin: 0 auto;
@@ -1489,6 +1493,8 @@ li::before {
   }
   .option-btn:hover {
     display: flex;
+    width: 400px;
+    height: 80px;
     align-items: center;
     padding: 2% 10% 2% 5%;
     margin: 0 auto;
@@ -1544,20 +1550,28 @@ li::before {
 
   .option-btn:focus {
     transform: translate(-30%, 0%);
+    width: 400px;
+    height: 80px;
   }
   .option-btn:hover {
     transform: translate(-30%, 0%);
+    width: 400px;
+    height: 80px;
   }
 }
 
 @media screen and (min-width: 900px) {
   .option-btn:focus {
-    padding: 7% 10% 7% 6%;
-    transform: translate(-40%, 0%);
+    padding: 5%;
+    transform: translate(0%, 0%);
+    width: 500px;
+    height: 100px;
   }
   .option-btn:hover {
-    padding: 7% 10% 7% 6%;
-    transform: translate(-40%, 0%);
+    /* padding: 7% 10% 7% 6%; */
+    transform: translate(0%, 0%);
+    width: 500px;
+    height: 100px;
   }
 }
 
@@ -1581,9 +1595,13 @@ li::before {
 
   .option-btn:focus {
     transform: translate(-60%, 0%);
+    width: 400px;
+    height: 80px;
   }
   .option-btn:hover {
     transform: translate(-60%, 0%);
+    width: 400px;
+    height: 80px;
   }
 }
 
