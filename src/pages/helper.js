@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import DescriptionModal from "../components/descriptionModal"
 import EmailModal from "../components/emailModal"
+import HelpModal from "../components/helpModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
@@ -11,8 +12,11 @@ import { reactLocalStorage } from "reactjs-localstorage"
 import { useStaticQuery, graphql } from 'gatsby'
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
+import { Spinner } from "react-bootstrap";
+// import TextNodes from "../components/content"
 
 const Helper = () => {
+
   const data = useStaticQuery(
     graphql`
     query {
@@ -35,10 +39,9 @@ const Helper = () => {
           }
         }
       }
-    }
-    
-    `
+    }`
   )
+  
   const TextNodes = useMemo(() => {
     return data?.allContentfulUnicornNode?.edges?.map?.(edge => {
       return {
@@ -58,8 +61,10 @@ const Helper = () => {
       ?? [];
   }, [data])
 
+  const [downloadClick, setDownloadClick] = useState(false)
   const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
+  const [showHelp, setShowHelp] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
   const [pathStorage, setPathStorage] = useState(
     reactLocalStorage.get("results")
@@ -118,18 +123,34 @@ const Helper = () => {
     setNodeState(nextNode)
   }
 
-  const downloadPDF = () => {
-    const divToDisplay = document.getElementById("capture")
-    console.log(divToDisplay, "  div to display")
-    html2canvas(divToDisplay).then(async (canvas) => {
-      const divImage = await canvas.toDataURL("image/png");
-      const pdf = new jsPDF();
-      await pdf.addImage(divImage, 'PNG', 0, 0);
-      await pdf.save("unicorn-results.pdf");
-    })
-  }
+    const loadingScreen = (
+    <div className="spinnerz">
+      <Spinner className="spinner1" animation="grow" variant="info" />
+      <Spinner className="spinner2" animation="grow" variant="warning" />
+      <Spinner className="spinner3" animation="grow" variant="danger" />
+      <Spinner className="spinner4" animation="grow" variant="success" />
+    </div>
+  )
+  
 
-  const handleClose = () => setShowModal(false)
+  const downloadPDF = async () => {
+    setDownloadClick(true)
+    setTimeout(async() => {
+      const divToDisplay = document.getElementById("capture")
+      html2canvas(divToDisplay).then(async(canvas) => {
+        const divImage = await canvas.toDataURL("image/png");
+        const pdf = new jsPDF();
+        await pdf.addImage(divImage, 'PNG', 0, 0);
+        await pdf.save("unicorn-results.pdf");
+        setDownloadClick(false)
+      })
+    }, 0)
+ }
+
+  const handleClose = () => {
+    setShowModal(false)
+    setShowHelp(false)
+  }
 
   function handleHome() {
     const resetPath = reactLocalStorage.clear()
@@ -137,9 +158,7 @@ const Helper = () => {
   }
 
   function handleHelp() {
-    alert(
-      "Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!"
-    )
+    setShowHelp(true)
   }
 
   return (
@@ -147,6 +166,9 @@ const Helper = () => {
       <Layout>
         <SEO title="Service Guide" />
         <div className="pathwayContainer">
+          {showHelp ? (
+            <HelpModal onHide={handleClose} />
+          ) : null }
           {showModal && !showResults ? (
             <DescriptionModal
               onHide={handleClose}
@@ -197,18 +219,19 @@ const Helper = () => {
                 )
               })
             ) : (
-                <>
-                  <div id="capture"> {/* <ResultsPDF value={pathStorage}/></div> */}
-                    <Results
-                      value={pathStorage}
-                      showEmail={
-                        (() => setShowResults(true), () => setShowModal(true))
-                      }
-                      download={downloadPDF}
-                    />
-                  </div>
-                </>
-              )}
+              <>
+              <div id="capture">
+                <Results
+                  classToggle={downloadClick ? "PDF-format" : null}
+                  value={pathStorage}
+                  showEmail={
+                    (() => setShowResults(true), () => setShowModal(true))
+                  } 
+                  download={downloadPDF}
+                  />
+             </div>
+           </>
+         )}
           </div>
         </div>
         <div className="nav-btns">

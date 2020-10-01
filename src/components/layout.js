@@ -29,10 +29,6 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
-        {/* <footer>
-          © {new Date().getFullYear()}, Tyler Bates | Ethan Firpo @{` `}
-          <a href="https://www.eyecuelab.com">EyeCue Lab</a>
-        </footer> */}
       </div>
     </>
   )
