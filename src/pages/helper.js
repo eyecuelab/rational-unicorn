@@ -60,6 +60,7 @@ const Helper = () => {
       ?? [];
   }, [data])
 
+  const [downloadClick, setDownloadClick] = useState(false)
   const [nodeState, setNodeState] = useState(TextNodes[TextNodes.length - 1])
   const [showModal, setShowModal] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
@@ -120,7 +121,9 @@ const Helper = () => {
     setNodeState(nextNode)
   }
 
-  const downloadPDF = () => {
+  const downloadPDF = async () => {
+    setDownloadClick(true)
+    setTimeout(async() => {
     const divToDisplay = document.getElementById("capture")
     console.log(divToDisplay, "  -------div to display")
     html2canvas(divToDisplay).then(async(canvas) => {
@@ -128,7 +131,9 @@ const Helper = () => {
       const pdf = new jsPDF();
       await pdf.addImage(divImage, 'PNG', 0, 0);
       await pdf.save("unicorn-results.pdf");
+      setDownloadClick(false)
     })
+  }, 0)
  }
 
   const handleClose = () => setShowModal(false)
@@ -202,6 +207,7 @@ const Helper = () => {
               <>
               <div id="capture">
                 <Results
+                  classToggle={downloadClick ? "PDF-format" : null}
                   value={pathStorage}
                   showEmail={
                     (() => setShowResults(true), () => setShowModal(true))
