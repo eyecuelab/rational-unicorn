@@ -103,7 +103,6 @@ const Results = ({ onHide, value }) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <br/>
                 <ul id="email-body">
                     {output.map(outputText => <><li key={outputText?.replace(/\s/,'-')} className="email-li">{outputText}</li><br/></>)}
                 </ul>

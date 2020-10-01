@@ -571,7 +571,7 @@ h1 {
   list-style-type: none;
   position: relative;
   padding-left: 30px;
-  padding-right: 15%;
+  padding-right: 0%;
   font-family: "Montserrat";
   font-style: normal;
   /* font-weight: bold; */
@@ -831,7 +831,7 @@ strong {
   font-size: 16px;
   line-height: 16px;
   color: #333333;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .email-li::before {
