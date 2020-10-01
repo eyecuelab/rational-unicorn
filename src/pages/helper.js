@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import DescriptionModal from "../components/descriptionModal"
 import EmailModal from "../components/emailModal"
+import HelpModal from "../components/helpModal"
 import useNextNode from "../components/useNextNode"
 import usePrevNode from "../components/usePrevNode"
 import Results from "../components/results"
@@ -11,8 +12,8 @@ import { reactLocalStorage } from "reactjs-localstorage"
 import { useStaticQuery } from 'gatsby'
 import html2canvas from 'html2canvas';
 import { jsPDF } from "jspdf";
+import { Spinner } from "react-bootstrap";
 // import TextNodes from "../components/content"
-// import ResultsPDF from "../components/resultsPDF";
 
 const Helper = () => {
 
@@ -120,6 +121,15 @@ const Helper = () => {
     }
     setNodeState(nextNode)
   }
+
+    const loadingScreen = (
+    <div className="spinnerz">
+      <Spinner className="spinner1" animation="grow" variant="info" />
+      <Spinner className="spinner2" animation="grow" variant="warning" />
+      <Spinner className="spinner3" animation="grow" variant="danger" />
+      <Spinner className="spinner4" animation="grow" variant="success" />
+    </div>
+  )
   
 
   const downloadPDF = async () => {
@@ -143,10 +153,10 @@ const Helper = () => {
     setPathStorage(resetPath), (window.location.pathname = '/')
   }
 
-  function handleHelp() {
-    alert(
-      "Hey there! Click on the option that best applies to you or if you don't know, we got an option for that too! Once you've made your way through you'll be given a list of the services you may require!"
-    )
+  const handleHelp = ()=> {
+    return (
+      <HelpModal onHide={handleClose} />
+   )
   }
 
   return (
@@ -213,7 +223,7 @@ const Helper = () => {
                     (() => setShowResults(true), () => setShowModal(true))
                   } 
                   download={downloadPDF}
-                />
+                  />
              </div>
            </>
          )}

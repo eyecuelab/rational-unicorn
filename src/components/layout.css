@@ -722,9 +722,6 @@ font-style: normal;
 font-weight: bold;
 font-size: 16px;
 line-height: 20px;
-/* or 125% */
-
-
 color: #FFFFFF;
 }
 
@@ -732,6 +729,12 @@ color: #FFFFFF;
   overflow-y: scroll;
   max-width: 80vw;
   border-bottom: 0 none;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
 }
 
 .modal-footer {
@@ -797,10 +800,16 @@ color: #FFFFFF;
 }
 
 .email-li {
+  text-align: left;
   list-style-type: none;
   position: relative;
-  padding-left: 10%;
-  white-space: nowrap;
+  padding-left: 15%;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-size: 16px;
+  line-height: 16px;
+  color: #333333;
+  white-space: normal;
 }
 
 .email-li::before {
@@ -877,6 +886,11 @@ color: #FFFFFF;
   font-family: "Montserrat";
   font-style: normal;
   font-size: 16px; 
+}
+
+.text-muted {
+  color: #6c757d!important;
+  white-space: nowrap;
 }
 
 
@@ -1734,7 +1748,7 @@ li::before {
     font-style: normal;
     font-weight: bold;
     font-size: 8px;
-    line-height: 8px;
+    line-height: 10px;
     color: #ffffff;
   }
   
@@ -1744,7 +1758,7 @@ li::before {
     font-style: normal;
     font-weight: lighter;
     font-size: 6px;
-    line-height: 6px;
+    line-height: 10px;
     color: #ffffff;
   }
 
@@ -1753,4 +1767,17 @@ li::before {
     margin-bottom: 2% !important;
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.spinner1{
+  animation-delay: .01s;
+}
+.spinner2{
+  animation-delay: .10s;
+}
+.spinner3{
+  animation-delay: .20s;
+}
+.spinner4{
+  animation-delay: .30s;
 }

@@ -74,11 +74,11 @@ const Results = ({ onHide, value }) => {
         }
         .btn-send:hover{
           background-color: rgb(18, 63, 61);
-          color: #FFFFF !important;
+          color: #FFFFFF !important;
         }
         .btn-send:active{
             background-color: rgb(18, 63, 61);
-            color: #FFFFF !important;
+            color: #FFFFFF !important;
           }
         @media screen and (min-width: 460px) {
             .btn-close {
@@ -105,7 +105,7 @@ const Results = ({ onHide, value }) => {
             <Modal.Body>
                 <br/>
                 <ul id="email-body">
-                    {output.map(outputText => <li key={outputText?.replace(/\s/,'-')} className="email-li">{outputText}</li>)}
+                    {output.map(outputText => <><li key={outputText?.replace(/\s/,'-')} className="email-li">{outputText}</li><br/></>)}
                 </ul>
             </Modal.Body>
             <Modal.Footer>
@@ -115,7 +115,7 @@ const Results = ({ onHide, value }) => {
                             <Col xs={12}>
                                 <Form.Control type="email" onChange= {(e)=> setEmail(e.target.value)} placeholder="Enter E-mail Here" /><br/>
                                 <Form.Text className="text-muted">
-                                    ( We'll never share your email with anyone else )
+                                    * We'll never share your email with anyone else *
                                 </Form.Text>
                                 <a className="newsLink" href="https://rationalunicorn.us7.list-manage.com/subscribe?u=26217361a595e76edc25043f3&id=09deb29ea3">Sign up for the Newsletter!</a>
                             </Col>
