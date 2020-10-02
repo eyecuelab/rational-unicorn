@@ -1,22 +1,23 @@
 ![](https://i.ibb.co/QNgD1P6/guide-logo.png)
 <br />
 
-#### By Tyler Bates & Ethan Firpo
+#### By Tyler Bates & Ethan Firpo @ [EyeCue Lab](https://www.eyecuelab.com/)
 
 <hr/>
 
 ## Description
 
-Welcome to our "choose your own adventure" style web application designed to help entrepenuers and under-represtented individuals navigate through and learn about the legal services required to start a business. <br>
-The user will be prompted a list of options attached to a question on what they're hoping to achieve. The option will have a description of what that legal service is/does and depending on what they choose the user will be provided with additional questions and options. At the end of the guide the user will be displayed information and links to all of the legal services required based on the information they provided throughout the application. [here]().
+Welcome to Choose Your Venture "choose your own adventure" style web application designed to help entrepenuers and under-represtented individuals navigate through and learn about the legal services required to start a business. <br>
+The user will be prompted a list of options attached to a question on what they're hoping to achieve. The option will have a description of what that legal service is/does and depending on what they choose the user will be provided with additional questions and options. At the end of the guide the user will be displayed information and links to all of the legal services required based on the information they provided throughout the application with the option of either downloading their results or emailing them to Rational Unicorn to further discuss their potential business entity. Check out the application [here](https://chooseyourventure.netlify.app/).
 
 <hr />
 
 ## Application Diagrams
 
 ### App Design
-
-<img src='src\images\Animation_Example.png' alt="app design">
+Splash Page | First Node | Confirmation Modal | Results Page | Email Confirmation Modal
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img src='src\images\AppDesign1.PNG' alt="design panel 1"> |<img src='src\images\AppDesign2.PNG' alt="design panel 2"> | <img src='src\images\AppDesign3.PNG' alt="design panel 3"> |<img src='src\images\AppDesign4.PNG' alt="design panel 4"> | <img src='src\images\AppDesign5.PNG' alt="design panel 5"> |
 
 ### Legal Service Flow Chart
 
@@ -36,17 +37,21 @@ The user will be prompted a list of options attached to a question on what they'
 | :heavy_check_mark: | Clicking confirm navigates to the next question        |
 | :heavy_check_mark: | User can go back to previous question resetting last answer            |
 | :heavy_check_mark: | User is given results at end of application with list of needed legal services       |
-
+| :heavy_check_mark: | User can download formatted PDF copy of application results |
+| :heavy_check_mark: | User can email application results to designated company email with custom message | 
+| :heavy_check_mark: | Application has Clean, Responsive UI                                    |
+| :heavy_check_mark: | Site is deployed                                        |
+| :heavy_check_mark: | Client can update questions/options via Contentful CMS   |
+| :heavy_check_mark: | Client can add new questions/options via Contentful CMS    |
+| :heavy_check_mark: | Application automatically re-deploys upon modification to Conentful CMS or Repository Master Branch. |
 <br/>
 <br/>
 
 |                    | Stretch Goals                                           |
 | ------------------ | ------------------------------------------------------- |
-| :heavy_check_mark: | Clean, Responsive UI                                    |
-| :heavy_check_mark: | Site is deployed                                        |
-|                    | Client can update questions/options via Contentful CMS   |
-|                    | Client can add new questions/options via Contentful CMS    |
-|                    | Application automatically re-deploys upon modification from client. |
+| | Emailed results are handled through SendGrid|
+| | Incorporate transitional animations in application UI|
+| | Add OAuth to Admin page|
 
 <hr />
 
@@ -122,18 +127,24 @@ If you have a bug or an idea, browse the open issues before opening a new one. Y
 
 ## Legal
 
-#### Apache License V2.0
+#### MIT License
 
-Copyright 2020 Tyler Bates & Ethan Firpo @ [EyeCue Lab](https://www.eyecuelab.com/)
+Copyright (c) 2020 Tyler Bates & Ethan Firpo @ [EyeCue Lab](https://www.eyecuelab.com/)
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-http://www.apache.org/licenses/LICENSE-2.0
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
