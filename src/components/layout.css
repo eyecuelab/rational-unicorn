@@ -251,6 +251,7 @@ h1 {
   outline: none;
   transform: translate(30%, 20%);
   transition: all 0.2s cubic-bezier(0, 1.26, 0.8, 1.28);
+  z-index: 3000;
 }
 
 #logoButton:hover {
@@ -677,7 +678,7 @@ h1 {
   font-size: 20px;
   line-height: 20px;
   color: #810f5d;
-  transform: translate(-30%, 0%);
+  transform: translate(-18%, 0%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -743,7 +744,7 @@ h1 {
 }
 
 .modal-body {
-  overflow-y: scroll;
+  overflow-y: auto;
   max-width: 80vw;
   border-bottom: 0 none;
   font-family: "Libre Baskerville", serif;
@@ -1622,7 +1623,7 @@ li::before {
     font-size: 20px;
     line-height: 20px;
     color: #810f5d;
-    transform: translate(-15%, 0%);
+    transform: translate(-37%, 0%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1678,6 +1679,7 @@ li::before {
 
   .splashContainer {
     transform: translate(0%, -30%) scale(1);
+    z-index: -1;
   }
 
   .resultUnicron {
@@ -1743,6 +1745,7 @@ li::before {
 @media screen and (min-width: 1100px) {
   .splashContainer {
     transform: translate(-18%, -10%) scale(1.5);
+    z-index: -1;
   }
 
   .start-btn {

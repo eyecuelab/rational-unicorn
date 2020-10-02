@@ -102,6 +102,7 @@ const Results = ({ onHide, value }) => {
         </Modal.Header>
         <Modal.Body>
           <ul id="email-body">
+            <p className="referral-text">Send us your results and we'll help you get started!</p>
             {output.map(outputText => (
               <>
                 <li key={outputText?.replace(/\s/, "-")} className="email-li">

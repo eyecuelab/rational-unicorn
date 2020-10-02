@@ -28,16 +28,8 @@ const Menu = ({ toggle, value }) => {
         </div>
         <div className="navNoWrap">
           <h2>
-            <Link to="/about">
-              <FontAwesomeIcon className="icon-font" icon={faInfoCircle} />{" "}
-              About
-            </Link>
-          </h2>
-        </div>
-        <div className="navNoWrap">
-          <h2>
             <a href="https://rationalunicornlegalservices.com/">
-              <FontAwesomeIcon className="icon-font" icon={faHorseHead} />{" "}
+              <img src="../images/unicorn-icon.svg"/>{" "}
               Company Site
             </a>
           </h2>
@@ -50,8 +42,16 @@ const Menu = ({ toggle, value }) => {
             </a>
           </h2>
         </div>
+        <div className="navNoWrap">
+          <h2>
+            <Link to="/instructions">
+              <FontAwesomeIcon className="icon-font" icon={faInfoCircle} />{" "}
+              Admin
+            </Link>
+          </h2>
+        </div>
         <div className="menu-footer">
-          <p className="footer-title">Rational Unicorn Legal Services PC</p>
+          <p className="footer-title">Rational Unicorn<br/>Legal Services PC</p>
           <hr />
           <p className="footer-body">
             107 SE WASHINGTON ST, STE 156 PORTLAND, OR 97214
