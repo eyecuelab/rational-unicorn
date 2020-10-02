@@ -17,7 +17,7 @@ const Results = ({ onHide, value }) => {
     event.preventDefault()
     const listText = output.map(outputText => `%0D%0A •  ${outputText} %0D%0A`)
     let a = document.createElement("a")
-    a.href = `mailto:michaeljonas@rationalunicorn.com?subject=Choose Your Venture Results&body=Hello Rational Unicorn. I did a thing!
+    a.href = `mailto:rationalunicornlegal@gmail.com?subject=Choose Your Venture Results&body=Hello Rational Unicorn. I did a thing!
         %0D%0A
         %0D%0A And by that I mean I've taken my first step towards becoming an entrepreneur and I'd like to talk about it!
         %0D%0A

@@ -12,8 +12,9 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           color: white;
           border-radius: 30px;
           display: flex;
-          justify-content: center;
-          align-items: center;
+          justify-content: center !important;
+          align-items: center !important;
+          line-heigh:auto;
           width: 120px;
           height: 30px;
           transform: scale(1.1);
@@ -27,8 +28,9 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           color: white;
           border-radius: 30px;
           display: flex;
-          justify-content: center;
-          align-items: center;
+          justify-content: center !important;
+          align-items: center !important;
+          line-height: auto;
           width: 120px;
           height: 30px;
           transform: scale(1.1);
