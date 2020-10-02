@@ -41,6 +41,7 @@ const Results = ({ onHide, value }) => {
           background-color: rgb(46, 155, 149);
           color: white;
           border-radius: 30px;
+          margin: 0 auto;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -62,6 +63,7 @@ const Results = ({ onHide, value }) => {
           background-color: rgb(46, 155, 149);
           color: white;
           border-radius: 30px;
+          margin: 0 auto;
           display: flex;
           justify-content: center;
           align-items: center;
