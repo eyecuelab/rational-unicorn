@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Modal, Button, Form, Col } from "react-bootstrap"
 
 const Results = ({ onHide, value }) => {
-  const [email, setEmail] = useState("")
+  const [name, setName] = useState("")
 
   const output = value.reduce((outputTextArray, currentValue) => {
     const returnArray = [...outputTextArray]
@@ -15,19 +15,18 @@ const Results = ({ onHide, value }) => {
 
   const sendEmail = event => {
     event.preventDefault()
-    // const refText = "here"
-    // const refLink = refText.link("https://rationalunicornlegalservices.com/referrals")
     const listText = output.map(outputText => `%0D%0A •  ${outputText} %0D%0A`)
     let a = document.createElement("a")
-    a.href = `mailto:${email}?subject=Your Cheat Sheet from Rational Unicorn&body=Congratulations on your first step to becoming an entrepreneur!
+    a.href = `mailto:michaeljonas@rationalunicorn.com?subject=Choose Your Venture Results&body=Hello Rational Unicorn. I did a thing!
         %0D%0A
-        %0D%0AAt Rational Unicorn, we know it’s a daunting task to sort out all the legal requirements on your own. This is why we created this app to help potential business owners like you through the process.
+        %0D%0A And by that I mean I've taken my first step towards becoming an entrepreneur and I'd like to talk about it!
         %0D%0A
-        %0D%0A Based on your selections, here is what you may need to get you on your way!
+        %0D%0A My results from the Choose Your Venture application include the following services:
         %0D%0A ${listText}
-        %0D%0A Here are some additional resources to help get you on your way:
+        %0D%0A I can't wait to meet you and until then take care.
         %0D%0A
-        %0D%0A Referrals to vetted professionals that offer additional services can be found at https://rationalunicornlegalservices.com/referrals.`
+        %0D%0A Fondly,
+        %0D%0A ${name}`
     a.target = "_blank" // this opens in a new tab
     a.rel = "noopener noreferrer"
     a.click()
@@ -111,6 +110,7 @@ const Results = ({ onHide, value }) => {
                 <br />
               </>
             ))}
+            <p className="referral-text">Need a different service?<br/>Check out our list of vetted specialists <a className="referral-link" href="https://rationalunicornlegalservices.com/referrals">here</a>.</p>
           </ul>
         </Modal.Body>
         <Modal.Footer>
@@ -119,9 +119,9 @@ const Results = ({ onHide, value }) => {
               <Form.Row>
                 <Col xs={12}>
                   <Form.Control
-                    type="email"
-                    onChange={e => setEmail(e.target.value)}
-                    placeholder="Enter E-mail Here"
+                    type="text"
+                    onChange={e => setName(e.target.value)}
+                    placeholder="Please enter your name"
                   />
                   <br />
                   <Form.Text className="text-muted">
@@ -141,7 +141,7 @@ const Results = ({ onHide, value }) => {
                 Close
               </Button>
               <Button variant="send" type="submit">
-                Send
+                E-Mail
               </Button>
             </div>
           </Form>

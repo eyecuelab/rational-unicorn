@@ -51,7 +51,7 @@ const Results = ({ value, showEmail, download, classToggle }) => {
             className={classToggle ? "btn-hide" : "end-btn1"}
             onClick={showEmail}
           >
-            <p className="end-btn1-text">Email Me</p>
+            <p className="end-btn1-text">Email Us</p>
           </button>
           <br />
           <button
