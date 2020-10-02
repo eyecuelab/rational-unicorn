@@ -11,6 +11,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           background-color: rgb(46, 155, 149);
           color: white;
           border-radius: 30px;
+          margin: 0 auto;
           display: flex;
           justify-content: center !important;
           align-items: center !important;
@@ -27,6 +28,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           background-color: rgb(46, 155, 149);
           color: white;
           border-radius: 30px;
+          margin: 0 auto;
           display: flex;
           justify-content: center !important;
           align-items: center !important;
