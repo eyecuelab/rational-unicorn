@@ -13,6 +13,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import html2canvas from "html2canvas"
 import { jsPDF } from "jspdf"
 import { Spinner } from "react-bootstrap"
+import { getResults, setResults, clearStorage } from "../services/storage"
 // import TextNodes from "../components/content"
 
 const Helper = () => {
@@ -71,9 +72,7 @@ const Helper = () => {
   const [showHelp, setShowHelp] = useState(false)
   const [optionValue, setOptionValue] = useState(null)
   const [pathStorage, setPathStorage] = useState(
-    reactLocalStorage.get("results")
-      ? JSON.parse(reactLocalStorage.get("results"))
-      : []
+    getResults("results") 
   )
   const [showResults, setShowResults] = useState(false)
 
@@ -97,7 +96,7 @@ const Helper = () => {
     const lastNode = pathStorage?.length - 1
     const backNode = pathStorage?.[lastNode]?.prevNodeId
     const newPathStorage = pathStorage.slice(0, pathStorage.length - 1)
-    await reactLocalStorage.set("results", JSON.stringify(newPathStorage))
+    await setResults(newPathStorage)
     if (pathStorage.length < 1) {
       window.location.pathname = "/"
     } else if (showResults) {
@@ -117,7 +116,7 @@ const Helper = () => {
   const handleClick = async value => {
     const nextNode = useNextNode(value, TextNodes)
     const nextPathStorage = [...pathStorage, value]
-    await reactLocalStorage.set("results", JSON.stringify(nextPathStorage))
+    await setResults(nextPathStorage)
     setPathStorage([...pathStorage, value])
     setShowModal(false)
     if (value.nextNodeId === "last") {
@@ -162,7 +161,7 @@ const Helper = () => {
   }
 
   function handleHome() {
-    const resetPath = reactLocalStorage.clear()
+    const resetPath = clearStorage()
     setPathStorage(resetPath), (window.location.pathname = "/")
   }
 
