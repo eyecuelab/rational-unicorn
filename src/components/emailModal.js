@@ -102,6 +102,7 @@ const Results = ({ onHide, value }) => {
         </Modal.Header>
         <Modal.Body>
           <ul id="email-body">
+            <p className="referral-text">Send us your results and we'll help you get started!</p>
             {output.map(outputText => (
               <>
                 <li key={outputText?.replace(/\s/, "-")} className="email-li">
@@ -123,10 +124,6 @@ const Results = ({ onHide, value }) => {
                     onChange={e => setName(e.target.value)}
                     placeholder="Please enter your name"
                   />
-                  <br />
-                  <Form.Text className="text-muted">
-                    * We'll never share your email with anyone else *
-                  </Form.Text>
                   <a
                     className="newsLink"
                     href="https://rationalunicorn.us7.list-manage.com/subscribe?u=26217361a595e76edc25043f3&id=09deb29ea3"
