@@ -130,7 +130,7 @@ const Helper = () => {
     return (
       <div className="spinnerz">
         <div className="spin-position">
-          <h1 className="loader-head">Downloading</h1><br/>
+          <h1 className="loader-head">Prancing In Progress</h1><br/>
           <Spinner className="spinner1" animation="grow" variant="light" />
           <Spinner className="spinner2" animation="grow" variant="light" />
           <Spinner className="spinner3" animation="grow" variant="light" />

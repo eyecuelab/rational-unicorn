@@ -29,7 +29,7 @@ const Menu = ({ toggle, value }) => {
         <div className="navNoWrap">
           <h2>
             <a href="https://rationalunicornlegalservices.com/">
-              <img src="../images/unicorn-icon.svg"/>{" "}
+              <img className="icon-font" src="https://raw.githubusercontent.com/eyecuelab/rational-unicorn/addc1699d69fdaf21f64a25b949c500a0b14c633/src/images/unicorn-icon.svg"/>{" "}
               Company Site
             </a>
           </h2>

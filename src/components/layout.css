@@ -309,6 +309,8 @@ h1 {
 
 .icon-font {
   color: #810f5d;
+  height: 32px;
+  width: 32px;
 }
 
 .menu-footer {
@@ -1971,6 +1973,7 @@ li::before {
   font-weight: 900;
   text-transform: uppercase;
   opacity: 0.6;
+  text-align: center;
 
   -webkit-animation: bounceInDown 1s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: bounceInDown 1s; /* Firefox < 16 */
