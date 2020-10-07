@@ -760,11 +760,11 @@ h1 {
 .modal-footer {
   box-sizing: border-box;
   display: flex;
-  /* padding: 0 !important; */
   margin: 0 auto !important;
   width: 100%;
   white-space: nowrap;
-  justify-content: space-around !important;
+  text-align: center;
+  justify-content: center;
   align-items: center;
   border-top: 0px !important;
 }
@@ -1572,6 +1572,7 @@ li::before {
   white-space: normal;
   justify-content: center;
   align-items: center;
+  text-align: center;
   border-top: 1 none;
 }
 
