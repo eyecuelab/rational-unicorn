@@ -22,9 +22,7 @@ const Helper = () => {
         allContentfulUnicornNode {
           edges {
             node {
-              question {
-                question
-              }
+              question
               answers {
                 answers {
                   description
