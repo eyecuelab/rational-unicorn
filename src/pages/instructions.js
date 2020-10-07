@@ -35,7 +35,9 @@ const Instructions = () => {
       allContentfulUnicornNode {
         edges {
           node {
-            question
+            question {
+              question
+            }
             answers {
               answers {
                 nextNodeId

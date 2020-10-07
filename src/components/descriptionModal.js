@@ -12,10 +12,10 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           color: white;
           border-radius: 30px;
           margin: 0 auto;
-          display: flex;
+          display: inherit;
           justify-content: center !important;
           align-items: center !important;
-          line-heigh:auto;
+          line-heigh: 1rem !important;
           width: 120px;
           height: 30px;
           transform: scale(1.1);
@@ -32,7 +32,7 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           display: flex;
           justify-content: center !important;
           align-items: center !important;
-          line-height: auto;
+          line-heigh: 1rem !important;
           width: 120px;
           height: 30px;
           transform: scale(1.1);
