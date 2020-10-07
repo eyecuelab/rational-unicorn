@@ -15,7 +15,8 @@ const HelpModal = ({ onHide })=> {
             display: flex;
             justify-content: center;
             align-items: center;
-            line-heigh: 1rem !important;
+            line-height: 1rem !important;
+            vertical-align: middle !important;
             margin: 0 auto;
             width: 120px;
             height: 30px;

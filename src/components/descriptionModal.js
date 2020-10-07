@@ -15,7 +15,8 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           display: inherit;
           justify-content: center !important;
           align-items: center !important;
-          line-heigh: 1rem !important;
+          line-height: 1rem;
+          vertical-align: middle !important;
           width: 120px;
           height: 30px;
           transform: scale(1.1);
@@ -32,7 +33,9 @@ const DescriptionModal = ({ onHide, value, handleClick })=> {
           display: flex;
           justify-content: center !important;
           align-items: center !important;
-          line-heigh: 1rem !important;
+          vertical-align: middle !important;
+          line-height: 1rem !important;
+          
           width: 120px;
           height: 30px;
           transform: scale(1.1);

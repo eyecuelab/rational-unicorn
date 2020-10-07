@@ -45,7 +45,8 @@ const Results = ({ onHide, value }) => {
           display: flex;
           justify-content: center;
           align-items: center;
-          line-heigh: 1rem !important;
+          line-height: 1rem;
+          vertical-align: middle !important;
           margin: 0 auto;
           width: 120px;
           height: 30px;
@@ -68,6 +69,8 @@ const Results = ({ onHide, value }) => {
           display: flex;
           justify-content: center;
           align-items: center;
+          line-height: 1rem;
+          vertical-align: middle !important;
           margin: 0 auto;
           width: 120px;
           height: 30px;
