@@ -7,7 +7,7 @@
 
 ## Description
 
-Welcome to Choose Your Venture! A "choose your own adventure" style web application designed to help entrepenuers and under-represtented individuals navigate through and learn about the legal services required to start a business. <br>
+Welcome to Choose Your Venture! A "choose your own adventure" style web application designed to help entrepreneurs and under-represented individuals navigate through and learn about the legal services required to start a business entity. <br>
 The user will be prompted a list of options attached to a question on what they're hoping to achieve. The option will have a description of what that legal service is/does and depending on what they choose the user will be provided with additional questions and options. At the end of the guide the user will be displayed information and links to all of the legal services required based on the information they provided throughout the application with the option of either downloading their results or emailing them to Rational Unicorn to further discuss their potential business entity. Check out the application [here](https://chooseyourventure.netlify.app/).
 
 <hr />
