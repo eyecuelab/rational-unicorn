@@ -77,7 +77,7 @@ const Helper = () => {
 
   useEffect(() => {
     const lastNode = pathStorage?.length - 1
-    if (pathStorage?.[lastNode]?.nextNodeId == "last") {
+    if (pathStorage?.[lastNode]?.nextNodeId == "Last") {
       setShowResults(true)
     } else if (pathStorage) {
       for (let i = 0; i < TextNodes.length; i++) {
@@ -118,7 +118,7 @@ const Helper = () => {
     await setResults(nextPathStorage)
     setPathStorage([...pathStorage, value])
     setShowModal(false)
-    if (value.nextNodeId === "last") {
+    if (value.nextNodeId === "Last") {
       setShowResults(true)
     }
     setNodeState(nextNode)
