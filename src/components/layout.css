@@ -598,7 +598,14 @@ h1 {
 }
 
 .page-link {
-  font-size: 1em;
+  font-size: 16px !important;
+  background-color: #c8fffb !important;
+  color: #810f5d !important;
+  border-radius: 50% !important;
+}
+
+.page-item {
+  opacity: 0.8 !important;
 }
 
 .end-btn1 {
