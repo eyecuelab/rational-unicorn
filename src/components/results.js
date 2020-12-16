@@ -19,8 +19,6 @@ const Results = ({ value, showEmail, download, classToggle, currentPage, results
   const currentResults = output.slice(indexOfFirstResult, indexOfLastResult);
 
 
-  console.log(output, "this is the output --------------------");
-
   return (
     <>
       <div className={classToggle}>
@@ -55,6 +53,7 @@ const Results = ({ value, showEmail, download, classToggle, currentPage, results
               <br />
             </>
           ))}
+          <Pagination resultsPerPage={resultsPerPage} totalResults={output.length} />
           <br />
           <br />
           <button
