@@ -74,6 +74,9 @@ const Helper = () => {
     getResults("results") 
   )
   const [showResults, setShowResults] = useState(false)
+  const [currentPage, setCurrentPage] = useState(1)  // PAGINATION
+  const [resultsPerPage, setResultsPerPage] = useState(4)  // PAGINATION
+
 
   useEffect(() => {
     const lastNode = pathStorage?.length - 1
@@ -234,6 +237,8 @@ const Helper = () => {
                       (() => setShowResults(true), () => setShowModal(true))
                     }
                     download={downloadPDF}
+                    currentPage={currentPage}
+                    resultsPerPage={resultsPerPage}
                   />
                 </div>
               </>

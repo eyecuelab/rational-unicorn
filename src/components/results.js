@@ -1,6 +1,9 @@
-import React from "react"
+import React, { useState } from "react"
+import Pagination from "../components/pagination"
 
-const Results = ({ value, showEmail, download, classToggle }) => {
+
+
+const Results = ({ value, showEmail, download, classToggle, currentPage, resultsPerPage }) => {
   const output = value.reduce((outputTextArray, currentValue) => {
     const returnArray = [...outputTextArray]
     const { resultText } = currentValue || {}
@@ -10,6 +13,13 @@ const Results = ({ value, showEmail, download, classToggle }) => {
 
     return returnArray
   }, [])
+
+  const indexOfLastResult = currentPage * resultsPerPage;
+  const indexOfFirstResult = indexOfLastResult - resultsPerPage;
+  const currentResults = output.slice(indexOfFirstResult, indexOfLastResult);
+
+
+  console.log(output, "this is the output --------------------");
 
   return (
     <>
@@ -34,7 +44,7 @@ const Results = ({ value, showEmail, download, classToggle }) => {
             <br />
             require to get up and running!
           </p>
-          {output.map(outputText => (
+          {currentResults.map(outputText => (
             <>
               <li
                 key={outputText?.replace(/\s/, "-")}
