@@ -3,7 +3,7 @@ import Pagination from "../components/pagination"
 
 
 
-const Results = ({ value, showEmail, download, classToggle, currentPage, resultsPerPage }) => {
+const Results = ({ value, showEmail, download, classToggle, currentPage, resultsPerPage, paginate }) => {
   const output = value.reduce((outputTextArray, currentValue) => {
     const returnArray = [...outputTextArray]
     const { resultText } = currentValue || {}
@@ -14,6 +14,7 @@ const Results = ({ value, showEmail, download, classToggle, currentPage, results
     return returnArray
   }, [])
 
+  // Set number of results per page
   const indexOfLastResult = currentPage * resultsPerPage;
   const indexOfFirstResult = indexOfLastResult - resultsPerPage;
   const currentResults = output.slice(indexOfFirstResult, indexOfLastResult);
@@ -53,7 +54,11 @@ const Results = ({ value, showEmail, download, classToggle, currentPage, results
               <br />
             </>
           ))}
-          <Pagination resultsPerPage={resultsPerPage} totalResults={output.length} />
+          <Pagination
+            resultsPerPage={resultsPerPage}
+            totalResults={output.length}
+            paginate={paginate}
+          />
           <br />
           <br />
           <button

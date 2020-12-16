@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Pagination = ({ resultsPerPage, totalResults }) => {
+const Pagination = ({ resultsPerPage, totalResults, paginate }) => {
     
     console.log(resultsPerPage, "resultsPerPage in Pagination");
     console.log(totalResults, "totalResults in Pagination");
@@ -12,10 +12,10 @@ const Pagination = ({ resultsPerPage, totalResults }) => {
     console.log(pageNumbers, "pageNumbers");
     return (
         <nav>
-            <ul className="pagination">
+            <ul className='pagination'>
                 {pageNumbers.map(number => (
-                    <p key={number} className="page-item">
-                        <a href="!#" className="page-link">
+                    <p key={number} className='page-item'>
+                        <a onClick={() => paginate(number)} className='page-link'>
                             {number}
                         </a>
                     </p>
