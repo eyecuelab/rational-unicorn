@@ -60,7 +60,7 @@ const Results = ({ value, showEmail, download, classToggle, currentPage, results
             paginate={paginate}
           />
           <br />
-          <br />
+          {/* <br /> */}
           <button
             className={classToggle ? "btn-hide" : "end-btn1"}
             onClick={showEmail}

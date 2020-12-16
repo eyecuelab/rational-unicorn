@@ -598,15 +598,19 @@ h1 {
 }
 
 .page-link {
-  font-size: 16px !important;
-  background-color: #c8fffb !important;
+  background-color: #ffffff81 !important;
   color: #810f5d !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  font-size: 16px !important;
+  line-height: 16px !important;
   border-radius: 50% !important;
 }
 
-.page-item {
+/* .page-item {
   opacity: 0.8 !important;
-}
+} */
 
 .end-btn1 {
   text-align: left;
