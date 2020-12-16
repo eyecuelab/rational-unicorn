@@ -597,6 +597,10 @@ h1 {
   opacity: 1;
 }
 
+.page-link {
+  font-size: 1em;
+}
+
 .end-btn1 {
   text-align: left;
   margin: 0 auto;
