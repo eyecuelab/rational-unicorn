@@ -1,5 +1,5 @@
-import React from "react"
-import { useStaticQuery } from "gatsby"
+// import React from "react"
+// import { useStaticQuery } from "gatsby"
 
 
 // const data = useStaticQuery(
